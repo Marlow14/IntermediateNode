@@ -2,4 +2,13 @@ extends layout
 
 block content
   h1= title
-  p Students will go here #{title}
+  
+  if (students)  
+    p List of students
+    ul
+      for student in students
+        li= student
+  else
+    p No Students Found
+
+

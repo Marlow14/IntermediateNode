@@ -20,3 +20,16 @@ copy in the css and js from the libs directory to the approrpiate places
 CSS etc etc okay if yoru stylig does not match
 complete th exercises for content completion, then you can refer to the solution if you like
 
+
+add an array of students
+via router
+
+in pug
+
+test
+
+and an if conditoon
+
+comment out students
+
+test
