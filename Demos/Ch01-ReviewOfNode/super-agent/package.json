@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browserify public/sa.js > public/bundle.js && json-server -p 3333 --watch db.json "
+    "build": "browserify ./public/sa.js -o ./public/bundle.js",
+    "start": "browserify ./public/sa.js > public/bundle.js && json-server -p 3333 --watch db.json "
   },
   "author": "",
   "license": "ISC",
