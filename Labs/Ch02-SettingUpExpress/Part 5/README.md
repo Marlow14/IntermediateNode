@@ -15,7 +15,8 @@ rename stylesheets to just css, again im a lazy typer and dont like their defaul
 
 copy in the css and js from the libs directory to the approrpiate places
 
-
+display data however you want, solutin usies a table
+you can just output it anyway you like, thenif time go back and style more
 
 CSS etc etc okay if yoru stylig does not match
 complete th exercises for content completion, then you can refer to the solution if you like
