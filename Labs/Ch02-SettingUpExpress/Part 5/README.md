@@ -33,3 +33,8 @@ and an if conditoon
 comment out students
 
 test
+
+
+do it as a table
+with firstname, lastname
+etc
