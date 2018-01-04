@@ -1,9 +1,9 @@
-express --view=hbs example/demo-project && cd example/demo-project 
+express --view=pug lab-project && cd lab-project 
 
 flag for gitignore
 
 npm install
 
-nom start
+nodemon start 
 
 localhost:3000
