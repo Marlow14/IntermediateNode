@@ -10,6 +10,9 @@ var users = require('./routes/users');
 var students = require('./routes/students');
 
 const knex = require("knex");
+let db = knex(require("./knexfile"));
+
+
 
 var app = express();
 
