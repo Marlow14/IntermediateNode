@@ -9,3 +9,4 @@ module.exports = {
 		database: config.database.database
 	}
 }
+
