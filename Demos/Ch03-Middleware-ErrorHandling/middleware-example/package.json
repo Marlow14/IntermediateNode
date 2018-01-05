@@ -1,0 +1,22 @@
+{
+  "name": "middleware-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": ["example"],
+  "author": "Judy Lipinski",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2",
+    "moment": "^2.18.1",
+    "pug": "^2.0.0-beta11"
+  }
+}
