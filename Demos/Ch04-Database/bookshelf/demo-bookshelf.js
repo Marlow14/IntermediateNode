@@ -3,28 +3,36 @@
 const Promise = require("bluebird");
 const knex = require("knex");
 let db = knex(require("./knexfile"));
-var bookshelf = require('bookshelf')(knex);
+var bookshelf = require('bookshelf')(db);
 
-var User = bookshelf.Model.extend({
-  tableName: 'users',
-  posts: function() {
-    return this.hasMany(Posts);
+var Book = bookshelf.Model.extend({
+  tableName: 'books',
+  summary: function() {
+    return this.hasOne(Summary);
   }
 });
 
-var Posts = bookshelf.Model.extend({
-  tableName: 'messages',
-  tags: function() {
-    return this.belongsToMany(Tag);
+var Summary = bookshelf.Model.extend({
+  tableName: 'summaries',
+  book: function() {
+    return this.belongsTo(Book);
   }
 });
 
-var Tag = bookshelf.Model.extend({
-  tableName: 'tags'
-})
 
-User.where('id', 1).fetch({withRelated: ['posts.tags']}).then(function(user) {
-  console.log(user.related('posts').toJSON());
-}).catch(function(err) {
-  console.error(err);
-});
+//save does an update or insert
+new Book({title: 'Atlas Shrugged'})
+    .save()
+    .then(function(model) {
+      // ...
+    });
+
+// select * from `books` where `id` = '1'
+new Book({'id': 1})
+  .fetch()
+  .then(function(model) {
+    // outputs 'Atlas Shrugged'
+    console.log(model.get('title'));
+  });
+
+  
