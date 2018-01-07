@@ -1,56 +1,53 @@
 # Chapter 2 Exercise 5: Iterate over data
 
 ## Objectives:
-* Setup data to be used in router
-* Iterate over data in pug file
+* Setup student array data to be used in the student router
+* ...of the format: {
+	nameFirst: "Devin",
+	nameLast: "Durgan",
+	email: "Devin.Durgan@gmail.com",
+	hireDate: moment("01/19/2015", "MM/DD/YYYY")
+}
+* Display studentds by iterating over the data in student pug file 
+*. Add an if conditon to display if no students are present. Test this.
+* Change the formatting of the application and add Bootstrap
+
+Need step by steps?
+Read below...
 
 ## Steps
 
+1. Continue with your `MyPractice/lab-project` and launch http://localhost:3000 in browser. Refer to previous exercises if you need more detail.
 
-1. If you successfully completed the last exercise, continue with your project. Otherwise use the solution from the last exercise.
+1. In the terminal install the moment package and add it as a dependency to the package.json.
+`npm i -S moment`
 
-1. Locate the /Libs folder in the root of this cuorse folder.
+1. update the index.pug to just say `Welcome to #{title}`
 
-1. copy the contents of the directory copy the libs folder contents into the appropriate locations under public
+1. update the layout to say `Student Manager Application`
 
+1. Define student array in the `/routes/students`. Use the moment package ot create dates. Add moment to the project using an nom install with a --save flag.
 
-Need step by steps?
+1. display student data however you want, the solution uses a table. The demo displays list items.
+	```
+	each student in students
+		tr
+		td #{student.nameFirst} #{student.nameLast}
+		td #{student.email}
+		td #{student.hireDate.format("MM/DD/YYYY")}
+	```
+1. Test that you can see the students in the browser. If not make fixes and ask if you get stuck.
 
-Read below...
+1. Add an if conditon to display if no students are present. Comment out students inclusion in router and test your conditional works.
 
-update the index.pug to say Home Page Wlecome
+## Preparing Project for future work
+The following will modify the application to have links to the routes files.
+It uses Bootstrap for styling. 
 
-update the layout to say student manger
-rename javascripst to js saves typing and that spelling is annoying
-rename stylesheets to just css, again im a lazy typer and dont like their default
+1. Delete the `/public/javascripts` and `/public/stylesheets` directories. 
 
-copy in the css and js from the libs directory to the appropriate places
+1. Copy the (css and js files) from `NODE-INTERMEDIATE/Libs/Part2-5` into the `/public` folder. 
 
-display data however you want, solutin usies a table
-you can just output it anyway you like, thenif time go back and style more
+1. Replace the `layout.pug` and `students.pug` from `NODE-INTERMEDIATE/Libs/Part2-5` into the views directory.
 
-CSS etc etc okay if yoru stylig does not match
-complete th exercises for content completion, then you can refer to the solution if you like
-
-
-add an array of students
-via router
-
-in pug
-
-test
-
-and an if conditoon
-
-comment out students
-
-test
-
-
-do it as a table
-with firstname, lastname
-etc
-
-1. Open a terminal for the project directory and run the command  `nodemon start` 
-
-1. Visit the site at http://localhost:3000/students
+1. Load in the browser and you should now see a table being displayed like in the solution.
