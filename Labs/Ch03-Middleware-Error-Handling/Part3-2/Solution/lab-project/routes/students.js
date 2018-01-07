@@ -19,6 +19,8 @@ let students = [{
 	hireDate: moment("08/29/2015", "MM/DD/YYYY")
 }];
 
+
+
 /* GET users listing. */
 router.get('/', function(req, res, next) {
  // res.send('Students will go in here');

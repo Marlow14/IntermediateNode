@@ -20,6 +20,7 @@ module.exports = function({errorReporter}) {
 			stackTrace = null;
 		}
 	
+		// checking error codes
 		if (err.status == 404) {
 			res.status(404);
 		}
