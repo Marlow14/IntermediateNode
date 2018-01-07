@@ -1,7 +1,7 @@
-# Chapter 3 Exercise 1: Add use of middleware
+# Chapter 3 Exercise 1: Use default error handling middleware
 
 ## Objectives:
-* Update your project to have middleware in use
+* Examine the default error handling middleware and modify the req and res objects. 
 
 ## Steps
 
@@ -35,5 +35,8 @@
 
 1. In the error handler, log the req.timestamp using console.log. Test your changes in the browser.
 
-1. Note the usage of `res.locals.message = err.message`;  This is another way to make data available in the template view. Use this approach to set the date timestamp and display this in
-error.pug. Test your changes in the browser.
+1. Note the usage of `res.locals.message = err.message` and how this is used in error.pug.  This is another way to make data available in the template view. 
+
+1. Use this approach with res.locals to set the date timestamp so that this code can be used in error.pug `Error occured at #{timestamp}` 
+
+1. Test your changes in the browser.
