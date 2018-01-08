@@ -1,7 +1,7 @@
-Run using npm run start
+1. Run using npm run start.
 
-Watch the console and load the browser at the Home link
+1. Watch the console and load the browser at the Home link
 
-Compare the code to the functionality on the screen.
+1. Compare the code to the functionality on the screen.
 
-How are makes displayed?
+1. How are makes displayed?

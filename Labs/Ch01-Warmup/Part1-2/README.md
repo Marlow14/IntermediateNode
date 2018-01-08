@@ -16,6 +16,6 @@
 1. Install browserify globally. 
 `npm install -g browserify`            
 
-1. Execite this command: browserify source.js -o bundle.js
+1. Execute this command: browserify source.js -o bundle.js
 
 1. Test your index.html file in Chrome and Internet Explorer. Do you see your ouput in the console?

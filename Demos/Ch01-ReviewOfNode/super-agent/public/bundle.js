@@ -2074,5 +2074,4 @@ request
   
 
 
-},{"./api.js":8,"superagent":3}]},{},[9])
-//# sourceMappingURL=bundle.js.map
+},{"./api.js":8,"superagent":3}]},{},[9]);
