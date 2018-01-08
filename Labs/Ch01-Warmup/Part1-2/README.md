@@ -20,4 +20,4 @@
 
 1. Execute this command: browserify source.js -o bundle.js
 
-1. Test your index.html file in Chrome and Internet Explorer. Do you see your ouput in the console?
+1. Test your index.html file in Chrome and Internet Explorer. Do you see your output in the console?
