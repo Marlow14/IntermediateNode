@@ -8,6 +8,8 @@
 
 1. In the /MyWarmup directory create a folder called practiceModules.
 
+1. You will be doing command line work in this folder. You can get there in VS code by right clickign the folder and choosing Open in Terminal.
+
 1. In practiceModules, create an index.html file which contains
 ``` <script src="bundle.js"></script> ```
 
