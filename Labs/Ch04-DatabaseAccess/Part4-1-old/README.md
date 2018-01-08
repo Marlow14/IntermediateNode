@@ -57,45 +57,6 @@ module.exports = {
 }
 ```
 
-1. In the app.js file use knex and pg to create a database connection pool.
-
-```
-const knex = require("knex");
-const db = knex(require("./knexfile"));
-```
-
-1. In app.js, pass the db info to the student router.
-
-1. app.use('/students', students({db}));
-
-1. Change the students.js file to accept {db}. Use this to try and get the students from the database. Map the results to add a fullname property. Then pass these students off to the render function.  
-
-``` javascript
-'use strict';
-
-const Promise = require("bluebird");
-
-module.exports = function({db}) {
-	let router = require("express-promise-router")();
-
-	router.get("/students",  (req, res) => {
-		return Promise.try(() => {
-			return db("students");
-		}).map((student) => { //process each student
-			student.fullName = student.nameFirst + ' ' + student.nameLast;
-			return student;
-		}).then((students) => {
-			res.render("students", {
-				students: students
-			});
-		});
-	});
-
-	return router;
-}
-
-```
-
 
 
 
