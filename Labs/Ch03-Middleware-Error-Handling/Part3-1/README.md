@@ -9,7 +9,7 @@
 
 1. Try to reach a made up URL like http://localhost:3000/notforrealz 
 
-1. Notice how 404 are handled. You shoudl be seeing the same format as your other pages.
+1. Notice how 404 are handled. You should be seeing the same format as your other pages.
 
 1. Can you see how the error view is being rendered? Try to find it.  Scroll down to continue and confirm info on this.
 

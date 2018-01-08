@@ -1,11 +1,12 @@
 # Chapter 3 Exercise 3: Using the promise router so middleware can return promises
 
 ## Objectives:
-* Add the use of Express Promise Router to our Application
+* Add a login route to the app
+* Use the Express Promise Router 
 * Create custom errors
 * Throw a custom error from a Promise
 
-## Steps
+## Steps 
 
 1. Continue working in your `MyPractice/lab-project` project. 
 
@@ -51,7 +52,7 @@ Which HTTP method is needed to request the login page?
                 res.redirect('/students');
             
             } else {
-            //throw new errors.AuthenticationError("Incorrect password");
+            //throw new customErrors.AuthenticationError("Incorrect password");
                 throw new Error("Incorrect password");
             }
         });
@@ -82,6 +83,32 @@ Which HTTP method is needed to request the login page?
     ```
 
 1. Now, test that logging in, with an invalid password, works with or without the catch() block in the Promise.try() 
+
+## Add Custom errors
+
+1. In the root of this project `/lab-project` create a file to house custom errors called `custom-errors.js`. You can right click lab-project and choose `New file.`
+
+1. In this file require createError and export an object with two custom error types.
+    ```javascript
+    const createError = require("create-error");
+
+    module.exports = {
+        AuthenticationError: createError("AuthenticationError", {isCustomError: true, statusCode: 401}),
+        ValidationError: createError("ValidationError", {isCustomError: true, statusCode: 422})
+    };
+    ```
+
+1. Add the create-error package to the project `npm i -S create-error`
+
+1. In `index.js` include the new custom errors:
+```const errors = require("../custom-errors");```
+
+1. Now in the POST login method, use the new custom error:
+```throw new customErrors.AuthenticationError("Incorrect password");```
+     
+1. Replace the contents of error-handler.js with the contents in `/Libs/Part3-3/middleware/error-handler`
+
+1. Test that the app is still working after these changes.
 
 1. We still have work to do. We will start working with the DB next.
 
