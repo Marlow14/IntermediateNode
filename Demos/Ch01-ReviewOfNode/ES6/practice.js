@@ -1,7 +1,7 @@
-const hobbies = [
-                    { name: 'volleyball', duration: 20 },
-                    { name: 'cooking', duration: 5},
-                    { name: 'swimming', duration: 11}
+        const sportsArray = [
+                    { name: 'volleyball', duration: 'matches' },
+                    { name: 'baseball', duration: 'innings'},
+                    { name: 'football', duration: 'quarters'}
                 ];
 
 
@@ -13,3 +13,9 @@ const hobbies = [
         printSportInfo(sportsArray[0]);
         printSportInfo(sportsArray[1]);
         printSportInfo(sportsArray[2]);
+
+        console.log('****');
+
+        for (const sport of sportsArray) {
+            printSportInfo(sport);
+        }

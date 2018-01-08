@@ -1,8 +1,8 @@
 # Chapter 1 Exercise 2: Modules and Browserify
 
 ## Objectives:
-* Create a new module called source.js
-* Copy your logic (or the solution) from the last exercise into the browser for usage.
+* Create a new folder called modulePractice
+* Copy your logic (or the solution) from the last exercise into source.js
 
 ## Steps
 
