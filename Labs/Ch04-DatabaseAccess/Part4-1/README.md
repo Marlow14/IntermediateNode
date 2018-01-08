@@ -42,7 +42,7 @@
 	}
 	```
 
-1. Create a knexfile.js that uses the config.json file.
+1. Create a `knexfile.js` that uses the `config.json` file.
 ```
 const config = require("./config.json");
 
@@ -57,7 +57,7 @@ module.exports = {
 }
 ```
 
-1. In the app.js file use knex and pg to create a database connection pool.
+1. In the `app.js` file use knex and pg to create a database connection pool.
 
 ```
 const knex = require("knex");

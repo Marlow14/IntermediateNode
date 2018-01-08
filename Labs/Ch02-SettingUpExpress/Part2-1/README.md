@@ -4,9 +4,7 @@
 
 ## Steps
 
-1. During the course you will be writin code in Create a new folder called `MyPractice` at the same level as `Demos` and `Labs`.
-
-1. If VS Code is open to the `Node-Intermediate` folder you can right-click below the other folders and choose new folder. If it gets created in an exitsing folder you can drag it to the correct location.
+1. During the course you will be creating a project and updating it in each exercise.  Create a new folder called `MyPractice` at the same level as `Demos` and `Labs`.   If VS Code is open to the `Node-Intermediate` folder you can right-click below the other folders and choose new folder. If it gets created in an existing folder you can drag it to the correct location.
 
 1. Open a terminal at the location of the new folder. You can right click and Choose Open Terminal.
 
