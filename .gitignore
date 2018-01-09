@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+# output from CLI browserify and babel
+bundle.js
+
+source-compiled.js
