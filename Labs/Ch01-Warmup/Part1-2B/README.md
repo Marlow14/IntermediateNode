@@ -55,9 +55,10 @@
     }
     ```
 
-1. Now, we want to execute the babel command from the command line. Recall, we could give the full path to node_modules, but this is made easier with the built in npm tool called `npx`. Issue this command:
+1. Now, we want to execute the babel command from the command line. Recall, we could give the full path to node_modules, but this is made easier with the built in npm tool called `npx`. Issue these commands:
     ```
     npx babel source.js -o source-compiled.js
+    npx babel printHobbies.js -o source-compiled.js
     ```
 
 
