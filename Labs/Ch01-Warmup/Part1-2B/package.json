@@ -1,8 +1,8 @@
 {
   "name": "babel-practice",
   "version": "1.0.0",
-  "description": "## Objectives: * Create a new folder called modulePractice * Copy your logic (or the solution) from the last exercise into source.js",
-  "main": "script.js",
+  "description": "## Objectives: * Update npm * Understand package.lock * Use babel to transpile from ES6 to ES5",
+  "main": "source.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

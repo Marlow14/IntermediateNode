@@ -2,33 +2,13 @@
 
 ## Objectives:
 * Create a new node project using npm init
-* Use bluebird to use promises with files
+* Use babel to compile code from ES6 to ES5
+* Use bluebird to use promises with file reading
 
 ## Steps
 
 1. In the /MyWarmup directory create a folder called bluebird.
 
-There are several ways to "transpile" code from ES6 down to ES5. One way is using babel. It can be used several ways including from the command line. One approach would be to install babel globally but this has fallen out of favor. Installing globally isnt always desirable. It makes it harder to manage the versions of the tools being used and can cause developers more manual work. Instead let's create a package.json for our mini-project, and list the dependency there.
-
-1. Create a package.json by using the `npm init` wizard from the command line. Call the package `babel-practice` - and accept all other defaults (keep hitting Return key)
-
-1. Add the babel CLI to the new package dependencies with this command:
-```
-npm install --save-dev babel-cli
-```
-
-1. Add 
-npm install babel-preset-env --save-dev
-
-
-1. Now, we want to execute the babel command from the command line. 
-
-./node_modules/.bin/babel script.js --out-file script-compiled.js --presets=es2015
-
-You could go the route of specifying the path such as ./node_modules/.bin/babel - but there is an easier way if using npm version > 5.2. 
-
-Let's 
-https://babeljs.io/docs/usage/cli/
 
 
 
