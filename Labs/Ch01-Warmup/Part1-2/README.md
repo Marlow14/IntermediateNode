@@ -16,8 +16,11 @@
 1. Create a file called source.js and copy into it your logic (or the solution) from Part1-1
 
 1. Install browserify globally. 
-`npm install -g browserify`            
+`npm install -g browserify` 
 
 1. Execute this command: browserify source.js -o bundle.js
 
 1. Test your index.html file in Chrome and Internet Explorer. Do you see your output in the console?
+
+1. Internet Explorer and Firefox will not work due to the ES6 code. We will address this in the next section. 
+
