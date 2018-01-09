@@ -55,17 +55,18 @@
     }
     ```
 
-1. Now, we want to execute the babel command from the command line. Recall, we could give the full path to node_modules, but this is made easier with the built in npm tool called `npx`. Issue these commands:
-    ```
-    npx babel source.js -o source-compiled.js
-    npx babel printHobbies.js -o source-compiled.js
-    ```
 
-
-1. Now use browserify again to create the bundle to be loaded in the browser.
+1. Use browserify to bundle our files that are relate through module requires. 
     ```
-    browserify source-compiled.js -o bundle.js
+    browserify source.js -o es6bundle.js
     ```    
+
+
+1. Now, we want to execute the babel command to turn this into ES5. Recall, we could give the full path to node_modules, but this is made easier with the built in npm tool called `npx`. Issue this command:
+    ```
+    npx babel es6bundle.js -o bundle.js
+    ```
+
 
 1. Reload the browser, you should now see output in the dev tools console for both Chrome and IE.
 
