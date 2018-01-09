@@ -1,10 +1,10 @@
 const request = require('superagent');
-const api = require('./api.js');
+//const api = require('./api.js');
+let makesLocal = [];
 
 module.exports = function(global, makes){
-
-    var favorites = [];
-
+    makesLocal = makes;
+   
     global.showmakes = function(){
         let htmlMakes = `<table>
         <tr>
@@ -13,7 +13,7 @@ module.exports = function(global, makes){
         <th>Action</th>
         </tr>`;
         
-            makes.forEach(function(m){
+        makesLocal.forEach(function(m){
             console.log(m.make_display + ' | ' + m.make_country);
             htmlMakes += `
             <tr>
@@ -26,7 +26,24 @@ module.exports = function(global, makes){
     };
 
     global.deletemake = function(id){
-        alert(`Trying to delete ${id} - not yet implemented`);
+    //    alert(`Trying to delete ${id} - not yet implemented`);
+    
+    request
+    .delete(`/Makes/${id}`)
+    .then(function(res) {
+        // res.body, res.headers, res.status
+        makesLocal = makesLocal.filter(function(el) {
+            return el.id !== id;
+        });
+        alert(`Deleted record`);
+        showmakes();
+    })
+    .catch(function(err) {
+        // err.message, err.response
+        throw new Error('An AJAX error occured: ' + err.message);
+    });
+
+
     }
 
 }
