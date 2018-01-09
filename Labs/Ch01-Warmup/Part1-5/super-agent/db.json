@@ -37,12 +37,6 @@
       "make_country": "USA"
     },
     {
-      "id": 11,
-      "make_display": "Armstrong Siddeley",
-      "make_is_common": 0,
-      "make_country": "UK"
-    },
-    {
       "id": 12,
       "make_display": "Ascari",
       "make_is_common": 0,
@@ -95,12 +89,6 @@
       "make_display": "Beijing",
       "make_is_common": 0,
       "make_country": "China"
-    },
-    {
-      "id": 21,
-      "make_display": "Bentley",
-      "make_is_common": 1,
-      "make_country": "UK"
     },
     {
       "id": 22,

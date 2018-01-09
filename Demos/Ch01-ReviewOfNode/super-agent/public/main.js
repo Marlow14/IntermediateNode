@@ -1,6 +1,7 @@
 const request = require('superagent');
 const api = require('./api.js');
 
+//initialize the api
 request
       .get('/Makes')
       .then(function(res) {

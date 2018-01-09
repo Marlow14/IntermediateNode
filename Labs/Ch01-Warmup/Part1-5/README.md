@@ -2,11 +2,14 @@
 
 ## Objectives:
 * Practice with superagent
+* Create a delete call
 
 ## Steps
 
-1. Copy/paste this folders superagent directory into the /MyWarmup directory
+1. Copy/paste the /Demos/Ch01-Review../super-agent folder to /WarmUp so that you have a /MyWarmUp/super-agent folder.
 
-1. Do an npm install
+1. Sometimes, the node_modules folder do not copy well. Try to start the project by executing the command: `npm run start`
 
-1. Write the code to do CRUD against the URL /makes
+1. If you get an error, delete node_mdule and execute `npm install`
+
+1. Implement the delete functionality in the 

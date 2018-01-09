@@ -1,9 +1,9 @@
 const request = require('superagent');
-const api = require('./api.js');
+//const api = require('./api.js');
+let makesLocal = [];
 
 module.exports = function(global, makes){
-
-    var favorites = [];
+    makesLocal = makes;
 
     global.showmakes = function(){
         let htmlMakes = `<table>
@@ -13,7 +13,7 @@ module.exports = function(global, makes){
         <th>Action</th>
         </tr>`;
         
-            makes.forEach(function(m){
+        makesLocal.forEach(function(m){
             console.log(m.make_display + ' | ' + m.make_country);
             htmlMakes += `
             <tr>
