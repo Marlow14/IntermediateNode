@@ -8,6 +8,8 @@
 
 1. Open a terminal at the location of the new folder. You can right click and Choose Open Terminal.
 
+1. If you havent already install globally the Express application generator using `npm install express-generator -g`
+
 1. Execute this command to create the lab-project
 `express --view=pug --git lab-project && cd lab-project` 
 
