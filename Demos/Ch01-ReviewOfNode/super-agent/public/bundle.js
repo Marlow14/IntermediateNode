@@ -2042,6 +2042,7 @@ module.exports = function(global, makes){
         <tr>
         <th>Make</th>
         <th>Country</th>
+        <th>Action</th>
         </tr>`;
         
             makes.forEach(function(m){
@@ -2050,10 +2051,15 @@ module.exports = function(global, makes){
             <tr>
             <td> ${m.make_display}</td>
             <td>${m.make_country}</td>
+            <td><button onclick="deletemake(${m.id})">Delete</button></td>
             </tr>`
         });
         document.getElementById("output-makes").innerHTML = htmlMakes;
     };
+
+    global.deletemake = function(id){
+        alert(`Trying to delete ${id} - not yet implemented`);
+    }
 
 }
 },{"./api.js":8,"superagent":3}],9:[function(require,module,exports){
@@ -2074,5 +2080,4 @@ request
   
 
 
-},{"./api.js":8,"superagent":3}]},{},[9])
-//# sourceMappingURL=bundle.js.map
+},{"./api.js":8,"superagent":3}]},{},[9]);
