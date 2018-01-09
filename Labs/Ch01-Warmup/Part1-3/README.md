@@ -42,7 +42,7 @@
 
     ```
 
-1. In the terminal window, execuet the command `node index.js`
+1. In the terminal window, execute the command `node index.js`
 
 1. Look at the output in the console and the order of the printed statements.
 
