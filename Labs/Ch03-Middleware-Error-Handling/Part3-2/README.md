@@ -48,7 +48,7 @@
         next(err);
     });
     ```
-1. Test the URL:  http://localhost:3000/badurl
+1. Test the URL:  http://localhost:3000/mtgox
 
 1. Now lets assume we have a bug in our code. An error is being thrown from somewhere and isn't being handled. What was not planned for? 
 

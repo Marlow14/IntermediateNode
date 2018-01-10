@@ -20,6 +20,7 @@ module.exports = function({errorReporter}) {
 			stackTrace = null;
 		}
 	
+		// checking error codes
 		if (err.status == 404) {
 			res.status(404);
 		}
@@ -34,7 +35,8 @@ module.exports = function({errorReporter}) {
 		}
 
 		res.render("error", {
-			errorMessage: err.message,
+			error: err,
+			errorMessage: `${err.status}: ${err.message}`,
 			stackTrace: stackTrace
 		});
 

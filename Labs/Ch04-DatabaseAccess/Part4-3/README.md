@@ -43,13 +43,6 @@ exports.down = function(knex, Promise) {
 
 1. Check the DB for the added Users table
 
-1. Drop the table from the client.
-
-1. Try to run this again
-```knex migrate:latest```
-
-1. You will likely get a message that it is already up to date
-and if so you must drop the knex_migrations table before you can run the command again.  Do that now so you end up with the users table.
 
 
 

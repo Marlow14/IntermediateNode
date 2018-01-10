@@ -64,3 +64,5 @@ typings/
 bundle.js
 
 source-compiled.js
+
+es6bundle.js
