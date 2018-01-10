@@ -66,37 +66,39 @@ const db = knex(require("./knexfile"));
 
 1. In app.js, pass the db info to the student router.
 
-1. app.use('/students', students({db}));
+``` router.use('/students', students({db})); ```
 
-1. Change the students.js file to accept {db}. Use this to try and get the students from the database. Map the results to add a fullname property. Then pass these students off to the render function.  
+1. Change the students.js file to accept {db}. Use this to try and get the students from the database. Map the results to add a fullname property. Use oment wiht hiredate. Then pass these students off to the render function.  
 
 	``` javascript
-	'use strict';
+	const expressPromiseRouter = require("express-promise-router");
+const router = expressPromiseRouter();
+const Promise = require("bluebird");
+const moment = require('moment');
 
-	const Promise = require("bluebird");
+module.exports = function({db}) {
+	let router = require("express-promise-router")();
 
-	module.exports = function({db}) {
-		let router = require("express-promise-router")();
-
-		router.get("/students",  (req, res) => {
-			return Promise.try(() => {
-				return db("students");
-			}).map((student) => { //process each student
-				student.fullName = student.nameFirst + ' ' + student.nameLast;
-				return student;
-			}).then((students) => {
-				res.render("students", {
-					students: students
-				});
+	router.get("/",  (req, res) => {
+		return Promise.try(() => {
+			return db("students");
+		}).map((student) => { //process each student
+			student.fullName = student.nameFirst + ' ' + student.nameLast;
+			student.hireDate = moment(student.hireDate, "MM/DD/YYYY")
+			return student;
+		}).then((students) => {
+			res.render("students", {
+				students: students
 			});
 		});
+	});
 
-		return router;
-	}
+	return router;
+}
 
 	```
 
-1. 
+1. Test your changes in the browser, do you see the students from the database?
 
 
 

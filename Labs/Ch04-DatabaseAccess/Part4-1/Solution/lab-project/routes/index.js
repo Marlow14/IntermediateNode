@@ -16,18 +16,18 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login', (req, res, next) => {
- // return Promise.try(() => {
-      if (req.body.password === "secret") {
-      //if it is the correct password, login and set up session
-        err = null;
-        res.redirect('/students');
-        return;
-      } else {
-          throw new customErrors.AuthenticationError("Incorrect password");
-       // throw new Error("Incorrect password");
-      }
- // })
-  //.catch( next )
+  return Promise.try(() => {
+    if (req.body.password === "secret") {
+      //req.session.loggedIn = true;
+      return Promise.try(() => {
+       // return req.saveSession();
+      }).then(() => {
+        res.redirect("/students");
+      });
+    } else {
+      throw new errors.AuthenticationError("Incorrect password");
+    }
+  });
 });  
 
 module.exports = router;

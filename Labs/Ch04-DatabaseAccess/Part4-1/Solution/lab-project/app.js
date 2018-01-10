@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+const knex = require("knex");
+const db = knex(require("./knexfile"));
+
 var moment = require('moment');
 
 var index = require('./routes/index');
@@ -13,17 +16,20 @@ var students = require('./routes/students');
 
 var app = express();
 
+const expressPromiseRouter = require("express-promise-router");
+const router = expressPromiseRouter();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+router.use(logger('dev'));
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(cookieParser());
+router.use(express.static(path.join(__dirname, 'public')));
 
 const unhandledError = require("unhandled-error");
 
@@ -43,24 +49,26 @@ let errorReporter = unhandledError((err) => {
    }
 
 
-app.use(function (req, res, next) {
+router.use(function (req, res, next) {
   console.log(`Time: ${moment().format('MMMM Do YYYY, h:mm:ss a')}  `);
   next();
 });
 
 /* Main routes */
-app.use('/', index);
-app.use('/users', users);
-app.use('/students', students);
+router.use('/', index);
+router.use('/users', users);
+router.use('/students', students({db}));
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+router.use(function(req, res, next) {
   let err = new Error('Oh no! the page cannot be found');
   err.status = 404;
   req.timestamp = new Date();
   next(err);
 });
 
-app.use(require("./middleware/error-handler")(state));
+router.use(require("./middleware/error-handler")(state));
+
+app.use(router);
 
 module.exports = app;
