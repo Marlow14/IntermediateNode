@@ -1,56 +1,44 @@
 'use strict';
 
-const http = require("http");
+	/* 500 is an internal server error; this category includes any kind
+		   of unexpected error (ie. a bug). It should be reported to the
+		   error reporter, which will then likely crash the process and let
+		   it get restarted. */
+	
 
 // let isInDevelopmentMode = (process.env.NODE_ENV === "development");
-let isInDevelopmentMode = true;
+let isInDevelopmentMode = false;
+
 
 module.exports = function({errorReporter}) {
-    return function(err, req, res, next) {
-        let statusCode, errorMessage, stackTrace;
+	return function(err, req, res, next) {
+		let stackTrace;
 
-        if (err.isCustomError && err.statusCode != null) {
-            statusCode = err.statusCode;
-        } else {
-            statusCode = 500;
-        }
+		if (isInDevelopmentMode) {
+			stackTrace = err.stack;
+		} else {
+			stackTrace = null;
+		}
+	
+		// checking error codes
+		if (err.status == 404) {
+			res.status(404);
+		}
+		else if (err.status >= 500 && err.status <= 504) {
+			res.status(err.status);
+		}
+		else {  //else we dont know why we are here
+			// errorReporter.report(err, {
+			// 	req: req,
+			// 	res: res
+			// });
+		}
 
-        if (isInDevelopmentMode || (statusCode >= 400 && statusCode < 500)) {
-            /* We only want to display the original error message if we're either in
-               development mode, or the statusCode is a 4XX code (meaning an error
-               that's caused by the client). */
-            errorMessage = err.message;
-        } else {
-            errorMessage = http.STATUS_CODES[statusCode];
-        }
+		res.render("error", {
+			error: err, 
+			errorMessage: `${err.status}: ${err.message}`,
+			stackTrace: stackTrace
+		});
 
-        if (isInDevelopmentMode) {
-            stackTrace = err.stack;
-        } else {
-            stackTrace = null;
-        }
-
-        if (statusCode < 400 || statusCode >= 500) {
-            /* Non-client errors should always be displayed on the terminal, even
-               if we're running in production (so that the service manager can log
-               them, just in case we need them there). */
-            console.error(err.stack);
-        }
-
-        if (statusCode === 500) {
-            /* This is an internal server error; this category includes any kind
-               of unexpected error (ie. a bug). It should be reported to the
-               error reporter, which will then likely crash the process and let
-               it get restarted. */
-            errorReporter.report(err, {
-                req: req,
-                res: res
-            });
-        }
-        res.render("error", {
-            errorMessage: err.message,
-            stackTrace: stackTrace
-        });
-
-    };
+	};
 }

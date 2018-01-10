@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "devstart": "DEBUG=lab-project node ./bin/www",
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "bluebird": "^3.5.1",

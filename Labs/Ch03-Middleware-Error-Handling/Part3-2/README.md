@@ -12,7 +12,17 @@
 
 1. Copy the file called `error-handler.js`from `NODE-INTERMEDIATE/Libs/Part3-2` into the `/middleware` folder. 
 
-1. Note how this will check for 404 and 500 level errors.
+1. Note how this will check for 404 and 500 level errors. IT sets up an errorMessage to be used on error page. Update the error.pug to use this:
+    ```
+    extends layout
+
+    block content
+    h1= message
+    h2= errorMessage
+    
+    pre #{error.stack}
+    ```  
+
 
 1. Update `app.js` to include this new middleware.
 `app.use(require("./middleware/error-handler")(state));`
@@ -83,7 +93,7 @@
     ```
 
 
-1. Update `error-handler` to have a clause where no error code is being captured, and use it to report the error with errorReporter.
+1. Update `error-handler` to use the else statement where no error code is being captured, and use it to report the error with errorReporter. (uncomment the code)
     ``` javascript
     else { // else we dont know why we are here
              	errorReporter.report(err, {

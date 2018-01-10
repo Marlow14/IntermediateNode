@@ -35,7 +35,8 @@ module.exports = function({errorReporter}) {
 		}
 
 		res.render("error", {
-			errorMessage: err.message,
+			error: err, 
+			errorMessage: `${err.status}: ${err.message}`,
 			stackTrace: stackTrace
 		});
 

@@ -33,7 +33,7 @@
 
 1. In the 404 catch middleware, modify the request to add a req.timestamp set it to new Date()
 
-1. In the error handler, log the req.timestamp using console.log. Test your changes in the browser.
+1. In the error handler, log the req.timestamp using console.log. Test your changes in the browser. View the terminal window to fing the log.
 
 1. Note the usage of `res.locals.message = err.message` and how this is used in error.pug.  This is another way to make data available in the template view. 
 
