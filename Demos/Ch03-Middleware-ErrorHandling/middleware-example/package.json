@@ -11,7 +11,9 @@
     "type": "git",
     "url": ""
   },
-  "keywords": ["example"],
+  "keywords": [
+    "example"
+  ],
   "author": "Judy Lipinski",
   "license": "MIT",
   "dependencies": {
