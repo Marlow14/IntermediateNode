@@ -40,3 +40,6 @@
 
 1. Rollback this change:
 ```knex migrate:rollback```
+
+1. Use Git icon in VS Code to undo changes ot this /Demo directory
+
