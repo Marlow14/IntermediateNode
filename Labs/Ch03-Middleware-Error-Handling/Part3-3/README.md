@@ -82,6 +82,10 @@ Which HTTP method is needed to request the login page?
     npm i -S express-promise-router
     ```
 
+1. Because we are now using the Express Promise Router in our application, let's replace the current contents of `app.js` with the contents in `/Libs/Part3-3/app.js`.
+
+1. Notice how the new version of app.js uses the express-promise-router
+
 1. Now, test that logging in, with an invalid password, works with or without the catch() block in the Promise.try() 
 
 ## Add Custom errors
