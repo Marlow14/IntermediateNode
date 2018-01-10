@@ -1,4 +1,4 @@
-//var express = require('express');
+var express = require('express');
 //var router = express.Router();
 var expressPromiseRouter = require("express-promise-router");
 var router = expressPromiseRouter();
@@ -16,20 +16,17 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login', (req, res, next) => {
-  console.log('IN ROUTER POST LOGIN');
   return Promise.try(() => {
       if (req.body.password === "secret") {
       //if it is the correct password, login and set up session
         res.redirect('/students');
-        console.log('after redirect');
-        res.end();
-        return;
+       
       } else {
           throw new customErrors.AuthenticationError("Incorrect password");
        // throw new Error("Incorrect password");
       }
   })
-  .catch( next )
+  //.catch( next )
 });  
 
 module.exports = router;

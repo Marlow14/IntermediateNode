@@ -1,10 +1,6 @@
-const expressPromiseRouter = require("express-promise-router");
-
-const router = expressPromiseRouter();
-//const customErrors = require('../custom-errors');
-const Promise = require("bluebird");
-
-const moment = require('moment');
+var express = require('express');
+var router = express.Router();
+var moment = require('moment');
 
 let students = [{
 	nameFirst: "Devin",
@@ -30,7 +26,8 @@ router.get('/', function(req, res, next) {
  // res.send('Students will go in here');
     res.render('students', { 
      title: 'Students' ,
-     students: students  
+     students: students
+        
     });
 });
 

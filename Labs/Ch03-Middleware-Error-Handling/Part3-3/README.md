@@ -73,8 +73,8 @@ Which HTTP method is needed to request the login page?
     
     ``` javascript
        //var router = express.Router();
-        var expressPromiseRouter = require("express-promise-router");
-        var router = expressPromiseRouter();
+        const expressPromiseRouter = require("express-promise-router");
+        const router = expressPromiseRouter();
     ```
 
 1. Add the dependency to the project. 

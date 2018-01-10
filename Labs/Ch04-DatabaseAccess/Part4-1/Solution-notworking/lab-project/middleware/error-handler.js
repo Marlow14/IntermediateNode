@@ -41,10 +41,10 @@ module.exports = function({errorReporter}) {
 			   of unexpected error (ie. a bug). It should be reported to the
 			   error reporter, which will then likely crash the process and let
 			   it get restarted. */
-			// errorReporter.report(err, {
-			// 	req: req,
-			// 	res: res
-			// });
+			errorReporter.report(err, {
+				req: req,
+				res: res
+			});
 		}
 
 		res.status(statusCode).render("error", {

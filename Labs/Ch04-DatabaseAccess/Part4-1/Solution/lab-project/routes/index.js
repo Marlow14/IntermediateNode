@@ -16,16 +16,17 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login', (req, res, next) => {
-  return Promise.try(() => {
+ // return Promise.try(() => {
       if (req.body.password === "secret") {
       //if it is the correct password, login and set up session
+        err = null;
         res.redirect('/students');
-       
+        return;
       } else {
           throw new customErrors.AuthenticationError("Incorrect password");
        // throw new Error("Incorrect password");
       }
-  })
+ // })
   //.catch( next )
 });  
 

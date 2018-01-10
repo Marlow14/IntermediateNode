@@ -7,10 +7,6 @@ var bodyParser = require('body-parser');
 
 var moment = require('moment');
 
-const knex = require("knex");
-const db = knex(require("./knexfile"));
-
-
 var index = require('./routes/index');
 var users = require('./routes/users');
 var students = require('./routes/students');
@@ -55,7 +51,7 @@ app.use(function (req, res, next) {
 /* Main routes */
 app.use('/', index);
 app.use('/users', users);
-app.use('/students', students({db}));
+app.use('/students', students);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
