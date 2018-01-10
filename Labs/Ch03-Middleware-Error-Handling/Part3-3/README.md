@@ -93,8 +93,8 @@ Which HTTP method is needed to request the login page?
     const createError = require("create-error");
 
     module.exports = {
-        AuthenticationError: createError("AuthenticationError", {isCustomError: true, statusCode: 401}),
-        ValidationError: createError("ValidationError", {isCustomError: true, statusCode: 422})
+        AuthenticationError: createError("AuthenticationError", {isCustomError: true, status: 401}),
+        ValidationError: createError("ValidationError", {isCustomError: true, status: 422})
     };
     ```
 
@@ -107,6 +107,8 @@ Which HTTP method is needed to request the login page?
 ```throw new customErrors.AuthenticationError("Incorrect password");```
      
 1. Replace the contents of error-handler.js with the contents in `/Libs/Part3-3/middleware/error-handler`
+
+1. Review the code. This version expects to get codes from custom error messages.
 
 1. Test that the app is still working after these changes.
 

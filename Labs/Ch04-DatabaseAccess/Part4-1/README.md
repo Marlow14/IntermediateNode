@@ -7,7 +7,7 @@
 
 1. Navigate to your `MyPractice/lab-project` folder.
 
-1. If you successfully completed the last exercise, continue with your project. Otherwise use the solution from the last exercise.
+1. If you successfully completed the last exercise, continue with your project. Otherwise copy  the solution from the last exercise.
 
 1. We will be connecting to the postgres database. Think about what dependencies we can use to build queries against the postgres database. Scroll down to verify and add the needed dependencies.
 ```
