@@ -59,14 +59,6 @@ router.use('/', index);
 router.use('/users', users);
 router.use('/students', students({db}));
 
-// catch 404 and forward to error handler
-router.use(function(req, res, next) {
-  let err = new Error('Oh no! the page cannot be found');
-  err.status = 404;
-  req.timestamp = new Date();
-  next(err);
-});
-
 router.use(require("./middleware/error-handler")(state));
 
 app.use(router);
