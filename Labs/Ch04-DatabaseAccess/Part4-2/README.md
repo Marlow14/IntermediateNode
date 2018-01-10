@@ -9,10 +9,42 @@
 
 1. If you successfully completed the last exercise, continue with your project. Otherwise copy  the solution from the last exercise.
 
-1. Create a migrations folder. We will put out user information in here.
+1. We will create a migrations file for users. Look at the `knexfile.js` and `config.json` for the project. Use a DB client to connect to the database.
 
-1. 
-```
+1. Review the knexfile.js and open the corresponding database view with the appropriate client software.
+
+1. execute this from the command line
+``` knex migrate:make create_users```
+
+1. Look in the newly created migratons folder at the created file
+
+1. Modify the file so that its content looks like this:
+
+    ``` javascript
+    'use strict';
+
+exports.up = function(knex, Promise) {
+    return knex.schema.createTable("accounts", (table) => {
+        table.increments("id").primary();
+        table.text("username").notNull().unique();
+        table.text("hash").notNull();
+        table.timestamp("createdOn").default(knex.fn.now());
+    });
+};
+
+exports.down = function(knex, Promise) {
+    return knex.schema.dropTable("accounts");
+};
+
+    ```
+
+1. Run the migration with this command:
+```knex migrate:latest```
+
+1. Check the DB for the added Users table
+
+
+
 
 
 
