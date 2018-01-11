@@ -62,7 +62,12 @@ typings/
 
 # output from CLI browserify and babel
 bundle.js
-
 source-compiled.js
-
 es6bundle.js
+
+# ignore until nom5 issues workedout
+package-lock.json
+
+# Editor files
+.vscode/
+.idea
