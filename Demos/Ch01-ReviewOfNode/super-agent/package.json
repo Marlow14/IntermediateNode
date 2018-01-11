@@ -11,7 +11,7 @@
    ,"start": "npm run browserifyo &  npm run jsonserver &  npm run watchify "
    
   },
-  "author": "",
+  "author": "Judy Lipinski",
   "license": "ISC",
   "dependencies": {
     "json-server": "^0.12.1",
