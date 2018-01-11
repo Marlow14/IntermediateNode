@@ -10,7 +10,7 @@
   "keywords": [
     "example"
   ],
-  "author": "Sven Slootweg",
+  "author": "Judy Lipinski",
   "license": "WTFPL",
   "dependencies": {
     "bluebird": "^3.5.0",
