@@ -9,10 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git.cryto.net:joepie91/student-management-example.git"
+    "url": ""
   },
   "keywords": ["example"],
-  "author": "Sven Slootweg",
+  "author": "Judy Lipinski",
   "license": "WTFPL",
   "dependencies": {
     "bluebird": "^3.5.0",
