@@ -67,6 +67,7 @@ es6bundle.js
 
 # ignore until nom5 issues workedout
 package-lock.json
+# https://github.com/npm/npm/issues/16991
 
 # Editor files
 .vscode/
