@@ -5,13 +5,13 @@
 
 ## Steps
 
-1. Continue with your `MyPractice/lab-project` and launch http://localhost:3000 in browser. Refer to the README.md in `/Labs/Ch02-SettingUpExpress/Part2-2` if you need more detail.
+1. Continue with your `MyPractice/lab-project` and launch http://localhost:3000 in browser. Refer to the README.md in `/Labs/Ch02-SettingUpExpress/Part2-2` if you need more help wiht launching the server.
 
-1. Modify the style.css file to make all body text red. Add 
-`color: red;` to the body selector.
+1. Modify the `style.css` file to make all body text red. Add 
+`color: red;` inside the body selector.
 
-1. Refresh the browser, and hit the URL. Is it updated? Is the text red?
+1. Refresh the browser, and hit the URL http://localhost:3000. Is it updated? Is the text red?
 
-1. Now try  http://localhost:3000/students
+1. Now try http://localhost:3000/students
 
 1. Is the text red?  Why or why not?
