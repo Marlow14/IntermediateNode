@@ -1,25 +1,39 @@
 # Chapter 2 Exercise 5: Iterate over data
 
 ## Objectives:
-* Setup student array data to be used in the student router
-* ...of the format: {
-	nameFirst: "Devin",
-	nameLast: "Durgan",
-	email: "Devin.Durgan@gmail.com",
-	hireDate: moment("01/19/2015", "MM/DD/YYYY")
-}
-* Display studentds by iterating over the data in student pug file 
-*. Add an if conditon to display if no students are present. Test this.
+* In the student router, setup a student array to be used in the student view
+	``` javascript
+	let students = [{
+		nameFirst: "Devin",
+		nameLast: "Durgan",
+		email: "Devin.Durgan@gmail.com",
+		hireDate: moment("01/19/2015", "MM/DD/YYYY")
+	}, {
+		nameFirst: "Cristal",
+		nameLast: "Adams",
+		email: "Cristal.Adams@live.com",
+		hireDate: moment("07/29/2016", "MM/DD/YYYY")
+	}, {
+		nameFirst: "Nettie",
+		nameLast: "McGlynn",
+		email: "Nettie.McGlynn@gmail.com",
+		hireDate: moment("08/29/2015", "MM/DD/YYYY")
+	}];
+	```
+* Pass the students to the view
+* In students.pug, display students by iterating over the data 
+* Add an if conditon to display if no students are present. Comment out array code to test this.
 * Change the formatting of the application and add Bootstrap
+* When your code is tested and works, replace the /views directory with /Libs/Part
 
-Need step by steps?
+Need detailed steps?
 Read below...
 
 ## Steps
 
 1. Continue with your `MyPractice/lab-project` and launch http://localhost:3000 in browser. Refer to previous exercises if you need more detail.
 
-1. In the terminal install the moment package and add it as a dependency to the package.json.
+1. In the terminal install the `moment` package and add it as a dependency to the package.json.
 `npm i -S moment`
 
 1. update the index.pug to just say `Welcome to #{title}`
