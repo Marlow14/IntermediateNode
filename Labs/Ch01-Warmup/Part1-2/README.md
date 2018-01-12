@@ -49,5 +49,5 @@ for (const hobby of hobbies) {
 
 1. Test your `index.html` file in Chrome and Internet Explorer. Do you see your output in the developer tools console?
 
-1. Chrome shoudl successfully display the data. But Internet Explorer and Firefox will not work due to the ES6 code. We will address this in the next section. 
+1. Chrome should successfully display the data. But Internet Explorer and Firefox will not work due to the ES6 code. We will address this in the next section. 
 
