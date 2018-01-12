@@ -10,7 +10,7 @@
 1. Modify the `style.css` file to make all body text red. Add 
 `color: red;` inside the body selector.
 
-1. Refresh the browser, and hit the URL http://localhost:3000. Is it updated? Is the text red?
+1. Refresh the browser, at the URL http://localhost:3000. Is it updated? Is the text red?
 
 1. Now try http://localhost:3000/students
 
