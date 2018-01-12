@@ -10,13 +10,18 @@
 
 1. If you havent already install globally the Express application generator using `npm install express-generator -g`
 
-1. Execute this command to create the lab-project
-`express --view=pug --git lab-project && cd lab-project` 
+1. Execute one of these commands to create the lab-project
+    1. This works if you have npm > 5.x
+         ``` express --view=pug --git lab-project && cd lab-project``` 
+    1. Or split it out into two commands instead of using && 
 
 1. Execute the command `npm install`
 
-1. Start the server `nodemon start` 
+1. If you havent already, install `nodemon` globally. This way you can start projects using `nodemon` - which will automatically restart the server when you make changes. 
 
+1. Update the scripts entry to use nodemon instead of node: 
+    ```   "start": "nodemon ./bin/www" ```
+    
 1. Visit the site at http://localhost:3000
 
 1. Notice the text on the screen. Look at the generated folder structure and code and find this code. 
