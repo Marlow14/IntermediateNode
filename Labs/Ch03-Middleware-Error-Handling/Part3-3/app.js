@@ -26,13 +26,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 const unhandledError = require("unhandled-error");
-let crashOptions = {doNotCrash : true};
-let errorReporter = unhandledError( (err) => {
-                            /* This should eventually be hooked into some sort of error reporting
-                              mechanism. SMS text nessaging....etc. bug */
-                            console.error("UNHANDLED ERROR:", err.stack);
-                          }
-                    , crashOptions);
+
+let errorReporter = unhandledError((err) => {
+	/* This should eventually be hooked into some sort of error reporting
+	   mechanism. SMS text nessaging....etc. bug */
+	console.error("UNHANDLED ERROR:", err.stack);
+});
 
 /* The 'state' object is an object that we pass to everything that needs some
    sort of stateful dependency; all of the stateful dependencies are initialized
@@ -79,13 +78,11 @@ app.use(require("./middleware/error-handler")(state));
 
 // // error handler
 // app.use(function(err, req, res, next) {
-//   console.log(`Error occured at: ${req.timestamp}`);
-
 //   // set locals, only providing error in development
 //   res.locals.message = err.message;
 //   res.locals.error = req.app.get('env') === 'development' ? err : {};
 //   res.locals.timestamp = req.timestamp
-  
+//   console.log(`Error occured at: ${req.timestamp}`);
 //   // render the error page
 //   res.status(err.status || 500);
 //   res.render('error');

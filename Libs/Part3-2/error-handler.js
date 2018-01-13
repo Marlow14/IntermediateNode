@@ -28,10 +28,10 @@ module.exports = function({errorReporter}) {
 			res.status(err.status);
 		}
 		else {  //else we dont know why we are here
-			errorReporter.report(err, {
-				req: req,
-				res: res
-			});
+			// errorReporter.report(err, {
+			// 	req: req,
+			// 	res: res
+			// });
 		}
 
 		res.render("error", {
