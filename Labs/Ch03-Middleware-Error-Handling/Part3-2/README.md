@@ -136,15 +136,12 @@ Organize code by adding a new middleware called error-handler.js
     const unhandledError = require("unhandled-error");
     ```
 
-
-1. Update `error-handler` to use the else statement where no error code is being captured, and use it to report the error with errorReporter. (uncomment the code)
-    ``` javascript
-    else { // else we dont know why we are here
-             	errorReporter.report(err, {
-             		req: req,
-             		res: res
-             	});
-            }
-    ```     
-
 1. Test the URL http://localhost:3000/bug . You should see Node being stopped in your console.   
+
+1. You can restart the server by making a non important chaneg to a .js file and hitting save. If you have been using nodemon, the server will restart. 
+
+1. Update `app.s` to set doNotCrash to true. 
+``` let crashOptions = {doNotCrash : true}; ```
+
+
+1. Test the URL http://localhost:3000/bug and you should see the error page
