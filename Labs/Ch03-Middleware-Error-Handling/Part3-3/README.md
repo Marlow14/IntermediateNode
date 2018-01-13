@@ -18,7 +18,7 @@
         a(href="/login") Login
     ```    
 
-1. Which file would be a good place to indicate the route for this path?
+1. Think about which file would be a good place to indicstore the route mapping for this path of `/login`?
 
 1. Let's add the /login route to the index.js file. The URL / is the root/index. If the URL were to be /users/login we could add it to the users.js file.
 Which HTTP method is needed to request the login page?
@@ -30,7 +30,8 @@ Which HTTP method is needed to request the login page?
         res.render('admin/login');
     });
     ```
-1. Copy the `admin` directory to the `views` directory which contains the login page from `/Libs/Part3-3`. Looking at login.pug - what action is taken when the form is submitted?
+
+1. From `/Libs/Part3-3` - copy the `admin` directory to the `views` directory which contains the login page. Looking at `login.pug` - what action is taken when the form is submitted?
 
 1. Test now if you can see the login page when you click the link. If not, troubleshoot.
 
@@ -69,7 +70,7 @@ Which HTTP method is needed to request the login page?
 
 1. You would need to do this everywhere you use promises. You may forget to do this in your code.  Instead, we can leverage the Express Promise Router. It allows middleware to return promses and will allow Promise rejections to be handled without explicitly calling next(err).  
 
-1. Modify index.js by commenting out express.Router and instead using expressPromiseRouter
+1. Modify `index.js` by commenting out express.Router and instead using expressPromiseRouter
     
     ``` javascript
        //var router = express.Router();
@@ -86,7 +87,7 @@ Which HTTP method is needed to request the login page?
 
 1. Notice how the new version of app.js uses the express-promise-router
 
-1. Now, test that logging in, with an invalid password, works with or without the catch() block in the Promise.try() 
+1. Now, test that logging in, with an invalid password, works with or without the catch() block in the `Promise.try()` 
 
 ## Add Custom errors
 

@@ -32,12 +32,13 @@ router.use(cookieParser());
 router.use(express.static(path.join(__dirname, 'public')));
 
 const unhandledError = require("unhandled-error");
-
-let errorReporter = unhandledError((err) => {
-	/* This should eventually be hooked into some sort of error reporting
-	   mechanism. SMS text nessaging....etc. bug */
-	console.error("UNHANDLED ERROR:", err.stack);
-});
+let crashOptions = {doNotCrash : true};
+let errorReporter = unhandledError( (err) => {
+                            /* This should eventually be hooked into some sort of error reporting
+                              mechanism. SMS text nessaging....etc. bug */
+                            console.error("UNHANDLED ERROR:", err.stack);
+                          }
+                    , crashOptions);
 
 /* The 'state' object is an object that we pass to everything that needs some
    sort of stateful dependency; all of the stateful dependencies are initialized
@@ -57,7 +58,15 @@ router.use(function (req, res, next) {
 /* Main routes */
 router.use('/', index);
 router.use('/users', users);
-router.use('/students', students({db}));
+router.use('/students', {db});
+
+// catch 404 and forward to error handler
+router.use(function(req, res, next) {
+  let err = new Error('Oh no! the page cannot be found');
+  err.status = 404;
+  req.timestamp = new Date();
+  next(err);
+});
 
 router.use(require("./middleware/error-handler")(state));
 
