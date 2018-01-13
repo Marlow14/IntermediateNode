@@ -2,6 +2,6 @@ extends layout
 
 block content
   h1= message
-  h2= errorMessage
- 
+  h2= error.status
+  h2 Error occured at #{timestamp}
   pre #{error.stack}

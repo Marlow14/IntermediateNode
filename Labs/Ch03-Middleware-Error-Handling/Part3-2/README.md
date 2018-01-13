@@ -40,7 +40,7 @@ Organize code by adding a new middleware called error-handler.js
 
 1. Note the usage of `res.locals.message = err.message` and how this is used in error.pug.  This is another way to make data available in the template view. 
 
-1. In this file, expose the timestamp by adding a property to res.locals and using it in error.pug in this way:
+1. In this file, expose the timestamp by adding a property to `res.locals` and using it in `error.pug` in this way:
     ```
     Error occured at #{timestamp}
     ``` 
@@ -60,7 +60,6 @@ Organize code by adding a new middleware called error-handler.js
     block content
     h1= message
     h2= errorMessage
-    
     pre #{error.stack}
     ```  
 

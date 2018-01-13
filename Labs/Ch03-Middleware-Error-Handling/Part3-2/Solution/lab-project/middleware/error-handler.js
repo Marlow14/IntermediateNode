@@ -19,6 +19,8 @@ module.exports = function({errorReporter}) {
 		} else {
 			stackTrace = null;
 		}
+
+		res.locals.timestamp = req.timestamp;
 	
 		// checking error codes
 		if (err.status == 404) {
