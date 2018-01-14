@@ -20,9 +20,9 @@ For now, update the line to read
 
 1. Update `app.js` to require and then use this route. If need help, copy what is being done for requiring the users route and update it for students.
 
-1. Refresh the browsr, is the root URL still working?
+1. Refresh the browser, is the root URL still working?
 
-1. Now see yoru new route by visiting the URL http://localhost:3000/students (you can ctrl click this link)
+1. Now see your new route by visiting the URL http://localhost:3000/students (you can ctrl click this link)
 
 1. Verify, are are you seeing the correct output? If not try to troubleshoot and ask questions if need be.
 
