@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var moment = require('moment');
 
+const customErrors = require('./custom-errors'); 
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var students = require('./routes/students');
@@ -21,7 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+router.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 router.use(logger('dev'));
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -58,11 +60,26 @@ router.use('/users', users);
 router.use('/students', students);
 
 // catch 404 and forward to error handler
+// router.use(function(req, res, next) {
+//   let err = new Error('Oh no! the page cannot be found');
+//   err.status = 404;
+//   req.timestamp = new Date();
+//   next(err);
+// });
+
+// catch 404 and forward to error handler
 router.use(function(req, res, next) {
-  let err = new Error('Oh no! the page cannot be found');
-  err.status = 404;
-  req.timestamp = new Date();
-  next(err);
+  console.log(`Why am I reaching this 404?`);
+  console.log(req);
+
+  console.log('\n\n\n\n*******\n\n\n');
+  console.log(res);
+  // console.log(res);
+ // let err = new Error('Oh no! the page cannot be found');
+ // err.status = 404;
+  throw new customErrors.NotFoundError("404 Resource Not Found");
+ // req.timestamp = new Date();
+ // next(err);
 });
 
 router.use(require("./middleware/error-handler")(state));

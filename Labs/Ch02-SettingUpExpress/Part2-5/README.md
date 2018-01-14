@@ -60,7 +60,9 @@ It uses Bootstrap for styling.
 
 1. Delete the `/public/javascripts` and `/public/stylesheets` directories. 
 
-1. Copy the (css and js files) from `NODE-INTERMEDIATE/Libs/Part2-5` into the `/public` folder. 
+1. Copy the `/public`  (css and js files) from `NODE-INTERMEDIATE/Libs/Part2-5` into the `/public` folder.
+
+1. Copy the favicon.ico file from `NODE-INTERMEDIATE/Libs/Part2-5` into the `/public` folder.
 
 1. Replace the `layout.pug` and `students.pug` from `NODE-INTERMEDIATE/Libs/Part2-5` into the views directory.
 

@@ -2,7 +2,7 @@ var express = require('express');
 //var router = express.Router();
 var expressPromiseRouter = require("express-promise-router");
 var router = expressPromiseRouter();
-const customErrors = require('../custom-errors');
+const customErrors = require('../custom-errors'); 
 
 const Promise = require("bluebird");
 
@@ -25,7 +25,7 @@ router.post('/login', (req, res, next) => {
         res.redirect("/students");
       });
     } else {
-      throw new errors.AuthenticationError("Incorrect password");
+      throw new customErrors.AuthenticationError("Incorrect password");
     }
   });
 });  

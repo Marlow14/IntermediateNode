@@ -1,11 +1,13 @@
 # Chapter 2 Exercise 3: Working with static assets
 ## Objectives:
-* Understand the use of middleware to enable the location of your static assets
-* You will include the usage of files in the public folder in your templates.
+* View usage of static assets files from in /public folder 
+* Add a favicon.ico from /Libs dorectory and enable it
 
 ## Steps
 
-1. Continue with your `MyPractice/lab-project` and launch http://localhost:3000 in browser. Refer to the README.md in `/Labs/Ch02-SettingUpExpress/Part2-2` if you need more help wiht launching the server.
+### Use CSS
+
+1. Continue with your `MyPractice/lab-project` and launch http://localhost:3000 in browser. Refer to the README.md in `/Labs/Ch02-SettingUpExpress/Part2-2` if you need more help with launching the server.
 
 1. Modify the `style.css` file to make all body text red. Add 
 `color: red;` inside the body selector.
@@ -15,3 +17,18 @@
 1. Now try http://localhost:3000/students
 
 1. Is the text red?  Why or why not?
+
+### Add a favicon 
+
+1. Copy `/Libs/Part2-3/favicon.ico` to your `/public` directory.
+
+1. Copy this line into your `layout.pug`, at the same indentation as the other link in the head section:
+    ``` link(rel="shortcut icon", href="favicon.ico", type="image/x-icon") ```      
+
+1. In app.js, find this section of code and uncomment the line for the favicon usage:
+    ``` javascript
+    // uncomment after placing your favicon in /public
+    app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+    ```
+
+1. You may need to re-open a new tab in the browser, but you shoudl see the favicon now in the browser tab.
