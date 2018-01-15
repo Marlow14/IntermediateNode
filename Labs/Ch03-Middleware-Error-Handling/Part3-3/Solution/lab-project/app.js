@@ -60,26 +60,8 @@ router.use('/users', users);
 router.use('/students', students);
 
 // catch 404 and forward to error handler
-// router.use(function(req, res, next) {
-//   let err = new Error('Oh no! the page cannot be found');
-//   err.status = 404;
-//   req.timestamp = new Date();
-//   next(err);
-// });
-
-// catch 404 and forward to error handler
 router.use(function(req, res, next) {
-  console.log(`Why am I reaching this 404?`);
-  console.log(req);
-
-  console.log('\n\n\n\n*******\n\n\n');
-  console.log(res);
-  // console.log(res);
- // let err = new Error('Oh no! the page cannot be found');
- // err.status = 404;
   throw new customErrors.NotFoundError("404 Resource Not Found");
- // req.timestamp = new Date();
- // next(err);
 });
 
 router.use(require("./middleware/error-handler")(state));

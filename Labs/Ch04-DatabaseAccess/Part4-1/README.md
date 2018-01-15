@@ -1,13 +1,14 @@
 # Chapter 4 Exercise 1: Database Access
 
 ## Objectives:
-* Connect to the database to get records to display
+* Use script to populate Student table with records
+* Connect to the database to get student records to display
 
 ## Steps 
 
 1. Navigate to your `MyPractice/lab-project` folder.
 
-1. If you successfully completed the last exercise, continue with your project. Otherwise copy  the solution from the last exercise.
+1. If you successfully completed the last exercise, continue with your project. Otherwise rename your lab-project (and ask intructor or others for help later) and copy the `Solution/lab-project` from the last exercise to continue.
 
 1. We will be connecting to the postgres database. Think about what dependencies we can use to build queries against the postgres database. Scroll down to verify and add the needed dependencies.
 	```

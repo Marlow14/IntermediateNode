@@ -30,13 +30,13 @@ Organize code by adding a new middleware called error-handler.js
 ```
 1. In app.js, look for the comment line: `// catch 404 and forward to error handler`
 
-1. This middleware is used to generate an error, set the status to 404 then it goes the next middleware the error handler. This catch 404 will only be reached if no other middleware returns with a send or render.
+1. This middleware is used to generate an error, set the status to 404 then it goes the next middleware the error handler. This catch 404 will only be reached if no other middleware returns with a send or render beforehand.
 
 1. In the 404 catch middleware, modify the passed in Error text so that instead of  `Not Found` the text `Oh no! the page cannot be found` is stored. 
 
 1. Still in the 404 catch middleware, modify the request to add a property called `req.timestamp` and set it to new Date(). Notice how next() is called with err.
 
-1. Now in the error handler middleware, use console.log to display the timestamp by accessing the previously set value for `req.timestamp`. Test your changes by refreshing Try to reach a made up URL like http://localhost:3000/notforrealz in the browser. View the Node terminal window to view the console.log.
+1. Now in the error handler middleware function, use console.log to display the timestamp by accessing the previously set value for `req.timestamp`. Test your changes by refreshing Try to reach a made up URL like http://localhost:3000/notforrealz in the browser. View the Node terminal window to view the console.log.
 
 1. Note the usage of `res.locals.message = err.message` and how this is used in error.pug.  This is another way to make data available in the template view. 
 
@@ -139,7 +139,7 @@ Organize code by adding a new middleware called error-handler.js
 
 1. You can restart the server by making a non important chaneg to a .js file and hitting save. If you have been using nodemon, the server will restart. 
 
-1. Update `app.s` to set doNotCrash to true. 
+1. Update `app.js` to set doNotCrash to true. 
 ``` let crashOptions = {doNotCrash : true}; ```
 
 

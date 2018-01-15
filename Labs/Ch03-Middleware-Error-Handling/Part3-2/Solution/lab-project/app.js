@@ -54,7 +54,7 @@ app.use('/users', users);
 app.use('/students', students);
 
 app.use('/mtgox', function(req,res,next){
-      console.log('Lets pretend this uses a service that is too busy and times out');
+      console.log(`Let's pretend this uses a service that is too busy and times out`);
       let err = new Error('The service is unavailable');
       err.status = 503;
       next(err);
@@ -72,23 +72,9 @@ app.use(function(req, res, next) {
   let err = new Error('Oh no! the page cannot be found');
   err.status = 404;
   req.timestamp = new Date();
-  next(err);
+  next(err);  
 });
 
 app.use(require("./middleware/error-handler")(state));
-
-// // error handler
-// app.use(function(err, req, res, next) {
-//   console.log(`Error occured at: ${req.timestamp}`);
-
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get('env') === 'development' ? err : {};
-//   res.locals.timestamp = req.timestamp
-  
-//   // render the error page
-//   res.status(err.status || 500);
-//   res.render('error');
-// });
 
 module.exports = app;

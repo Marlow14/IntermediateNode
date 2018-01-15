@@ -4,15 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const customErrors = require('./custom-errors');
+const debug = require('debug');
 
 const knex = require("knex");
 const db = knex(require("./knexfile"));
 
 var moment = require('moment');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
-var students = require('./routes/students');
 
 var app = express();
 
@@ -32,12 +30,13 @@ router.use(cookieParser());
 router.use(express.static(path.join(__dirname, 'public')));
 
 const unhandledError = require("unhandled-error");
-
-let errorReporter = unhandledError((err) => {
-	/* This should eventually be hooked into some sort of error reporting
-	   mechanism. SMS text nessaging....etc. bug */
-	console.error("UNHANDLED ERROR:", err.stack);
-});
+let crashOptions = {doNotCrash : true};
+let errorReporter = unhandledError( (err) => {
+                            /* This should eventually be hooked into some sort of error reporting
+                              mechanism. SMS text nessaging....etc. bug */
+                            console.error("UNHANDLED ERROR:", err.stack);
+                          }
+                    , crashOptions);
 
 /* The 'state' object is an object that we pass to everything that needs some
    sort of stateful dependency; all of the stateful dependencies are initialized
@@ -53,6 +52,11 @@ router.use(function (req, res, next) {
   console.log(`Time: ${moment().format('MMMM Do YYYY, h:mm:ss a')}  `);
   next();
 });
+
+/* Include Route files * /
+var index = require('./routes/index');
+var users = require('./routes/users');
+var students = require('./routes/students')({db});
 
 /* Main routes */
 router.use('/', index);

@@ -7,7 +7,7 @@ If you want a challenge do this now. Otherwise, refer to the steps below.
 
 ## Steps
 
-1. Continue with your `MyPractice/lab-project` and launch http://localhost:3000 in browser. Refer to previous exercises if you need more detail.
+1. Continue with your `MyPractice/lab-project` copy the solution. Launch http://localhost:3000 in browser. Refer to previous exercises if you need more detail.
 
 1. Create pug files for users and students by adding appropriately named files to the `views` directory. 
 (You can copy and paste the `index.pug` file and rename.

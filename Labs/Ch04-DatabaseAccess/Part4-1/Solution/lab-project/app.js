@@ -12,7 +12,6 @@ const db = knex(require("./knexfile"));
 
 var moment = require('moment');
 
-
 var app = express();
 
 const expressPromiseRouter = require("express-promise-router");
@@ -47,14 +46,14 @@ let errorReporter = unhandledError( (err) => {
    let state = {
      errorReporter: errorReporter
    }
-
+ 
 
 router.use(function (req, res, next) {
   console.log(`Time: ${moment().format('MMMM Do YYYY, h:mm:ss a')}  `);
   next();
 });
 
-
+/* Include Route files */
 var index = require('./routes/index');
 var users = require('./routes/users');
 var students = require('./routes/students')({db});
@@ -66,15 +65,7 @@ router.use('/students', students);
 
 // catch 404 and forward to error handler
 router.use(function(req, res, next) {
-  console.log(`Why am I in 404 ${req} ||| ${res}`);
-//  console.log(req);
-  console.log('*******');
- // console.log(res);
- // let err = new Error('Oh no! the page cannot be found');
- // err.status = 404;
   throw new customErrors.NotFoundError("404 Resource Not Found");
- // req.timestamp = new Date();
- // next(err);
 });
 
 router.use(require("./middleware/error-handler")(state));

@@ -7,7 +7,12 @@
 
 ### Use CSS
 
-1. Continue with your `MyPractice/lab-project` and launch http://localhost:3000 in browser. Refer to the README.md in `/Labs/Ch02-SettingUpExpress/Part2-2` if you need more help with launching the server.
+
+1. Navigate to your `MyPractice/lab-project` folder.
+
+1. If you successfully completed the last exercise, continue with your project. Otherwise rename your lab-project (and ask intructor or others for help later) and copy the `Solution/lab-project` from the last exercise to continue.
+
+1. Start the project if needed, and launch http://localhost:3000 in browser. Refer to the README.md in `/Labs/Ch02-SettingUpExpress/Part2-2` if you need more help with launching the server.
 
 1. Modify the `style.css` file to make all body text red. Add 
 `color: red;` inside the body selector.

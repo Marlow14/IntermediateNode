@@ -18,9 +18,8 @@ router.get('/login', function(req, res, next) {
 router.post('/login', (req, res, next) => {
   return Promise.try(() => {
     if (req.body.password === "secret") {
-      //req.session.loggedIn = true;
       return Promise.try(() => {
-       // return req.saveSession();
+       // return: go ahead and setup the user sessions
       }).then(() => {
         res.redirect("/students");
       });

@@ -1,7 +1,7 @@
 # Chapter 4 Exercise 2: Add migrations
 
 ## Objectives:
-* Add migrations to the project
+* Add migrations to the project for a users table
 
 ## Steps 
 
@@ -13,10 +13,10 @@
 
 1. Review the knexfile.js and open the corresponding database view with the appropriate client software.
 
-1. execute this from the command line
-``` knex migrate:make create_users```
+1. Execute this from the command line
+	``` knex migrate:make create_users```
 
-1. Look in the newly created migratons folder at the created file
+1. Look in the newly created migratons folder at the created file.
 
 1. Modify the file so that its content looks like this:
 
@@ -43,86 +43,16 @@
 
 1. Check the DB for the added Users table
 
-1. Drop the table from the client.
+1. Drop the table from the client database software, pgAdmin.
 
 1. Try to run this again
 	```knex migrate:latest```
 
-1. You will likely get a message that it is already up to date and if so - you must drop the knex_migrations table before you can run the command again.  Do that now so you end up with the users table.
+1. You will likely get a message that it is already up to date and if so - you must drop the knex_migrations table before you can run the command again.  Do that now with pgAdmin, and try to run the command again.
+```knex migrate:latest```
 
-1. Install:  `pg` and `knex` and add to package.json. You can do this in one step from the command line 
-`npm install -S pg knex `
+1. Be sure you end this exercise with the users table, it will be used in the next chapter.
 
-1. Instead of hard-coding values to the database, it is better to add a `config.json` file to the project. Add this to the root directory, with this content:
-	```
-	{
-		"port": 3000,
-		"database": {
-			"hostname": "localhost",
-			"username": "postgres",
-			"password": "password",
-			"database": "studentmanagement"
-		} 
-	}
-	```
-
-1. Create a `knexfile.js` that uses the `config.json` file.
-	``` javascript
-	const config = require("./config.json");
-
-	module.exports = {
-		client: "pg",
-		connection: {
-			host: config.database.hostname,
-			user: config.database.username,
-			password: config.database.password,
-			database: config.database.database
-		}
-	}
-	```
-
-1. In the `app.js` file use knex and pg to create a database connection pool.
-
-	```
-	const knex = require("knex");
-	const db = knex(require("./knexfile"));
-	```
-
-1. In app.js, pass the db info to the student router.
-
-	``` router.use('/students', students({db})); ```
-
-1. Change the students.js file to accept {db}. Use this to try and get the students from the database. Map the results to add a fullname property. Use oment wiht hiredate. Then pass these students off to the render function.  
-
-	``` javascript
-		const expressPromiseRouter = require("express-promise-router");
-		const router = expressPromiseRouter();
-		const Promise = require("bluebird");
-		const moment = require('moment');
-
-		module.exports = function({db}) {
-		let router = require("express-promise-router")();
-
-		router.get("/",  (req, res) => {
-			return Promise.try(() => {
-				return db("students");
-			}).map((student) => { //process each student
-				student.fullName = student.nameFirst + ' ' + student.nameLast;
-				student.hireDate = moment(student.hireDate, "MM/DD/YYYY")
-				return student;
-			}).then((students) => {
-				res.render("students", {
-					students: students
-				});
-			});
-		});
-
-		return router;
-	}
-
-	```
-
-1. Test your changes in the browser, do you see the students from the database?
 
 
 
