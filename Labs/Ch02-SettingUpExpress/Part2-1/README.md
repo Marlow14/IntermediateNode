@@ -29,3 +29,5 @@
 1. Change the code and refresh your browser. Do you see your changes?
 
 1. Visit the site at http://localhost:3000/users 
+
+1. Please note for all exercises, solutions are provided. If your code is ever not working and the time for the exercise has come to an end, you can rename your folder, for example Part4-2NotWorking and copy the `Solution/lab-project` folder to your `MyPractice` folder.
