@@ -8,18 +8,18 @@ const expressPromiseRouter = require("express-promise-router");
 
 const expressSession = require("express-session");
 const connectSessionKnex = require("connect-session-knex")(expressSession);
-
-const unhandledError = require("unhandled-error");
-
 const config = require("./config.json");
 
 let db = knex(require("./knexfile"));
 
-let errorReporter = unhandledError((err) => {
-	/* This should eventually be hooked into some sort of error reporting
-	   mechanism. */
-	console.error("UNHANDLED ERROR:", err.stack);
-});
+const unhandledError = require("unhandled-error");
+let crashOptions = {doNotCrash : true};
+let errorReporter = unhandledError( (err) => {
+        /* This should eventually be hooked into some sort of error reporting
+          mechanism. SMS text nessaging....etc. bug */
+        console.error("UNHANDLED ERROR:", err.stack);
+      }
+, crashOptions);
 
 /* The 'state' object is an object that we pass to everything that needs some
    sort of stateful dependency; all of the stateful dependencies are initialized

@@ -1,7 +1,8 @@
 # Chapter 4 Exercise 1: Database Access
 
 ## Objectives:
-* Use script to populate Student table with records
+* Update router usage to be Express Promise Router
+* Pass db into router
 * Connect to the database to get student records to display
 
 ## Steps 
@@ -30,10 +31,16 @@
 1. Install:  pg and knex and add to package.json. You can do this in one step from the command line 
 `npm install -S pg knex `
 
-1. Confirm with the pgAdmin client that you have a studentmanagement database. You can populate this database by importing the students.csv file form `/Libs/Part4-1`
+1. Confirm with the pgAdmin client that you have a studentmanagement database with a student table containing records. You can populate this database by importing the students.csv file form `/Libs/Part4-1`
 
 
-Instead of hard-coding values to the database, it is better to add a `config.json` file to the project. Add this to the root directory, with this content:
+
+1. Create a `knexfile.js` that uses the `config.json` file. First use this command:
+```knex init```
+
+1. View the contents and note how you can setup connections for different environments.
+
+1. Instead of hard-coding values to the database, it is better to add a `config.json` file to the project. Add this to the root directory, with this content:
 	```
 	{
 		"port": 3000,
@@ -46,19 +53,20 @@ Instead of hard-coding values to the database, it is better to add a `config.jso
 	}
 	```
 
-1. Create a `knexfile.js` that uses the `config.json` file.
-	```javascript	
-	const config = require("./config.json");
+1. In the knexfile.js add this reference at the top:
+	``` const config = require("./config.json"); ```
 
-	module.exports = {
+1. 	Modify the dev settings in knexfile.js tolook like this:
+	```javascript	
+	 development: {
 		client: "pg",
 		connection: {
-			host: config.database.hostname,
-			user: config.database.username,
-			password: config.database.password,
-			database: config.database.database
+		host: config.database.hostname,
+		user: config.database.username,
+		password: config.database.password,
+		database: config.database.database
 		}
-	}
+ 	 },
 	```
 
 1. In the `app.js` file use knex and pg to create a database connection pool.
@@ -67,10 +75,10 @@ Instead of hard-coding values to the database, it is better to add a `config.jso
 	const db = knex(require("./knexfile"));
 	```
 
-1. In app.js, pass the db info to the student router.
+1. In app.js, update the call to use the student router to pass the db info to the student router.
 	``` router.use('/students', students({db})); ```
 
-1. Change the students.js file to accept {db}. Use this to try and get the students from the database. Map the results to add a fullname property. Use oment wiht hiredate. Then pass these students off to the render function.  
+1. Change the students.js file to accept {db}. Use this to try and get the students from the database. Map the results to add a fullname property. Use moment with hiredate. Then pass these students off to the render function.  
 
 	``` javascript
 	const expressPromiseRouter = require("express-promise-router");

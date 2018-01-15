@@ -26,12 +26,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 const unhandledError = require("unhandled-error");
-
-let errorReporter = unhandledError((err) => {
-	/* This should eventually be hooked into some sort of error reporting
-	   mechanism. SMS text nessaging....etc. bug */
-	console.error("UNHANDLED ERROR:", err.stack);
-});
+let crashOptions = {doNotCrash : true};
+let errorReporter = unhandledError( (err) => {
+        /* This should eventually be hooked into some sort of error reporting
+          mechanism. SMS text nessaging....etc. bug */
+        console.error("UNHANDLED ERROR:", err.stack);
+      }
+, crashOptions);
 
 /* The 'state' object is an object that we pass to everything that needs some
    sort of stateful dependency; all of the stateful dependencies are initialized

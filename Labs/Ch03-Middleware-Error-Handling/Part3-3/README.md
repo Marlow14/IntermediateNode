@@ -83,38 +83,48 @@ Which HTTP method is needed to request the login page?
     npm i -S express-promise-router
     ```
 
-1. Because we are now using the Express Promise Router in our application, let's replace the current contents of `app.js` with the contents in `/Libs/Part3-3/app.js`.
+1. Because we are now using the Express Promise Router in our application, let's replace the current contents of `app.js` with the contents in `/Libs/Part3-3/app.js`. This changes the use of the Express Router to the Express Promise router.
 
 1. Notice how the new version of app.js uses the express-promise-router
 
 1. Now, test that logging in, with an invalid password, works with or without the catch() block in the `Promise.try()` 
 
 ## Add Custom errors
+  
+1. Replace the contents of `middleware/error-handler.js` with the contents in `/Libs/Part3-3/middleware/error-handler`
 
-1. In the root of this project `/lab-project` create a file to house custom errors called `custom-errors.js`. You can right click lab-project and choose `New file.`
+1. Review the code and read the comments. This version expects to process some custo error messages. If the message is custom and has a code, this code is what is set and used, OTherwise a 500 code is set. 
 
-1. In this file require createError and export an object with two custom error types.
+
+1. We will leverage the `create-error` package, which gives a simple API for creating new types of Error which contains a custom error message and a specifed error code. Add this to your projet using `npm i -S create-error`
+
+1. Let's create a file to house custom errors called `custom-errors.js`. You can right click the `lab-project` folder and choose `New file.`
+
+1. In this file require createError and export an object with three custom error types.
     ```javascript
     const createError = require("create-error");
 
     module.exports = {
         AuthenticationError: createError("AuthenticationError", {isCustomError: true, status: 401}),
+        NotFoundError: createError("Resource Not Found", {isCustomError: true, status: 404}),
         ValidationError: createError("ValidationError", {isCustomError: true, status: 422})
     };
     ```
 
-1. Add the create-error package to the project `npm i -S create-error`
+1. n app.js, update the 404:
+    ```javascript
+        // catch 404 and forward to error handler
+        router.use(function(req, res, next) {
+            throw new customErrors.NotFoundError("404 Resource Not Found");
+        });
+    ```
 
 1. In `index.js` include the new custom errors:
 ```const errors = require("../custom-errors");```
 
-1. Now in the POST login method, use the new custom error:
+1. Now in the POST /login method, use the new custom error:
 ```throw new customErrors.AuthenticationError("Incorrect password");```
-     
-1. Replace the contents of error-handler.js with the contents in `/Libs/Part3-3/middleware/error-handler`
-
-1. Review the code. This version expects to get codes from custom error messages.
-
+   
 1. Test that the app is still working after these changes.
 
 1. We still have work to do. We will start working with the DB next.
