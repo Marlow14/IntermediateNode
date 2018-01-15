@@ -1,9 +1,8 @@
 # Chapter 3 Exercise 2: Use a custom error handling middleware
 
 ## Objectives:
-* Examine the default error handling middleware and 
-
-Organize code by adding a new middleware called error-handler.js  
+* Examine the default error handling middleware 
+* Organize code by adding a new middleware called error-handler.js  
 * Practice passing state to the error handler
 
 ## Steps
@@ -32,7 +31,7 @@ Organize code by adding a new middleware called error-handler.js
 
 1. This middleware is used to generate an error, set the status to 404 then it goes the next middleware the error handler. This catch 404 will only be reached if no other middleware returns with a send or render beforehand.
 
-1. In the 404 catch middleware, modify the passed in Error text so that instead of  `Not Found` the text `Oh no! the page cannot be found` is stored. 
+1. In the 404 catch middleware, modify the Error text so that instead of  `Not Found` the text `Oh no! the page cannot be found` is stored. 
 
 1. Still in the 404 catch middleware, modify the request to add a property called `req.timestamp` and set it to new Date(). Notice how next() is called with err.
 

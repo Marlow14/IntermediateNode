@@ -24,6 +24,24 @@
 
 1. Execute the command `npm install`
 
+1. Look at the "start" script in package.json, how is this Node app started? See if you can walk through the code... then scroll down
+```
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+1. The script runs node `./bin/www`. This file requires `app.js`. We will mostly be working within app.js.
+
 1. Run npm start
 
 1. Visit the site at http://localhost:3000. Your app should now be up and running.
@@ -49,5 +67,7 @@
         "start": "nodemon ./bin/www"
     },
     ```
+
+1. You can also add a console.log to the `./bin/www` file which lists the URL to make it easer to click through to the start of the application.
 
 1. Stop/Restart the server using `npm start` is it still working?

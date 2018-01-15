@@ -1,4 +1,4 @@
-# Chapter 3 Exercise 1: Use default error handling middleware
+# Chapter 3 Exercise 1: Middleware
 
 ## Objectives:
 * Create middleware that logs the current time to the console
@@ -19,4 +19,4 @@
     });
     ``` 
 
-1. Load the application in the browser. Look at the log when you go to http://localhost:3000 and for each link/route you activate - you should see teh time in the terminal console.
+1. Load the application in the browser. Look at the log when you go to http://localhost:3000 and for each link/route you activate - you should see the time in the terminal console.
