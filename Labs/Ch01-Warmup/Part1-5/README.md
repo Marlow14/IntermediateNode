@@ -6,7 +6,7 @@
 
 ## Steps
 
-1. Copy/paste the /Demos/Ch01-Review../super-agent folder to /WarmUp so that you have a /MyWarmUp/super-agent folder.
+1. Copy/paste the `/Demos/Ch01-Review../super-agent` folder to `/WarmUp` so that you have a `/MyWarmUp/super-agent` folder.
 
 1. Sometimes, the node_modules folder do not copy well. Try to start the project by executing the command: `npm run start`
 
@@ -23,7 +23,7 @@
     ``` javascript
     alert(`Trying to delete ${id} - not yet implemented`);
     ```
-1. After this line use this code for superagent, and complete the TODOs:
+1. After this line use this code for superagent, and complete the TODO:
     ``` javascript
     request
     .delete(` `)  //TODO: ADD THE CORRECT URL
