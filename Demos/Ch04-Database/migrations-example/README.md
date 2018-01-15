@@ -1,4 +1,6 @@
 
+1. Before running this demo clean up your GIT directory.
+
 1. View package.json and run `npm install`
 
 1. View the knexfile.js and open the corresponding database with the appropriae client software
@@ -6,7 +8,7 @@
 1. execute this from the command line
 ``` knex migrate:make create_products ```
 
-1. Look in the migratons folder at the created file
+1. Look in the migrations folder at the created file
 
 1. modify the file with this content whch creates a table
 
@@ -41,5 +43,5 @@
 1. Rollback this change:
 ```knex migrate:rollback```
 
-1. Use Git icon in VS Code to undo changes ot this /Demo directory
+1. Use Git icon in VS Code to undo changes to this /Demo directory
 
