@@ -10,7 +10,7 @@
 
 1. If you successfully completed the last exercise, continue with your project. Otherwise rename your lab-project (and ask intructor or others for help later) and copy the `Solution/lab-project` from the last exercise to continue.
 
-1. We will be connecting to the postgres database. Think about what dependencies we can use to build queries against the postgres database. Scroll down to verify and add the needed dependencies.
+1. We will be connecting to the postgres database to read student records. Think about what dependencies we can use to build queries against the postgres database. Scroll down to verify and add the needed dependencies.
 	```
 
 
@@ -30,7 +30,10 @@
 1. Install:  pg and knex and add to package.json. You can do this in one step from the command line 
 `npm install -S pg knex `
 
-1. Instead of hard-coding values to the database, it is better to add a `config.json` file to the project. Add this to the root directory, with this content:
+1. Confirm with the pgAdmin client that you have a studentmanagement database. You can populate this database by importing the students.csv file form `/Libs/Part4-1`
+
+
+Instead of hard-coding values to the database, it is better to add a `config.json` file to the project. Add this to the root directory, with this content:
 	```
 	{
 		"port": 3000,
