@@ -72,3 +72,6 @@ package-lock.json
 # Editor files
 .vscode/
 .idea
+
+# from doing demos, do not use Git
+in-process-demo/

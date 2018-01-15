@@ -1,18 +1,57 @@
 # Chapter 2 Exercise 2: Creating a new route
 ## Objectives:
-* You will add aditional routes to your project. 
+* Understand the usage of routes in the app so far
+* Add an additional route to your project. 
 
 ## Steps
 
-1. Navigate to your `MyPractice/lab-project` folder. If you had any issues creating the project, copy the solution from the last exercise into this location.
+### Review and organize existing routes
 
-1. If not already running, open a terminal at the location of your project folder. You can right click the `MyPractice/lab-project/package.json` and Choose Open Terminal.
+1. Visit the site at http://localhost:3000
 
-1. Start the application by running the command  `nodemon start` 
+1. Notice the text on the screen. Look at the generated folder structure and code, can you see which file sets this text?  Think of your answer, and then scroll down to see..
+    
+    ``` 
 
-1. In the browser, visit the URL http://localhost:3000 and verify that it is working. You can ctrl-click this link in VS Code. 
 
-1.  Create a new route in the routes folder called students.js `routes/studets.js`. The easiest way to do this is to copy and paste users.js. You can right click and choose copy (or CTRL-C) then click the folder and right click and choose paste. (or CTRL-V)
+
+
+
+
+
+
+
+
+
+    ```
+
+
+1.  In `app.js` there are lines to include routes:
+    ``` javascript
+    var index = require('./routes/index');
+    var users = require('./routes/users');
+    ```
+
+1. And further down the file these are used.
+    ``` javascript
+    app.use('/', index);
+    app.use('/users', users);
+    ```
+
+1. This had been set up during the app creation. Let's organize a bit and move the require statements down to the use statements so that all 4 of these lines are together. These statements could even be combined like this:
+    ```app.use('/', require('./routes/index'));```
+
+1. What the app.use means, is that when http://localhost:3000/ is hit in the browser, it will use the index (/) router. Open the file `/routes/index.js` and see how it defines a router using express.Router()  
+    ``` var router = express.Router();```
+
+1. This router is exported, but before it is, it defines that when a GET request is made to the index path, that the index view (in this case index.pug) is rendered and the title with value of Express is passed. 
+
+1. Notice in `app.js` that the route `/users` will use the `routes/users.js`. Look inside of this file. Notice that the route is setup with `router.get('/', ` not `router.get('/users',`.  If the entry inside /users.js was also /users then the complete path to match would be http://localhost:3000/users/users 
+
+
+### Create a new route 
+
+1.  Create a new route in the routes folder called students.js `routes/studets.js`. The easiest way to do this is to copy and paste `users.js`. You can right click and choose copy (or CTRL-C) then click the folder and right click and choose paste. (or CTRL-V)
 
 1. This is where the display of students will be. 
 For now, update the line to read 

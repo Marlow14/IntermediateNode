@@ -7,10 +7,6 @@ var bodyParser = require('body-parser');
 
 var moment = require('moment');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var students = require('./routes/students');
-
 var app = express();
 
 const expressPromiseRouter = require("express-promise-router");
@@ -51,6 +47,11 @@ router.use(function (req, res, next) {
   console.log(`Time: ${moment().format('MMMM Do YYYY, h:mm:ss a')}  `);
   next();
 });
+
+/* Include Route files */
+const index = require('./routes/index');
+const users = require('./routes/users');
+const students = require('./routes/students');
 
 /* Main routes */
 router.use('/', index);

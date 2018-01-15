@@ -54,9 +54,9 @@ router.use(function (req, res, next) {
 });
 
 /* Include Route files */
-var index = require('./routes/index');
-var users = require('./routes/users');
-var students = require('./routes/students')({db});
+const index = require('./routes/index');
+const users = require('./routes/users');
+const students = require('./routes/students')({db});
 
 /* Main routes */
 router.use('/', index);

@@ -9,10 +9,6 @@ var moment = require('moment');
 
 const customErrors = require('./custom-errors'); 
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var students = require('./routes/students');
-
 var app = express();
 
 const expressPromiseRouter = require("express-promise-router");
@@ -54,6 +50,10 @@ router.use(function (req, res, next) {
   next();
 });
    
+const index = require('./routes/index');
+const users = require('./routes/users');
+const students = require('./routes/students');
+
 /* Main routes */
 router.use('/', index);
 router.use('/users', users);

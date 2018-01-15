@@ -10,20 +10,19 @@
 
 1. Continue working in your `MyPractice/lab-project` project. 
 
-1. So far our routes have been simple. Let's clean this area up a bit in our project because it can get messy quickly. First delete the /mtgox and /bug routes from app.js. 
+1. So far our routes have been simple. Let's clean this area up a bit in our project because it can get messy quickly. First delete the /mtgox and /bug routes from `app.js`.  
 
-1. In this app, a requirement exists to have http://localhost:3000/login as a way to allow users to login. Add this as a link in the layout.pug file after `a(href="/users") Users`
+1. In our app, we just got a new requirement to have http://localhost:3000/login as a way to allow users to login. Add this as a link in the layout.pug file after `a(href="/users") Users`
     ```
     li 
         a(href="/login") Login
     ```    
 
-1. Think about which file would be a good place to indicstore the route mapping for this path of `/login`?
+1. Which file would be a good place to indicate how to handle this route mapping for `/login`?
 
-1. Let's add the /login route to the index.js file. The URL / is the root/index. If the URL were to be /users/login we could add it to the users.js file.
-Which HTTP method is needed to request the login page?
-
-1. We need a GET for /login which returns the login view. Add this to `index.js`
+1. Let's add the /login route to the `index.js` file. The URL / is the root/index. If the URL were to be /users/login we would add it to the users.js file.
+    * Which HTTP method is needed to request the login page?
+    * We need a GET for /login which returns the login view. Add this to `index.js`
 
     ``` javascript
     router.get('/login', function(req, res, next) {

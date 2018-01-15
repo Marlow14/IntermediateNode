@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "devstart": "DEBUG=lab-project nodemon ./bin/www",
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
