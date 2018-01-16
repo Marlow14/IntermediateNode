@@ -24,7 +24,7 @@
 1. Ensure npm is up to date. Use this command to get current version:
 ```npm -v```
 
-1. Use this command to find out the latest version:
+1. Use this command to find out the latest version available on the Internet:
 ```npm view npm version```
 
 1. To update: If your npm version is < 5.x use this command:
