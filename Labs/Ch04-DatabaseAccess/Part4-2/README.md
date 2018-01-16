@@ -107,5 +107,55 @@
 
 
 
+## Add a new migration file
+
+1. Now create a new migraton to add a new column to the users table. We really shouldnt store password as plain text, but instead - a hash of it.
+	* Think of the command to create a new migration file
+	* Think of the logic to add/remove the column
+	* Scroll down...
+	```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+	```
+1. Execute the command: 	``` knex migrate:make add_hash_column_users```
+This allows seed data to be provided. Update the contents fo the file to this:
+	``` javascript
+		exports.up = function(knex, Promise) {
+			return knex.schema.table("users", function(table){
+				table.string("hash");
+			});
+		};
+
+		exports.down = function(knex, Promise) {
+			return knex.schema.table("users", function(table){
+				table.dropColumn("hash");
+			})
+		};
+	```
+
+1. Run the command:
+	```knex migrate:latest```
+
+1. Check the database the new column should be available
+
+ Run the command:
+	```knex migrate:rollback```
+
+1. Check the database the new column should be gone now
+
+1. Run the command:
+	```knex migrate:latest```
+
+1. Check the database the new column should be available. This is what we need for future exercises.
