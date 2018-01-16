@@ -1,3 +1,5 @@
+1. Install exorcist and watchify globally using npm i -g exorcist watchify
+
 1. Run using npm run start.
 
 1. Watch the console and load the browser at the Home link - this may take a minute to appear:

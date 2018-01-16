@@ -6,6 +6,9 @@
 
 ## Steps
 
+1. If you havent already (from demo) - install the packages `exorcist` and `watchify` globally using 
+    ```npm i -g exorcist watchify```
+
 1. Copy/paste the `/Demos/Ch01-Review../super-agent` folder to `/WarmUp` so that you have a `/MyWarmUp/super-agent` folder.
 
 1. Sometimes, the node_modules folder do not copy well. Try to start the project by executing the command: `npm run start`
