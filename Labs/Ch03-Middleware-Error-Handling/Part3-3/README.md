@@ -84,7 +84,7 @@
 
 1. Because we are now using the Express Promise Router in our application, let's replace the current contents of `app.js` with the contents in `/Libs/Part3-3/app.js`. This changes the use of the Express Router to the Express Promise router.
 
-1. Notice how the new version of app.js uses the express-promise-router
+1. Notice how the new version of `app.js` uses the express-promise-router in multiple places.
 
 1. Now, test that logging in, with an invalid password, works with or without the catch() block in the `Promise.try()` 
 
@@ -92,7 +92,7 @@
   
 1. Replace the contents of `middleware/error-handler.js` with the contents in `/Libs/Part3-3/middleware/error-handler`
 
-1. Review the code and read the comments. This version expects to process some custo error messages. If the message is custom and has a code, this code is what is set and used, OTherwise a 500 code is set. 
+1. Review the code and read the comments. This version expects to process some custo error messages. If the message is custom and has a code, this code is what is set and used, Otherwise a 500 code is set. 
 
 
 1. We will leverage the `create-error` package, which gives a simple API for creating new types of Error which contains a custom error message and a specifed error code. Add this to your projet using `npm i -S create-error`
@@ -110,7 +110,7 @@
     };
     ```
 
-1. n app.js, update the 404:
+1. In app.js, update the 404:
     ```javascript
         // catch 404 and forward to error handler
         router.use(function(req, res, next) {

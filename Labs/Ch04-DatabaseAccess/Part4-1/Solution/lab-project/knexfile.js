@@ -1,9 +1,10 @@
 // Update with your config settings.
+const config = require("./config.json");
 
 module.exports = {
 
   development: {
-    client: "pg",
+    client: 'pg',
     connection: {
       host: config.database.hostname,
       user: config.database.username,

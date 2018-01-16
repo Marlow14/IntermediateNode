@@ -6,11 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const customErrors = require('./custom-errors'); 
 const debug = require('debug');
-
-const knex = require("knex");
-const db = knex(require("./knexfile"));
-
 var moment = require('moment');
+
+const db  = require('./db');
 
 var app = express();
 

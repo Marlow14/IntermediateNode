@@ -31,11 +31,9 @@
 1. Install:  pg and knex and add to package.json. You can do this in one step from the command line 
 `npm install -S pg knex `
 
-1. Confirm with the pgAdmin client that you have a studentmanagement database with a student table containing records. You can populate this database by importing the students.csv file form `/Libs/Part4-1`
+1. Confirm with the pgAdmin client that you have a studentmanagement database with a student table containing records. If setting up your own environment, you can populate this database by importing the students.csv file from `/Libs/Part4-1`
 
-
-
-1. Create a `knexfile.js` that uses the `config.json` file. First use this command:
+1. Use knex CLI tool to create a `knexfile.js` that uses the `config.json` file. First use this command:
 ```knex init```
 
 1. View the contents and note how you can setup connections for different environments.
@@ -75,10 +73,57 @@
 	const db = knex(require("./knexfile"));
 	```
 
-1. In app.js, update the call to use the student router to pass the db info to the student router.
-	``` router.use('/students', students({db})); ```
+1. In app.js, update the call to require the student router, by passing the db info to the student router.
+	``` const students = require('./routes/students')({db}); ```
 
-1. Change the students.js file to accept {db}. Use this to try and get the students from the database. Map the results to add a fullname property. Use moment with hiredate. Then pass these students off to the render function.  
+1. Change the `routes/students.js` file to remove hard-coded students, and accept {db} like this:
+	```
+	const expressPromiseRouter = require("express-promise-router");
+	const router = expressPromiseRouter();
+	const Promise = require("bluebird");
+	const moment = require('moment');
+
+	module.exports = function({db}) {
+			
+	const expressPromiseRouter = require("express-promise-router");
+	const router = expressPromiseRouter();
+	const Promise = require("bluebird");
+	const moment = require('moment');
+
+	module.exports = function({db}) {
+	let router = require("express-promise-router")();
+
+	router.get("/",  (req, res) => {
+		console.log('in the students GET route ' );
+		return Promise.try(() => {
+			return db("students");
+		}).map((student) => { //process each student
+			student.fullName = student.nameFirst + ' ' + student.nameLast;
+			student.hireDate = moment(student.hireDate, "MM/DD/YYYY")
+			return student;
+		}).then((students) => {
+			res.render("students", {
+				students: students
+			});
+		}).catch(err => {
+			console.log('Reaching this err block ' + err);
+			console.log(err);
+			res.render("students", {
+				students: null
+			});
+	       });
+	});
+	
+	return router;
+}
+		
+			
+			
+			
+			
+			```
+
+1. Use this to try and get the students from the database. Map the results to add a fullname property. Use moment with hiredate. Then pass these students off to the render function.  
 
 	``` javascript
 	const expressPromiseRouter = require("express-promise-router");
