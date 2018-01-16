@@ -11,7 +11,7 @@
 
 1. Navigate to your `MyPractice/lab-project` folder.
 
-1. If you successfully completed the last exercise, continue with your project. Otherwise rename your lab-project (and ask intructor or others for help later) and copy the `Solution/lab-project` from the last exercise to continue.
+1. If you successfully completed the last exercise, continue with your project. Otherwise copy the solution from the last exercise.
 
 1. We will be connecting to the postgres database to read student records. Think about what dependencies we can use to build queries against the postgres database. Scroll down to verify and add the needed dependencies.
 	```
