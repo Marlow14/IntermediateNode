@@ -4,6 +4,7 @@ const Promise = require("bluebird");
 const moment = require('moment');
 
 module.exports = function({db}) {
+	let router = require("express-promise-router")();
 
 	router.get("/",  (req, res) => {
 		return Promise.try(() => {
@@ -16,11 +17,7 @@ module.exports = function({db}) {
 			res.render("students", {
 				students: students
 			});
-		}).catch(err => {
-			res.render("students", {
-				students: null
-			});
-	       });
+		});
 	});
 
 	return router;
