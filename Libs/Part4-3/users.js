@@ -8,7 +8,10 @@ var Model = require('./../models/User');
 var saveUser = function (req, res) { 
 	new Model.User({
 		username: req.body.username,
-		password: req.body.password
+		email: req.body.email,
+		name: req.body.name,
+		age: req.body.age,
+		location: req.body.location
 	}).save()
 		.then(function (user) {
 			res.json(user);
@@ -31,10 +34,7 @@ var getAllUsers = function (req, res) {
 var deleteUser = function (req, res) {
 	var userId = req.params.id;
 	new Model.User().where('id', userId)
-    .destroy()
-    .then(()=> {
-      res.render('users');
-    })
+		.destroy()
 		.catch(function (error) {
 			res.json(error);
 		});
