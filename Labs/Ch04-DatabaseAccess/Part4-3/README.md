@@ -1,10 +1,13 @@
 # Chapter 4 Exercise 3: 
 
 ## Objectives:
-* Add the use of bookshelf to add CRUD to the app for users
-* Create, list, delete and list details of a user.
+* Add the use of bookshelf to create a User model
+* Use the model to create CRUD operations in the user router
+* Modify the login route to use the database
 
 ## Steps 
+
+### Add the use of bookshelf to create a User model
 
 1. Navigate to your `MyPractice/lab-project` folder.
 
@@ -35,6 +38,8 @@
     };
     ```
 
+
+### Use the model to create CRUD operations in the user router
 1. Let's update the `routes/users.js` to:
     * Use express-promise-router
     * Use the User model and define methods for different CRUD operations
@@ -58,4 +63,18 @@ GET http://localhost:3000/users/3
 DELETE:
 http://localhost:3000/users/3
 
+
+### Modify the login route to use the database
+
+1. Let's update the /login route to look at the database based upon the username.
+
+1. We can modify `app.js` to pass the db to `index.js`. 
+
+1. Modify the `index.js` to do the following, if need be copy ``index.js` from `Libs/Part4-3/index.js`
+    * Use express promise router
+    * Receive the db info 
+    * Use the db info to check the database for supplied username, and see if password matches
+    * Export the router 
+  
+1. Test your work that the new /login route works. 
 
