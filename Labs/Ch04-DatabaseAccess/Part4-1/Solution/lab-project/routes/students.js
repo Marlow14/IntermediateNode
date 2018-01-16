@@ -4,10 +4,8 @@ const Promise = require("bluebird");
 const moment = require('moment');
 
 module.exports = function({db}) {
-	let router = require("express-promise-router")();
-
+	
 	router.get("/",  (req, res) => {
-		console.log('in the students GET route ' );
 		return Promise.try(() => {
 			return db("students");
 		}).map((student) => { //process each student
@@ -19,8 +17,6 @@ module.exports = function({db}) {
 				students: students
 			});
 		}).catch(err => {
-			console.log('Reaching this err block ' + err);
-			console.log(err);
 			res.render("students", {
 				students: null
 			});

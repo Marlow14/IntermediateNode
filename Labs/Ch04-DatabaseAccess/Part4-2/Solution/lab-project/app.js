@@ -6,11 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const customErrors = require('./custom-errors');
 const debug = require('debug');
-
-const knex = require("knex");
-const db = knex(require("./knexfile"));
-
 var moment = require('moment');
+
+const db  = require('./db');
 
 var app = express();
 
@@ -61,7 +59,12 @@ const students = require('./routes/students')({db});
 /* Main routes */
 router.use('/', index);
 router.use('/users', users);
-router.use('/students', students({db}));
+router.use('/students', students);
+
+// catch 404 and forward to error handler
+router.use(function(req, res, next) {
+  throw new customErrors.NotFoundError("404 Resource Not Found");
+});
 
 router.use(require("./middleware/error-handler")(state));
 

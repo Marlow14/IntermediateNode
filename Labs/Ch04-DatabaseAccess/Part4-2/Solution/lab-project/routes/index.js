@@ -24,7 +24,7 @@ router.post('/login', (req, res, next) => {
         res.redirect("/students");
       });
     } else {
-      throw new errors.AuthenticationError("Incorrect password");
+      throw new customErrors.AuthenticationError("Incorrect password");
     }
   });
 });  

@@ -1,9 +1,11 @@
 # Chapter 4 Exercise 1: Database Access
 
 ## Objectives:
-* Update router usage to be Express Promise Router
-* Pass db into router
-* Connect to the database to get student records to display
+* Setup knex for project using `knex init`
+* Configure usage of knex for development environment
+* Update student router to use Express Promise Router
+* Pass db into student router
+* Use db connection to get student records to display
 
 ## Steps 
 
@@ -31,30 +33,27 @@
 1. Install:  pg and knex and add to package.json. You can do this in one step from the command line 
 `npm install -S pg knex `
 
-1. Confirm with the pgAdmin client that you have a studentmanagement database with a student table containing records. If setting up your own environment, you can populate this database by importing the students.csv file from `/Libs/Part4-1`
+1. In the terminal, use this knex CLI command ```knex init``` to create a `knexfile.js`.
 
-1. Use knex CLI tool to create a `knexfile.js` that uses the `config.json` file. First use this command:
-```knex init```
-
-1. View the contents and note how you can setup connections for different environments.
+1. Open the created `knexfile.js`. This version of the knexfile can be used in different environments. View the contents and note how you can setup connections for different environments.
 
 1. Instead of hard-coding values to the database, it is better to add a `config.json` file to the project. Add this to the root directory, with this content:
 	```
 	{
-		"port": 3000,
+		"env": "development",
 		"database": {
 			"hostname": "localhost",
 			"username": "postgres",
 			"password": "password",
 			"database": "studentmanagement"
-		} 
 	}
+}
 	```
 
 1. In the knexfile.js add this reference at the top:
 	``` const config = require("./config.json"); ```
 
-1. 	Modify the dev settings in knexfile.js tolook like this:
+1. 	Modify the dev settings in knexfile.js to look like this:
 	```javascript	
 	 development: {
 		client: "pg",
@@ -67,34 +66,87 @@
  	 },
 	```
 
-1. In the `app.js` file use knex and pg to create a database connection pool.
+1. Create a `db.js` file in the project root, that:
+	* requires knex, knexfile and config
+	* Creates a database connection pool passing the env from config.json
+	* Try this now, or scroll down for help
 	``` javascript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	const knex = require("knex");
-	const db = knex(require("./knexfile"));
+	const knexconfig = require('./knexfile.js'); 
+	const config = require('./config.json'); 
+
+	const db         = require('knex')(knexconfig[config.env]);
+
+	module.exports = db;
 	```
 
-1. In app.js, update the call to require the student router, by passing the db info to the student router.
+1. In `app.js`, update the call to require the student router, by passing the db info to the student router.
 	``` const students = require('./routes/students')({db}); ```
 
-1. Change the `routes/students.js` file to remove hard-coded students, and accept {db} like this:
+1. Change the `routes/students.js` file to the structure below...it removes the hard-coded students, and changes the module.exports to a function that accepts {db}, and now uses the express-promise-router:
 	```
 	const expressPromiseRouter = require("express-promise-router");
-	const router = expressPromiseRouter();
 	const Promise = require("bluebird");
 	const moment = require('moment');
-
-	module.exports = function({db}) {
-			
-	const expressPromiseRouter = require("express-promise-router");
 	const router = expressPromiseRouter();
-	const Promise = require("bluebird");
-	const moment = require('moment');
-
+	
 	module.exports = function({db}) {
-	let router = require("express-promise-router")();
+		
+		router.get("/",  (req, res) => {
+			//TODO: return a Promise that 
+			// 1. tries to get the students from the database table students
+			// 2. If get from db is successful, maps:
+			// 2a. the first name and last name to another property called fullName
+			// 2b. uses moment to set the hireDate property based on the format MM/DD/YYYY
+			// 3. If map is successful, use the response to render the students view passing students
+			// 4. If there is any error, render students but pass null
+		});
+		
+		return router;
+	}
+
+	```
+
+1. Try to complete the TODO section. Scroll down for help...
+	``` javascript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	router.get("/",  (req, res) => {
-		console.log('in the students GET route ' );
 		return Promise.try(() => {
 			return db("students");
 		}).map((student) => { //process each student
@@ -106,54 +158,16 @@
 				students: students
 			});
 		}).catch(err => {
-			console.log('Reaching this err block ' + err);
-			console.log(err);
 			res.render("students", {
 				students: null
 			});
 	       });
 	});
-	
-	return router;
-}
-		
-			
-			
-			
-			
-			```
-
-1. Use this to try and get the students from the database. Map the results to add a fullname property. Use moment with hiredate. Then pass these students off to the render function.  
-
-	``` javascript
-	const expressPromiseRouter = require("express-promise-router");
-	const router = expressPromiseRouter();
-	const Promise = require("bluebird");
-	const moment = require('moment');
-
-	module.exports = function({db}) {
-		let router = require("express-promise-router")();
-
-		router.get("/",  (req, res) => {
-			return Promise.try(() => {
-				return db("students");
-			}).map((student) => { //process each student
-				student.fullName = student.nameFirst + ' ' + student.nameLast;
-				student.hireDate = moment(student.hireDate, "MM/DD/YYYY")
-				return student;
-			}).then((students) => {
-				res.render("students", {
-					students: students
-				});
-			});
-		});
-
-	return router;
-}
-
 	```
 
-1. Test your changes in the browser, do you see the students from the database?
+1. Confirm with the pgAdmin client that you have a studentmanagement database with a student table containing records. 
+
+1. Test your changes in the browser, do you see the student records from the database?
 
 
 
