@@ -51,7 +51,7 @@
 
 ### Create a new route 
 
-1.  Create a new route in the routes folder called students.js `routes/studets.js`. The easiest way to do this is to copy and paste `users.js`. You can right click and choose copy (or CTRL-C) then click the folder and right click and choose paste. (or CTRL-V)
+1.  Create a new route in the routes folder called students.js `routes/students.js`. The easiest way to do this is to copy and paste `users.js`. You can right click and choose copy (or CTRL-C) then click the folder and right click and choose paste. (or CTRL-V)
 
 1. This is where the display of students will be. 
 For now, update the line to read 
