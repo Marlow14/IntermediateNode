@@ -17,7 +17,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-// this middleware will not allow the request to go beyond it
 app.use(function(req, res, next) {
     res.send('Hello World');
 });

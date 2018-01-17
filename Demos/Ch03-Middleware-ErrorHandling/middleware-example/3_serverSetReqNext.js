@@ -19,7 +19,8 @@ app.use(function (req, res, next) {
 
 app.use(function (req, res, next) {
     var responseText = 'Server Next!<br>';
-    responseText += '<small>Requested at: ' + req.requestTime + '</small>';
+    responseText += '<small>Requested at: ' 
+                  + req.requestTime + '</small>';
     res.send(responseText);
 });
 

@@ -17,7 +17,6 @@ app.use(function (req, res, next) {
     next();
 });
 
-// requests will never reach this route
 app.get('/', function (req, res) {
     res.send('Welcome');
 });
