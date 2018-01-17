@@ -42,7 +42,8 @@ let errorReporter = unhandledError( (err) => {
    wrapper function. The wrapper function can unpack the stateful dependencies
    that it needs, eg. using object destructuring. */
    let state = {
-     errorReporter: errorReporter
+    db: db,
+		errorReporter: errorReporter
    }
 
 
@@ -52,9 +53,9 @@ router.use(function (req, res, next) {
 });
 
 /* Include Route files */
-const index = require('./routes/index')({db});
+const index = require('./routes/index')({state});
 const users = require('./routes/users');
-const students = require('./routes/students')({db});
+const students = require('./routes/students')(state);
 
 /* Main routes */
 router.use('/', index);

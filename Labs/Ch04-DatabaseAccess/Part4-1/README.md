@@ -96,8 +96,17 @@
 	module.exports = db;
 	```
 
-1. In `app.js`, update the call to require the student router, by passing the db info to the student router.
-	``` const students = require('./routes/students')({db}); ```
+1. In `app.js`, we want to pass the student router the database information. We can first update the state object and then pass the state object to the router. 
+
+	``` javascript
+	let state = {
+		db: db,
+		errorReporter: errorReporter
+	}
+	```
+
+1. Pass the state to the student roter module like this:
+	``` const students = require('./routes/students')(state); ```
 
 1. Change the `routes/students.js` file to the structure below...it removes the hard-coded students, and changes the module.exports to a function that accepts {db}, and now uses the express-promise-router:
 	```
