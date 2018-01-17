@@ -76,3 +76,4 @@ package-lock.json
 # from doing demos, do not use Git
 in-process-demo/
 Working/
+PCWorking/
