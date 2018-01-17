@@ -68,4 +68,6 @@ router.use(function(req, res, next) {
   next(err);
 });
 
+app.use(router);
+
 module.exports = app;
