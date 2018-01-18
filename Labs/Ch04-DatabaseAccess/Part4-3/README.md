@@ -43,7 +43,7 @@
 1. Let's update the `routes/users.js` to:
     * Use express-promise-router
     * Use the User model and define methods for different CRUD operations
-    * If you feel comfortable, try for solution, oherwise, copy the file `/Lib/Part4-3/users.js` into `routes/users.js`
+    * If you feel comfortable, try for solution, otherwise, copy the file `/Lib/Part4-3/users.js` into `routes/users.js`
 
 1. Bring up the URL: http://localhost:3000/users - you should see JSON being returned
 
