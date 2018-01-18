@@ -16,7 +16,7 @@
 
 1. Copy the register.pug from `/Libs/Part5-3` into this project's `/views/admin` directory.
 
-1. In the index.js route, add a route handler for `/register` that causes the admin/register page to render. 
+1. In the `index.js` route, add a route handler for `/register` that causes the admin/register page to render. 
 	``` javascript
 	router.get("/register", (req, res) => {
 		res.render("admin/register");
