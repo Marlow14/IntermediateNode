@@ -1,5 +1,5 @@
 
-1. Before running this demo clean up your GIT directory.
+1. Before running this demo, do a GIT PULL  
 
 1. View package.json and run `npm install`
 
