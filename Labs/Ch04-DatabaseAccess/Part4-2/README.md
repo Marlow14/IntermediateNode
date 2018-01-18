@@ -144,8 +144,6 @@ This allows seed data to be provided. Update the contents of the file to this:
 		};
 	```
 
-1. Verify with pgAdmin client program, that no `users` table exists in postgres. If it does drop the table and any `knex` related tables.
-
 1. Run the command:
 	```knex migrate:latest```
 
