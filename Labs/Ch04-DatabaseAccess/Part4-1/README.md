@@ -47,7 +47,6 @@
 			"password": "password",
 			"database": "studentmanagement"
 	}
-}
 	```
 
 1. In the knexfile.js add this reference at the top:
