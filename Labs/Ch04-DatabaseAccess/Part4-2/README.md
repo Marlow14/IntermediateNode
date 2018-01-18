@@ -48,18 +48,17 @@
 
 
 	exports.up = function(knex, Promise) {
-		knex.schema.createTable('users', function (table) {
+		return knex.schema.createTable('users', function (table) {
 			table.increments();
-			table.string('username');
+			table.string('username').notNull().unique();
 			table.string('password');
 			table.timestamps();
-		})
+		});
 	};
 
 	exports.down = function(knex, Promise) {
 		return knex.schema.dropTable("users");
 	};
-
     ```
 
 1. Run the migration with this command. The default is developent, if you would want to run for another env you can specify it with `knex migrate:latest --env test`
