@@ -73,10 +73,10 @@
 1. Try to run this again
 	```knex migrate:latest```
 
-1. You will likely get a message that it is already up to date and if so - you must drop the knex_migrations table before you can run the command again.  Do that now with pgAdmin, and try to run the command again.
+1. You will likely get a message that it is already up to date and if so - you must drop the knex_migrations related tables before you can run the command again.  Do that now with pgAdmin, and try to run the command again.
 ```knex migrate:latest```
 
-1. Be sure you end this exercise with the users table in the database, it will be used soon.
+1. Be sure you end this exercise with the users table in the database, it will be used in future exercises.
 
 
 ### Use seed for users
@@ -160,4 +160,4 @@ This allows seed data to be provided. Update the contents of the file to this:
 1. Run the command:
 	```knex migrate:latest```
 
-1. Check the database the new `hash` column should be available. This is what we need for future exercises.
+1. Check the database that the new `hash` column in `users` is present. This is what we need for future exercises.
