@@ -1,7 +1,7 @@
 # Chapter 4 Exercise 2: Add migrations
 
 ## Objectives:
-* Add migrations to the project for a users table called `accounts`
+* Add migrations to the project for a users table called `users`
 * Use seeds to populate the db
 
 ## Steps 
@@ -66,7 +66,7 @@
 
 	```knex migrate:latest```
 
-1. Check the DB for the added `Accounts` table
+1. Check the DB for the added `Users` table
 
 1. Drop the table from the client database software, pgAdmin.
 
@@ -76,7 +76,7 @@
 1. You will likely get a message that it is already up to date and if so - you must drop the knex_migrations table before you can run the command again.  Do that now with pgAdmin, and try to run the command again.
 ```knex migrate:latest```
 
-1. Be sure you end this exercise with the accounts table, it will be used soon.
+1. Be sure you end this exercise with the users table in the database, it will be used soon.
 
 
 ### Use seed for users
