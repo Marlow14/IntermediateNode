@@ -95,7 +95,7 @@
 	module.exports = db;
 	```
 
-1. In `app.js`, we want to pass the student router the database information. We can first update the state object and then pass the state object to the router. 
+1. In `app.js`, we want to use this new module. MAke sur eyou require it at thetop of your app.js file. Then, pass the student router the database information. We can first update the state object and then pass the state object to the router. 
 
 	``` javascript
 	let state = {
