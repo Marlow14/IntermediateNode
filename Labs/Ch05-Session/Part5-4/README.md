@@ -52,4 +52,4 @@ Modify your middleware that routes to /students and /users to use this. For exam
 		router.use('/users', requireLogin,  users);
 	```
 
-1. Try to reach the URLs that are now protected withoug
+1. Try to reach the URLs that are now protected. 
