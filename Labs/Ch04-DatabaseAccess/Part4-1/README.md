@@ -178,6 +178,17 @@
 
 1. Test your changes in the browser, do you see the student records from the database?
 
+1. It can be helpful at times to see the generated SQL. You can do this by adding the knex-logger package to your project as a dependency in app.js.
+	```npm i -S knex-logger```
+	```const knexLogger = require('knex-logger');```
+
+1. Now you can add middleware that logs the SQL calls.
+	``` app.use(knexLogger(db)); ```
+
+1. Test this is working by visiting the students URL.
+
+
+
 
 
 

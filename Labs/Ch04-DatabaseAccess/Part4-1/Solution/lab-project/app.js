@@ -7,10 +7,13 @@ var bodyParser = require('body-parser');
 const customErrors = require('./custom-errors'); 
 const debug = require('debug');
 var moment = require('moment');
+const knexLogger = require('knex-logger');
 
 const db  = require('./db');
 
 var app = express();
+
+app.use(knexLogger(db));
 
 const expressPromiseRouter = require("express-promise-router");
 const router = expressPromiseRouter();
