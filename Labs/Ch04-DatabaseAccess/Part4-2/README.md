@@ -158,4 +158,4 @@ This allows seed data to be provided. Update the contents fo the file to this:
 1. Run the command:
 	```knex migrate:latest```
 
-1. Check the database the new column should be available. This is what we need for future exercises.
+1. Check the database the new `hash` column should be available. This is what we need for future exercises.
