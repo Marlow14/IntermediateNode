@@ -37,7 +37,7 @@ module.exports = function ({ db }) {
         else {
 					return Promise.try(() => {
             console.log(req.body);
-            console.log(user.hash);
+            console.log(user);
             return scryptForHumans.verifyHash(req.body.password, user.hash);
 					}).then((result) => {
 						req.session.userId = user.id;
