@@ -6,6 +6,8 @@ var Model = require('./../models/User');
 
 /* Save a user */
 var saveUser = function (req, res) { 
+
+	//console.log(req);
 	new Model.User({
 		username: req.body.username,
 		password: req.body.password
