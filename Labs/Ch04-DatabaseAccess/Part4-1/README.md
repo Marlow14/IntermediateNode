@@ -46,6 +46,7 @@
 			"username": "postgres",
 			"password": "password",
 			"database": "studentmanagement"
+		}
 	}
 	```
 
