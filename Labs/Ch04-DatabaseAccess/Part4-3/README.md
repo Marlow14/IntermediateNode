@@ -68,7 +68,7 @@ http://localhost:3000/users/3
 
 1. Let's update the /login route to look at the database based upon the username.
 
-1. We can modify `app.js` to pass the db to `index.js`. 
+1. Modify `app.js` to pass the db to `index.js`. You can pass the state object which contains the db.
 
 1. Modify the `index.js` to do the following, if need be copy ``index.js` from `Libs/Part4-3/index.js`
     * Use express promise router
@@ -76,5 +76,5 @@ http://localhost:3000/users/3
     * Use the db info to check the database for supplied username, and see if password matches
     * Export the router 
   
-1. Test your work that the new /login route works. 
+1. Test your work and check that the new version of /login route works. 
 
