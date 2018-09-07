@@ -5,15 +5,6 @@ const Promise = require("bluebird");
 
 module.exports = function ({ db }) {
 
-  /* GET home page. */
-  router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Student Manager' });
-  });
-
-  router.get('/login', function (req, res, next) {
-    res.render('admin/login');
-  });
-
   router.post('/login', (req, res, next) => {
     return Promise.try(() => {
       return db("users").where({
@@ -35,6 +26,17 @@ module.exports = function ({ db }) {
           res.redirect("/");
         }
       })
+  });
+
+
+  //Moved below for screenshot
+  /* GET home page. */
+  router.get('/', function (req, res, next) {
+    res.render('index', { title: 'Student Manager' });
+  });
+
+  router.get('/login', function (req, res, next) {
+    res.render('admin/login');
   });
 
   return router;
