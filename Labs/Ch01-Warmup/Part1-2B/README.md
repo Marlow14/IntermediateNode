@@ -9,23 +9,14 @@
 
 ## Steps
 
-1. Continue working in the folder `/WarmUp/browserifyModules`.
+1. Continue working in the folder `/browserifyModules`.
 
 1. READ: There are several ways to "transpile" code from ES6 down to ES5. One way is using babel. It can be used several ways including from the command line. One approach would be to install babel globally. Installing globally isnt always desirable. It makes it harder to manage the versions of the tools being used and can cause developers more manual work.
 
     If you install at the package level, you can specify CLI tools in the node_modules directory like this: 
     
     ```./node_modules/.bin/babel source.js --out-file source-compiled.js```
-    
-    Starting with npm version 5.x.x there is a new tool available called `npx`. 
 
-    Let's use this approach.
-
-1. Ensure npm is up to date. Use this command to get current version:
-```npm -v```
-
-1. Use this command to find out the latest version available on the Internet:
-```npm view npm version```
 
 1. To update: If your npm version is < 5.x use this command:
 ```npm i -g npm```

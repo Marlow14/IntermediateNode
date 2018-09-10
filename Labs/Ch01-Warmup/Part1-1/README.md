@@ -10,7 +10,7 @@ If you need help you can refer to the demos for this chapter. There is a similar
 
 ## Steps
 
-1. In Ch00 you should have created a WIP directory. In this directory create another directory so that you have this structure: `WIP/Part1-1`
+1. In Ch00 you should have created a `WIP` directory. In this directory create another directory so that you have this structure: `WIP/Part1-1`
 
 
 1. Create a file called `myHobbies.js`.  You can right click the folder and choose new file, or click the new file icon in the menu when the folder is selected.
