@@ -7,15 +7,17 @@
 
 ### Create new project
 
-1. During the course you will be creating a project and updating it in each exercise.  Create a new folder called `MyPractice` at the same level as `Demos` and `Labs`.   If VS Code is open to the `Node-Intermediate` folder you can right-click below the other folders and choose new folder. If it gets created in an existing folder you can drag it to the correct location.
+1. During exercises, you will create various projects and update them during following exercises.
 
-1. Open a terminal at the location of the new `MyPractice` folder. You can right click and Choose Open Terminal.
+1. Create a new directory now at `WIP/express1`
 
 1. If you havent already, install globally the Express application generator using `npm install express-generator -g`
 
 1. Execute one of these commands to create the lab-project
+    
     1. This works if you have npm > 5.x
          ``` express --view=pug --git lab-project && cd lab-project``` 
+    
     1. Or split it out into two commands instead of using && for both steps
 
         ``` express --view=pug --git lab-project ```
@@ -26,6 +28,20 @@
 
 1. Look at the "start" script in package.json, how is this Node app started? See if you can walk through the code... then scroll down
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -51,7 +67,7 @@
     * Hit the trashcan icon to kill process and clsoe the window
     * Hit the X to hide the window, and use Ctrl-` to get it back
 
-1. PLEASE NOTE: solutions are provided for all exercises. If your code is ever not working and the time for the exercise has come to an end, you can rename your current `lab-project` folder to not lose your current work, for example `NotWorkingExercisePart2-4` and then copy the `Solution/lab-project` folder to your `MyPractice` folder.
+
 
 ### Modify initial setup of new project
 
@@ -68,6 +84,6 @@
     },
     ```
 
-1. You can also add a console.log to the `./bin/www` file which lists the URL to make it easer to click through to the start of the application.
+1. Add a nicer console.log to the `./bin/www` file which lists the complete URL to make it easer to click through to the start of the application.
 
-1. Stop/Restart the server using `npm start` is it still working?
+1. Stop/Restart the server is it still working?
