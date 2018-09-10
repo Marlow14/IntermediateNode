@@ -99,3 +99,14 @@
 
 1. Please mark your work as complete. With a name tent card if in classroom or by using instructed method for online training. (spreadsheet, status symbol, etc.)
 
+
+## Part 4 - Install/confirm these VSCode extensions:
+
+1. Click the extensions icon in the black vertical menu. See if these extensions are installed, and if not, install them.
+
+    Search, confirm author name, install, reload VSCode.
+    
+ * ESLint by Dirk Baeumer
+ * GitLens by Eric Amodio
+ * VSCode Great Icons by Emmanuel Beziat
+
