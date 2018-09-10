@@ -1,6 +1,19 @@
-1. Install exorcist and watchify globally using npm i -g exorcist watchify
+# Chapter 1 Demo: SuperAgent
 
-1. Run using npm run start.
+## Objectives:
+* Become familiar with SuperAgent
+* Explore the usage of watchify and exorcist
+
+## Steps
+
+1. Read over the package.json dependencies and scripts.
+
+    Hover over names for descriptions.
+
+
+1. Install dependencies by using `npm install`
+
+1. Run using `npm run start`.
 
 1. Watch the console and load the browser at the Home link - this may take a minute to appear:
 
@@ -12,6 +25,8 @@
     http://localhost:3333
     ```
 
-1. Compare the code to the functionality on the screen.
+1. Trace through the following code. 
+    * index.html
+    * main.js - and the files it requires
 
 1. How are makes displayed?
