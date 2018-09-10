@@ -41,7 +41,7 @@
 1. Very few browsers support modules, so lets use browserify to convert the use of modules into something that we can use. We can install it globally using:
 ```npm install -g browserify``` 
 
-1. Open a terminal at the location of your current folder and execute this command: 
+1. Open a terminal window at the same level as `browserifyModules` and execute this command: 
 
     ```
     browserify src/source.js -o dist/bundle.js
