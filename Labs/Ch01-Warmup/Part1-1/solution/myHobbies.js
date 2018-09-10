@@ -1,6 +1,6 @@
 const myHobbies = [
     { name: 'cooking', lengthInYearsAtHobby: 15 },
-    { name: 'essential oils', durlengthInYearsAtHobbyation: 6 },
+    { name: 'essential oils', lengthInYearsAtHobby: 6 },
     { name: 'volleyball', lengthInYearsAtHobby: 20 },
     { name: 'swimming', lengthInYearsAtHobby: 11 }
 ];
