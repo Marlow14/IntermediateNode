@@ -55,6 +55,11 @@ app.get('/method', function(req, res) {
   res.send('user ' + req.method);
 });
 
+app.post('/pet', function(req, res) {
+  
+  res.send('user ' + req.method);
+});
+
 
 
 
