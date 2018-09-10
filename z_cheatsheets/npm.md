@@ -1,3 +1,10 @@
+## Semantic versioning
+
+https://bytearcher.com/articles/semver-explained-why-theres-a-caret-in-my-package-json/ 
+
+
+
+
 `npm install`
     reads package.json and installs dependencies
 
