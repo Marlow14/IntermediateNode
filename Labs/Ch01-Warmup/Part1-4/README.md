@@ -2,9 +2,9 @@
 
 ## Objectives:
 * Apply ESLint
+* Explore the learnyounode package
 
-## Steps
-
+## Part One Steps
 
 1. Check your extensions for VSCode. If you do not have ESLint installed (by Dirk Baeumer), install it. 
 
@@ -83,6 +83,26 @@
     * While looking at the code in add.js, right click for the contextmenu and choose Command Palette...
     * Start typing ESlint and you will see possible choices
     * Practice enabling and disabling the feedback
-    
+
+## Part TWO Steps
+
+1. Create a new directory at `WIP\learnyounode`
+
+1. Install this npm package globally: 
+
+    ```
+        npm i -g learnyounode
+    ```
+
+1. Open a Windows command prompt - not VSCode integrated terminal. Make the window full size.
+
+1. Execute this command.
+
+    ```
+    learnyounode
+    ```
+
+1. Follow the application steps. You can do your work in `WIP\learnyounode`.
+
 ## Bonus
 1. If done before others, practice more with ESLint and try auto-correcting issues.
