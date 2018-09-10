@@ -1,14 +1,13 @@
 # Chapter 1 Exercise 1: ES6 Practice
 
 ## Objectives:
-* Create a new MyWarmup folder
 * Create a small application file and execute it
 * Practice with some of the newer ES6 features.
 
 ## Steps
 
+1. In Ch00 you should have created a WIP directory. In this directory create another directory so that you have this structure: `WIP/Part1-1`
 
-1. During the warmup chapter, you will be create a directory called `MyWarmup`. Create this new folder at the same level as `Demos` and `Labs`.   If VS Code is open to the `Node-Intermediate` folder you can right-click below the other folders and choose new folder. If it gets created in an existing folder you can drag it to the correct location.
 
 1. In a file called myHobbies.js - create an array of 3 of your hobbies. Each hobby should be represented as an object with a name, and lengthInYearsAtHobby. Similar to this sports array, only with lengthInYearsAtHobby as a numeric value.
 
