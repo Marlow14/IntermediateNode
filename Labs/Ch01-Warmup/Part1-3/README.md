@@ -5,7 +5,7 @@
 
 ## Steps
 
-1. In the `/WIP` directory create a folder called `bluebird`.
+1. In the `/WIP/Ch01` directory create a folder called `bluebird`.
 
 1. In the `/bluebird` folder, open a terminal window
 
@@ -19,7 +19,7 @@
         const Promise = require("bluebird");
     ```
 
-1. One feature that Bluebird gives us is the ability to Promisify packages....you can dynamically create asychrounous functions from normally synchronous ones. They get prefixed with the name `Async`. Add this line of code to promisify the Node built in `fs` package.
+1. One feature that Bluebird gives us is the ability to Promisify packages....you can dynamically create asychrounous functions from normally synchronous ones. They get suffixed with the name `Async`. Add this line of code to promisify the Node built in `fs` package.
 
     ``` javascript
         const fs = Promise.promisifyAll(require("fs"));
@@ -47,3 +47,9 @@
 1. Look at the output in the console and the order of the printed statements.
 
 1. Also look at the newly created file. You may need to refresh the directory in the editor.
+
+##Bonus
+
+1. Create a json file that contains hobby objects that have properties for name and lengthInYearsAtHobby.
+
+    Read the file in and iterate over the JSON values printing them to the screen.

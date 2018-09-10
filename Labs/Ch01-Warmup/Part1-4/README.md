@@ -18,8 +18,7 @@
 
 1. Add ESLint to your project using: `npm install eslint --save-dev`
 
-1. Create another subdirectory called `files` at the location
-`MyWarmup/eslint-practice/files`
+1. Create another subdirectory called `files` at the location `/eslint-practice/files`
 
 1. In the files directory, create a file called `add.js` with this content:
     ``` javascript
@@ -40,7 +39,7 @@
     }
     ```
 
-1. At the level of `MyWarmup/eslint-practice` create an ESLint config file by using the command: 
+1. At the level of `/eslint-practice` create an ESLint config file by using the command: 
 `npx eslint --init`
 
 1. Use the arrow keys to choose `Answer questions about your style` and choose:
@@ -56,7 +55,7 @@
 
 1. Look at the resulting `.eslintrc.json` file
 
-1. From the command line at `MyWarmup/eslint-practice` issue this command to check on one specific file, and look at the output in your console:
+1. From the command line at `/eslint-practice` issue this command to check on one specific file, and look at the output in your console:
     ```
     npx eslint files/add.js   
     ```
@@ -84,5 +83,6 @@
     * While looking at the code in add.js, right click for the contextmenu and choose Command Palette...
     * Start typing ESlint and you will see possible choices
     * Practice enabling and disabling the feedback
+    
 ## Bonus
-1. If done before others, practice more with with ESLint and try auto-correcting issues.
+1. If done before others, practice more with ESLint and try auto-correcting issues.
