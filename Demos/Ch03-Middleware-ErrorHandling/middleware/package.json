@@ -1,5 +1,5 @@
 {
-  "name": "middleware-example",
+  "name": "student-management-example",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,18 +7,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
   "keywords": [
     "example"
   ],
-  "author": "Judy Lipinski",
-  "license": "MIT",
+  "license": "WTFPL",
   "dependencies": {
     "express": "^4.15.2",
     "moment": "^2.18.1",
-    "pug": "^2.0.0-beta11"
+    "express-lowercase-paths": "^1.0.0",
+    "serve-favicon": "^2.4.5"
   }
 }

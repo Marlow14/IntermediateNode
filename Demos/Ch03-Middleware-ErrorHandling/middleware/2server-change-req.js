@@ -1,5 +1,7 @@
 const express = require('express')  
 const app = express();
+const config = {port: 3742}; 
+
 
 //log request handlers
 app.use((request, response, next) => {  
@@ -20,7 +22,7 @@ app.get('/', (request, response) => {
   })
 })
 
-app.listen(3002, () => {
-	console.log(`Listening on port 3002...`);
+app.listen(config.port, () => {
+	console.log(`Listening at http://localhost:${config.port}`);
 });
 

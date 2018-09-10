@@ -1,13 +1,11 @@
-'use strict';
-
 const express = require("express");
 const moment = require("moment");
 
 let router = express.Router();
 
 router.get("/", (req, res, next) => {
-	req.message += 'In router line 9 ';
-    next();
+	req.message += '<br/>I was added by middleware in /router/index.js';
+	next();
 });
 
 router.get("/", (req, res, next) => {
