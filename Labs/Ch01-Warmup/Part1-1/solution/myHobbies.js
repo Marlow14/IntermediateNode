@@ -1,13 +1,13 @@
 const myHobbies = [
-    { name: 'cooking', duration: 15 },
-    { name: 'essential oils', duration: 6 },
-    { name: 'volleyball', duration: 20 },
-    { name: 'swimming', duration: 11 }
+    { name: 'cooking', lengthInYearsAtHobby: 15 },
+    { name: 'essential oils', durlengthInYearsAtHobbyation: 6 },
+    { name: 'volleyball', lengthInYearsAtHobby: 20 },
+    { name: 'swimming', lengthInYearsAtHobby: 11 }
 ];
 
 
 function printHobbyInfo(hobby) {
-    console.log(` ${hobby.name} has been an interest for ${hobby.duration} years`)
+    console.log(` ${hobby.name} has been an interest for ${hobby.lengthInYearsAtHobby} years`)
 }
 
 for (const hobby of myHobbies) {
@@ -29,7 +29,7 @@ for (const hobby of myHobbies) {
 console.log('years')
 
 myHobbies.sort((a, b) => {
-    return a.duration - b.duration;
+    return a.lengthInYearsAtHobby - b.lengthInYearsAtHobby;
 })
 
 
