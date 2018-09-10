@@ -5,7 +5,7 @@
 
 ## Steps
 
-1. In the `/MyWarmup` directory create a folder called `bluebird`.
+1. In the `/WIP` directory create a folder called `bluebird`.
 
 1. In the `/bluebird` folder, open a terminal window
 

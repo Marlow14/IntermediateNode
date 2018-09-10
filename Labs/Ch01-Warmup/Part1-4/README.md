@@ -6,9 +6,11 @@
 ## Steps
 
 
-1. Check your extensions for VSCode. If you do not have ESLint installed (by Dirk Baeumer), install it. Once installed, disable it. You can do this by clicking on the extension and selecting the Disable drop-down, and choosing Workspace.
+1. Check your extensions for VSCode. If you do not have ESLint installed (by Dirk Baeumer), install it. 
 
-    In the `/MyWarmup` directory create a new subfolder called `/eslint-practice`
+1. Once installed, disable it. You can do this by clicking on the extension and selecting the Disable drop-down, and choosing Workspace.
+
+    In the `/WIP/Ch01` directory create a new subfolder called `/eslint-practice`
 
 1. Use npm init to create a new package.json - this time by using `npm init -y` - this will skip the questions and just generate the basic package.json using defaults.
 

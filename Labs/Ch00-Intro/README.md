@@ -106,6 +106,7 @@
 
     Search, confirm author name, install, reload VSCode.
     
+ * Open in Browser by TechER
  * ESLint by Dirk Baeumer
  * GitLens by Eric Amodio
  * VSCode Great Icons by Emmanuel Beziat

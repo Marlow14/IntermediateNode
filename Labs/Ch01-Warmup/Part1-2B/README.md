@@ -18,11 +18,11 @@
     
     The `--yes`, or `-y` accepts all the defaults from the wizard.
 
-1. Create an `index.html` file in this directory. You can use the html:5 template.
+1. Create an `index.html` file in this directory. Before typing anything else, in this file start typing the word `html`. A pop-up should appear, and if you choose the html:5 template it will create the basic HTML structure that is needed.
 
 1. Include a script reference like this:
     ``` javascript
-    <script src="src/hobbies.js"></script>
+    <script src="printHobbies.js"></script>
     ```
 
 1. Open `index.html` in Chrome and verify in the console area of devtools that it works.

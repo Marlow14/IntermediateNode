@@ -10,10 +10,10 @@ If you need help you can refer to the demos for this chapter. There is a similar
 
 ## Steps
 
-1. In Ch00 you should have created a `WIP` directory. In this directory create another directory so that you have this structure: `WIP/Part1-1`
+1. In Ch00 you should have created a `WIP` directory. In this directory create another directory so that you have this structure: `WIP/Ch01/es6`
 
 
-1. Create a file called `myHobbies.js`.  You can right click the folder and choose new file, or click the new file icon in the menu when the folder is selected.
+1. Create a file in the new directory called `myHobbies.js`.  You can right click the folder and choose new file, or click the new file icon in the menu when the folder is selected.
 
 1. In this new file, create an array called `myHobbies` with 3 objects, each object represents a hobby.  Each hobby object should have a property for the `name`, and `lengthInYearsAtHobby`. 
 
@@ -31,7 +31,7 @@ If you need help you can refer to the demos for this chapter. There is a similar
 
     More help: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 
 
-1. Sort by the lengthInYearsAtHobby - and use an arrow function.
+1. Sort by the `lengthInYearsAtHobby` - and use an arrow function.
 
 1. Mark your work as complete. 
 
