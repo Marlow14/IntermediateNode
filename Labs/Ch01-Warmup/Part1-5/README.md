@@ -6,14 +6,11 @@
 
 ## Steps
 
-1. If you havent already (from demo) - install the packages `exorcist` and `watchify` globally using 
-    ```npm i -g exorcist watchify```
+1. To make the following faster - you can first deleet the node_modules folder from `/Demos/Ch01-Review../super-agent`.
 
-1. Copy/paste the `/Demos/Ch01-Review../super-agent` folder to `/WarmUp` so that you have a `/MyWarmUp/super-agent` folder.
+    Copy/paste the `/Demos/Ch01-Review../super-agent` folder to `/WIP/Ch01` so that you have a `/WIP/Ch01/super-agent` folder.
 
-1. Sometimes, the node_modules folder do not copy well. Try to start the project by executing the command: `npm run start`
-
-1. If you get an error, delete node_module and execute `npm install`, then try `npm run start` again.
+1. Sometimes, the node_modules folders do not copy well. Try to using `npm install`, then `npm run start`.
 
 1. Implement the delete functionality in the `/public/api/js` file. It should:
     * call the json-server using superagent to delete
@@ -26,7 +23,9 @@
     ``` javascript
     alert(`Trying to delete ${id} - not yet implemented`);
     ```
-1. After this line use this code for superagent, and complete the TODO:
+
+1. After this line use the following code for superagent, and complete the TODO:
+
     ``` javascript
     request
     .delete(` `)  //TODO: ADD THE CORRECT URL
