@@ -99,65 +99,15 @@
 
 1. Reload the IE11 browser, you should now see output in the dev tools console for both Chrome and IE.
 
+1. READ: You can specify different browser versions with babel. Check out
+https://github.com/ai/browserslist 
+
+
 1. Mark your work as complete and then attempt the bonus
 
 ## BONUS
 
-1. Modify your html page to create a `div` to hold the hobbies, and add JavaScript to call a function to update the div.
-    ```
-    <div id="hobbiesInfo"></div>
-
-    <script>document.getElementById("hobbiesInfo").innerHTML=returnHobbiesHTML()</script>  
-    ```
-
-1. In a file `src/htmlHobbies.js`, write a `returnHobbiesHTML` function to return a string of hobby information, which includes HTML tags such as `<br />` or `<li>`. You can use ES6 backticks. Scroll down for a hint or to continue.
-
-    ```javascript
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function returnHobbiesHTML() {
-        let hobbyInfo = `
-            <ul>
-        `;
-        hobbiesArray.forEach(hobby => {
-            hobbyInfo+= `<li>${hobby.name} ${hobby.lengthInYearsAtHobby}</li>`;
-            });
-            hobbyInfo+=`</ul>`;
-        return hobbyInfo;
-    }
-
-    ```
-
-1. When you save the JS file again, notice the console indicates that the dist folder was updated. 
-
-1. Test in Chrome and IE. When it is working, mark your work as complete. 
-
-
-1. Add the functionality to display the hobbies in a table. Using backticks makes it easier to create html in JS and use classes. 
-
-1. Add a style attribute to the table to add styling. 
-
-1. npx also allows you to execute tools not installed. One-off. They take a little longer to run because they are downloaded, but then you don't have to clean up your npm local repos or package.json file. Try these out:
+1. npx is a short-cut which will download a tool if it is not present, or execute it from the node_modules directory. They take a little longer to run if they need to be downloaded, but then you don't have to clean up your npm local repos or package.json file. Try these out:
     ```
     npx cowsay Say something
 
@@ -166,10 +116,21 @@
     npx benny-hill
     ```
 
-1. You can specify different browser versions with babel. Check out
-https://github.com/ai/browserslist 
 
 
-1. You can look at the docs on `package.json` https://docs.npmjs.com/getting-started/using-a-package.json
+1. Modify your html page to create a `div` to hold the hobbies, and add JavaScript to call a function to update the div.
+    ```
+    <div id="hobbiesInfo"></div>
 
-1. Read over the documentation for `Arrays.prototype` there are many useful functions for processing data. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype
+    <script>document.getElementById("hobbiesInfo").innerHTML=returnHobbiesHTML()</script>  
+    ```
+
+1. In a new file/module `src/htmlHobbies.js`, write and export a function `returnHobbiesHTML` which  takes in an array of hobbies, and returns an HTML formatted string of hobby information, which includes tags such as `<br />` or `<li>`. You can use ES6 backticks. 
+
+    Include this module in source.js
+
+    Add an html element with an id value  of `hobbiesInfo` and target it using `document.getElementById("hobbiesInfo").innerHTML=` and setting it equal to the result of calling the new returnHobbiesHTML function.
+
+
+
+

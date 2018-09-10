@@ -1,9 +1,9 @@
 const printInfo = require('./printHobbies');
 
 const hobbies = [
-    { name: 'volleyball', duration: 20 },
-    { name: 'cooking', duration: 5},
-    { name: 'swimming', duration: 11}
+    { name: 'volleyball', lengthInYearsAtHobby: 20 },
+    { name: 'cooking', lengthInYearsAtHobby: 5},
+    { name: 'swimming', lengthInYearsAtHobby: 11}
 ];
 
 for (const hobby of hobbies) {
