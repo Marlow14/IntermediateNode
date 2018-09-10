@@ -6,7 +6,7 @@
 
 ## Steps
 
-1. To make the following faster - you can first deleet the node_modules folder from `/Demos/Ch01-Review../super-agent`.
+1. To make the following faster - you can first delete the node_modules folder from `/Demos/Ch01-Review../super-agent`.
 
     Copy/paste the `/Demos/Ch01-Review../super-agent` folder to `/WIP/Ch01` so that you have a `/WIP/Ch01/super-agent` folder.
 
@@ -28,7 +28,7 @@
 
     ``` javascript
     request
-    .delete(` `)  //TODO: ADD THE CORRECT URL
+    .delete(" ")  /* TODO: ADD THE CORRECT URL*/
     .then(function(res) {
         makesLocal = makesLocal.filter(function(el) {
             return el.id !== id;
@@ -38,7 +38,7 @@
         showmakes();
     })
     .catch(function(err) {
-        // err.message, err.response
+        /* err.message, err.response */
         throw new Error('An AJAX error occured: ' + err.message);
     });
     ```

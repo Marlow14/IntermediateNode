@@ -13,7 +13,7 @@
 
 1. Add the bluebird dependency to the project by issuing this command: `npm install -S bluebird`
 
-1. in the /bluebird directory create an index.js file. Start off by requiring bluebird
+1. in the /bluebird directory create an `index.js` file. Start off by requiring bluebird
 
     ``` javascript
         const Promise = require("bluebird");
@@ -48,8 +48,16 @@
 
 1. Also look at the newly created file. You may need to refresh the directory in the editor.
 
+1. Mark your work as complete.
+
 ##Bonus
 
-1. Create a json file that contains hobby objects that have properties for name and lengthInYearsAtHobby.
+1. Create a json file called `hobbies.json`.
 
-    Read the file in and iterate over the JSON values printing them to the screen.
+1. In this file create an array of objects - each object has a property for `name` and `lengthInYearsAtHobby`.
+
+1. Read the `data` in, as done above, "then" use the JSON.parse(data) to convert to objects. 
+
+1. Filter the array for hobbies that have year values under 5 and console.log the results. 
+
+1. Write the results to a new file underfive.json. 

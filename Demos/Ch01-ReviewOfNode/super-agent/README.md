@@ -29,4 +29,4 @@
     * index.html
     * main.js - and the files it requires
 
-1. How are makes displayed?
+1. How are the makes of cars displayed?
