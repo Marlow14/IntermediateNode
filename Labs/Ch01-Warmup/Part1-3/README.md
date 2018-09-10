@@ -54,10 +54,11 @@
 
 1. Create a json file called `hobbies.json`.
 
-1. In this file create an array of objects - each object has a property for `name` and `lengthInYearsAtHobby`.
+1. In this file create an array of 3 hobby objects - each object has a property for `name` and `lengthInYearsAtHobby`.
 
-1. Read the `data` in, as done above, "then" use the JSON.parse(data) to convert to objects. 
+1. Read the `data` in, as done above, "then" use the JSON.parse(data) to convert to a JavaScript array.  
 
 1. Filter the array for hobbies that have year values under 5 and console.log the results. 
 
+## Extra Bonus
 1. Write the results to a new file underfive.json. 
