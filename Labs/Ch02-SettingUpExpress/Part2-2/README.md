@@ -9,7 +9,7 @@
 
 1. Visit the site at http://localhost:3000
 
-1. Notice the text on the screen. Look at the generated folder structure and code, can you see which file sets this text?  Think of your answer, and then scroll down to see..
+1. Notice the text on the browser screen. Look at the generated folder structure and code, can you see which file sets this text?  Think of your answer, and then scroll down to see..
     
     ``` 
 
@@ -41,7 +41,7 @@
 1. This had been set up during the app creation. Let's organize a bit and move the require statements down to the use statements so that all 4 of these lines are together. These statements could even be combined like this:
     ```app.use('/', require('./routes/index'));```
 
-1. What the app.use means, is that when http://localhost:3000/ is hit in the browser, it will use the index (/) router. Open the file `/routes/index.js` and see how it defines a router using express.Router()  
+1. What the app.use means, is that when http://localhost:3000/ is hit in the browser, it will use the index (/) route file. Open the file `/routes/index.js` and see how it defines a router using express.Router()  
     ``` var router = express.Router();```
 
 1. This router is exported, but before it is, it defines that when a GET request is made to the index path, that the index view (in this case index.pug) is rendered and the title with value of Express is passed. 
