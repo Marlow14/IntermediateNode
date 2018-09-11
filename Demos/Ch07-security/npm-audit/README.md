@@ -40,4 +40,6 @@ What are the 3 vulnerabilities?
 
 1. Use it in your working project with ncu
 
+1. Now update package.json using `ncu -u`
+
 1. ^1.0.0 is a range that will includes all non-major updates. If you run npm update, it will install 1.0.1 without changing the dependency listed in your package file. You don't need to update your package file if the latest version is satisfied by the specified dependency range. If you really want to upgrade your package file (even though it's not necessary), you can run ncu --upgradeAll.

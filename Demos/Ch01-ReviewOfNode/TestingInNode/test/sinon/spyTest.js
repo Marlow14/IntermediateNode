@@ -1,4 +1,4 @@
-const spyOnMe = require('../app/spyOnMe');
+const spyOnMe = require('../../app/spyOnMe');
 const assert = require('chai').assert;
 const sinon = require('sinon');
 

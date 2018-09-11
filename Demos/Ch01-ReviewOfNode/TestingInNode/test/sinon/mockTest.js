@@ -1,4 +1,4 @@
-const Ticket = require('../app/ticket');
+const Ticket = require('../../app/ticket');
 const assert = require('chai').assert;
 const sinon = require('sinon');
 

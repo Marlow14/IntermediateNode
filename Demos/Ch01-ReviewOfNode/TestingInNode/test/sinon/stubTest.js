@@ -1,4 +1,4 @@
-const Concert = require('../app/concert');
+const Concert = require('../../app/concert');
 const assert = require('chai').assert;
 const sinon = require('sinon');
 
