@@ -218,8 +218,32 @@
 
 1.  Add a new folder called `app`.
 
-1. Inside of the folder create a module called weather 
+1. Inside of the folder create a module called `numbers.js`
+
+1. In the module define an array of the numbers 1 to 100. 
+
+1. Create and export 2 functions getEvens and getOdds.
+    * getEvens uses filter to return array of even numbers
+    * getOdds uses filter  to return array of odd numbers
+
+1. Write a test called `testNumbers.js`
+
+1. Use mocha and chai to test that both functions work. Example checks: check for certain numbers being in the array, check the length of the array returned.
 
 1. Mark your work as complete.
+
+## Bonus
+
+1. Create a scores.js module with an array of three objects such as let scores = [{homeTeam: 'Steelers', awayTeam: 'Ravens', homeScore:21 , awayScore:3 }]
+
+1. Write getWinners and getLosers functions that return the winners and losers. 
+
+1. Write test code to check your code is working correctly using chai BDD type statements. 
+
+    Can you write code that uses: 
+    
+    ```javascript
+    expect(winners).to.have.lengthOf(3);
+    ```
 
 
