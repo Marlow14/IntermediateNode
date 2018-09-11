@@ -16,6 +16,10 @@ describe('Array', function() {
     it('should start at a given index', function() {
         assert.equal([1,9,2,9].indexOf(9, 2),3);
     })
+
+    it('should ???? when the using negative', function() {
+      assert.equal([1,2,3].indexOf(-1), -1);
+    });
   });
 
   describe('#filter()', function() {
