@@ -31,7 +31,7 @@
     
     The use of & indicates that `jsonserver` should run in parallel. This works on linux but not on Windows.
 
-    The script `runall` does the same thing by using run-p - this works better when you have many tasks that need to run in parallel (run-p) or sequentially (run-s) - and works on Windows. 
+    The script `runall` does the same thing by using run-p - this works better when you have many tasks that need to run in parallel (run-p) or sequentially (run-s) - and works on Windows.  You also do not need to use `npm run` in front of script names.
 
 1. Execute the start script for your OS by using `npm start` or `npm run runall`  
 
