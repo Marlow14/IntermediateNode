@@ -7,9 +7,8 @@
     "prebuild": "browserify ./public/src/main.js -o ./public/dist/bundle.js",
     "build": "watchify ./public/src/main.js -o ./public/dist/bundle.js -v",
     "jsonserver": "json-server -p 3333 --watch db.json  ",
-    "start": "npm run build && npm run jsonserver",
-    "runall": "run-s build jsonserver"
-
+    "start": "npm run build & npm run jsonserver",
+    "runall": "run-p build jsonserver"
   },
   "author": "Judy Lipinski",
   "license": "ISC",

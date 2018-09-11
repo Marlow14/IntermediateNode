@@ -29,11 +29,11 @@
     
     After the initial bundling, the `build` script is used - which is using `watchify`. This will watch for changes in the files during dev, and will recreate the bundle if anything is changed.
     
-    The use of && indicates to only start `json-server` if the build was successful.
+    The use of & indicates that `jsonserver` should run in parallel. This works on linux but not on Windows.
 
-    The script `runall` does the same thing by using run-s - this works better when you have many tasks that need to run in parallel (run-p) or sequentially (run-s) on different OS.
+    The script `runall` does the same thing by using run-p - this works better when you have many tasks that need to run in parallel (run-p) or sequentially (run-s) - and works on Windows. 
 
-1. Execute the start script by using `npm start`.  
+1. Execute the start script for your OS by using `npm start` or `npm run runall`  
 
 1. Notice the output in the terminal window includes a URL for http://localhost:3333/Makes.  Open this in the browser (control+click works form VSCode) and notice this is a GET request which returns JSON data. The JSON data is coming from `db.json`.
 
