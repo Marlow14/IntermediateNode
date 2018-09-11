@@ -5,6 +5,8 @@
 
 ## Steps
 
+1. If you havent already - first complete the Demo work on Testing.
+
 1. In the `/WIP/Ch01` directory create a folder called `testing`.
 
 1. Under testing - create a folder called `test`.
