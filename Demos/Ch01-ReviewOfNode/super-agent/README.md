@@ -6,7 +6,12 @@
 
 ## Steps
 
-1. Read over the package.json dependencies and scripts.
+1. Read over the package.json dependencies.
+
+    * Find the description of json-sever on npm. What does this package do?
+    * Find the description of json-sever on npm. What does this package do?
+
+1. and scripts.
 
     Hover over names for descriptions.
 
