@@ -1,9 +1,9 @@
 # Chapter 1 Demo: SuperAgent
 
 ## Objectives:
-* Start a server and use postman to execute GET, POST, DELETE, PUT
-* Become familiar with SuperAgent
-* Explore the usage of watchify and exorcist
+* Review a project that uses client and server side modules
+* Start a server and use SuperAgent to simplify AJAX calls
+* Explore the usage of npm script commands
 
 ## Steps
 
@@ -11,9 +11,29 @@
 
 1. Open package.json. There is a lot going in this file and we will walk through it in this demo.
 
-1. First, notice the dependency in package.json for json-server.  This package creates a quick and easy REST API built on top of express. You can give it a JSON fle and it creates the endpoints for you. 
+1. First, notice the development dependencies.
 
-1. Look at the script in package.json called json-server. Let's start the json-server by running this script. `npm run jsonserver`
+    `browserify` is used to bundle modules for use on the client side
+
+    `watchify` is used during dev to keep bundling if there are any changes.
+
+    `npm-run-all` simplifies writing multiple npm script calls
+
+1. This project depends on  `json-server` and `superagent`.  The `json-server` package creates a quick and easy REST API built on top of express. You can give it a JSON fle and it creates the endpoints for you. 
+
+1. Usully, projects have a script called `start` as does this one. Can you tell what it is doing?
+
+    First, the build script is referenced. In npm, scripts can cause another script to run if it has a prefix of `pre` in front of the same name.
+
+    So we have a prebuild and a build. In this case, browserify is used to do an initial bundling of code (this is done so require can be used on the client side) 
+    
+    After the initial bundling, the `build` script is used - which is using `watchify`. This will watch for changes in the files during dev, and will recreate the bundle if anything is changed.
+    
+    The use of && indicates to only start `json-server` if the build was successful.
+
+    The script `runall` does the same thing by using run-s - this works better when you have many tasks that need to run in parallel (run-p) or sequentially (run-s) on different OS.
+
+1. Execute the start script by using `npm start`.  
 
 1. Notice the output in the terminal window includes a URL for http://localhost:3333/Makes.  Open this in the browser (control+click works form VSCode) and notice this is a GET request which returns JSON data. The JSON data is coming from `db.json`.
 
@@ -29,17 +49,17 @@
 
     * What do the 2 functions do?
 
-1. Open `main.js` and note the use of superagent to make a GET request to the JSON-server, and pass the results off to initialize the array you saw in app.js
+1. Open `main.js` and note the use of superagent to make a GET request to the JSON-server, and pass the results off to initialize the array you saw in `app.js`
 
-1. Because main.js uses require, can it be used directly in the browser?
+1. Bring back the terminal window. 
+(Control + `) This is a toggle. 
 
-    No, we need to use a module loader, in this case we are using browserify.
+1. In `app.js` modify line 9 to change the table column to Car Make instead of just make. Save your changes.
 
-1. Open package.json and look at the script `browserifyo` - this is used to bundle the require modules into one file bundle.js. This is what index.html is using.
+1. Watch the output of the terminal window. You should see a message about the bundle being updated.
 
-1. Notice `watchify`. This will watch for changes in the files during dev, and will recreate the bundle if anything is changed.
+1. Refresh the browser. You should see the changes displayed.
 
-1. Notice the `start` script. This does the original bundling, starts the jsonserver, and kicks off the watchify script as well. 
+1. Now discard your changes to `app.js` by clicking the Y looking repo icon in the balck vertical menu, hovering over the listed app.js file, and clicking the discard changes icon (counter-clockwise arrow).
 
-1. 
 

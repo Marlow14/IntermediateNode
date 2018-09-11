@@ -11,7 +11,7 @@ request
       })
       .catch(function(err) {
           // err.message, err.response
-          throw new Error('An AJAX error occured: ' + err.message);
+          throw new Error('An  AJAX error occured: ' + err.message);
       });
   
 
