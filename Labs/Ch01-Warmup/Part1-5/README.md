@@ -71,7 +71,7 @@
     });
     ```
 
-1. Test the changes that you have made. 
+1. Test the changes that you have made by deleting an item near the top of the list. The screen should refresh without this item. Examine the db.json, is the item you dleeted gone?
 
 1. Click the trashcan icon in the terminal window to stop the running process.
 
