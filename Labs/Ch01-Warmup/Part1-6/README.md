@@ -45,10 +45,7 @@
 
     You can use `npm install -D mocha chai`
 
-1. Generate the eslint config file:
-
-
-1. Open package.json and change the scripts.test  to have the value "mocha test".
+1. Open package.json and change the scripts.test property  to have the value "mocha test".
 
 1. In the test folder create a file called 1test-arrays.js
 
@@ -139,7 +136,7 @@
 
 1. Fix the expected result and re-run.
         
-1. Writing tests against APIs yo are not as familiar with can be a good way to practice both. Let's do another describe block, stil under array, but for a new function. Add this describe block after the one for  #indexOf
+1. Writing tests against APIs you are not as familiar with can be a good way to practice both. Let's do another describe block, still under array, but for a new function. Add this describe block after the one for  #indexOf
 
     ```javascript
         describe('#filter()', function() {
