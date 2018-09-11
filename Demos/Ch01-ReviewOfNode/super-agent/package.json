@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "browserifyo": "browserify ./public/main.js --debug | exorcist ./public/bundle.js.map > ./public/bundle.js",
-    "watchify": "watchify ./public/main.js -o ./public/bundle.js",
+    "browserifyo": "browserify ./public/src/main.js --debug | exorcist ./public/dist/bundle.js.map > ./public/dist/bundle.js",
+    "watchify": "watchify ./public/src/main.js -o ./public/dist/bundle.js",
     "jsonserver": "json-server -p 3333 --watch db.json  ",
     "start": "npm run browserifyo &  npm run jsonserver &  npm run watchify "
   },

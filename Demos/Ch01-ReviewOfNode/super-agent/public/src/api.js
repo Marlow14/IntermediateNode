@@ -1,5 +1,3 @@
-const request = require('superagent');
-//const api = require('./api.js');
 let makesLocal = [];
 
 module.exports = function(global, makes){
