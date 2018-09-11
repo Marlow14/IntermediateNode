@@ -29,25 +29,17 @@
 
     * What do the 2 functions do?
 
-1. Open `main.js` and note the use of require. 
+1. Open `main.js` and note the use of superagent to make a GET request to the JSON-server, and pass the results off to initialize the array you saw in app.js
 
+1. Because main.js uses require, can it be used directly in the browser?
 
-1. Install dependencies by using `npm install`
+    No, we need to use a module loader, in this case we are using browserify.
 
-1. Run using `npm run start`.
+1. Open package.json and look at the script `browserifyo` - this is used to bundle the require modules into one file bundle.js. This is what index.html is using.
 
-1. Watch the console and load the browser at the Home link - this may take a minute to appear:
+1. Notice `watchify`. This will watch for changes in the files during dev, and will recreate the bundle if anything is changed.
 
-    ``` 
-    Resources
-    http://localhost:3333/Makes
+1. Notice the `start` script. This does the original bundling, starts the jsonserver, and kicks off the watchify script as well. 
 
-    Home
-    http://localhost:3333
-    ```
+1. 
 
-1. Trace through the following code. 
-    * index.html
-    * main.js - and the files it requires
-
-1. How are the makes of cars displayed?

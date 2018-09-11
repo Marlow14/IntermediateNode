@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "browserifyo": "browserify ./public/src/main.js --debug | exorcist ./public/dist/bundle.js.map > ./public/dist/bundle.js",
+    "build": "browserify ./public/src/main.js -o ./public/dist/bundle.js",
+  "watch": "watchify browser.js -o static/bundle.js --debug --verbose",
     "watchify": "watchify ./public/src/main.js -o ./public/dist/bundle.js",
     "jsonserver": "json-server -p 3333 --watch db.json  ",
-    "start": "npm run browserifyo &  npm run jsonserver &  npm run watchify "
+    "start": "npm run build &  npm run jsonserver &  npm run watchify "
   },
   "author": "Judy Lipinski",
   "license": "ISC",
@@ -16,8 +17,7 @@
     "superagent": "^3.8.2"
   },
   "devDependencies": {
-    "eslint": "4.1.1",
-    "eslint-config-google": "^0.9.1",
+    "browserify": "^16.2.2",
     "exorcist": "^1.0.1",
     "watchify": "^3.11.0"
   }
