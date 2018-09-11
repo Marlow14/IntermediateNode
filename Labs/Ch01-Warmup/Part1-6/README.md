@@ -7,7 +7,7 @@
 
 1. In the `/WIP/Ch01` directory create a folder called `testing`.
 
-1. Under testing - create a folder called `test` and a folder called `app`.
+1. Under testing - create a folder called `test`.
 
 1. In the `/testing` folder, open a terminal window
 
@@ -175,7 +175,7 @@
 
 1. Edit your .eslintrc.json file by adding in mocha to the env property. Notice as you start typing mocha, there is autocompletion.
 
-## Using should
+    ### Using should
 
 1. Create another file `test/2test-should.js`
 
@@ -191,27 +191,35 @@
 
 1. READ: The `expect` interface provides a function as a starting point for chaining your language assertions. It works on node.js and in all browsers.
 
-The should interface extends Object.prototype to provide a single getter as the starting point for your language assertions. It works on node.js and in all modern browsers except Internet Explorer.
+    The should interface extends Object.prototype to provide a single getter as the starting point for your language assertions. It works on node.js and in all modern browsers except Internet Explorer.
 
 1. Create a describe block called BDD and inside of it, another describe block for #should.
 
 1. Add this code inside the #should block. 
 
     ```javascript
-    it('should work with should', function () {
+     it('should work with should', function () {
 
             let foo = 'bar'
                 , beverages = { tea: ['chai', 'matcha', 'oolong'] };
 
-            foo.should.be.a('string');
-            foo.should.equal('bar');
-            foo.should.have.lengthOf(3);
-            beverages.should.have.property('tea').with.lengthOf(3);
+            foo.should.be.a('number');//pass a string for correct datatype
+            foo.should.equal();//pass a string value
+            foo.should.have.lengthOf();//pass a number value
+            beverages.should.have.property('tea').with.lengthOf();//pass  value and length
         });
     ```
 
-Run the code and it fails.
-Update the code to make it work.
+1. Run the code and it fails. Update the code to make it work following the comments.
 
+1. Once working notice the format of the output.
+
+    ### Write some other code and test it.
+
+1.  Add a new folder called `app`.
+
+1. Inside of the folder create a module called weather 
+
+1. Mark your work as complete.
 
 

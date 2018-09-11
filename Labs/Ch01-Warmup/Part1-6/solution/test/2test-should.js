@@ -16,4 +16,4 @@ describe('BDD', function () {
             beverages.should.have.property('tea').with.lengthOf(3);
         });
     });
-});
+          });
