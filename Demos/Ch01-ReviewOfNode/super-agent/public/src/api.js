@@ -1,3 +1,6 @@
+//will be used during exercise
+const request = require('superagent');
+
 let makesLocal = [];
 
 module.exports = function(global, makes){
