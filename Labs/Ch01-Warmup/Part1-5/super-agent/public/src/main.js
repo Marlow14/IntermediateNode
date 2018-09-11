@@ -1,6 +1,7 @@
 const request = require('superagent');
 const api = require('./api.js');
 
+//initialize the api
 request
       .get('/Makes')
       .then(function(res) {
@@ -10,7 +11,7 @@ request
       })
       .catch(function(err) {
           // err.message, err.response
-          throw new Error('An AJAX error occured: ' + err.message);
+          throw new Error('An  AJAX error occured: ' + err.message);
       });
   
 
