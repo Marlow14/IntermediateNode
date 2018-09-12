@@ -7,8 +7,7 @@
 
 ### Use CSS
 
-
-1. Navigate to your `MyPractice/lab-project` folder.
+1. Navigate to your `express1/lab-project` folder.
 
 1. If you successfully completed the last exercise, continue with your project. Otherwise rename your lab-project (and ask intructor or others for help later) and copy the `Solution/lab-project` from the last exercise to continue.
 
@@ -25,7 +24,7 @@
 
 ### Add a favicon 
 
-1. Copy `/Libs/Part2-3/favicon.ico` to your `/public` directory.
+1. Find the file `/Libs/Part2-3/favicon.ico` in your courseload and copy it into your projects `/public` directory.
 
 1. Copy this line into your `layout.pug`, at the same indentation as the other link in the head section:
     ``` link(rel="shortcut icon", href="favicon.ico", type="image/x-icon") ```      
@@ -36,4 +35,4 @@
     app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
     ```
 
-1. You may need to re-open a new tab in the browser, but you shoudl see the favicon now in the browser tab.
+1. You may need to re-open a new tab in the browser, but you should see the favicon now in the browser tab.
