@@ -6,19 +6,47 @@
 
 ## Steps
 
-1. To make the following faster - you can first delete the node_modules folder from `/Demos/Ch01-Review../super-agent`.
+1. First, complete the demo which walks you through the demo code and explains usage of package.json scripts: `\Demos\Ch01-ReviewOfNode\super-agent`
 
-    Copy/paste the `/Demos/Ch01-Review../super-agent` folder to `/WIP/Ch01` so that you have a `/WIP/Ch01/super-agent` folder.
+1. Once completed, delete the generated node_modules folder in that demos folder, and right-click the folder and choose copy. 
 
-1. Sometimes, the node_modules folders do not copy well. Try to using `npm install`, then `npm run start`.
+1. Right-click on the `/WIP/Ch01` folder and choose paste so that you now have a `/WIP/Ch01/super-agent` folder.
 
-1. Implement the delete functionality in the `/public/api/js` file. It should:
+1. Try using `npm install`, then `npm run start`. Confirm the app is working.
+
+1. Now, you will changes, and you will be able to refresh the browser and test as the watchify task is rebuilding as you save.
+
+    Implement the delete functionality in the `/public/api/js` file.  It should:
     * call the json-server using superagent to delete
     * update the makesLocal array to remove the object that has the same `id` being passed
     * call the function which refreshes the screen
 
-1. If you need help follow the steps below.
+1. Try to do this, if you need help, or when you are done, scroll down this page to continue:
 
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ```
+
+    ### Detailed steps
 1. Find this line in `api.js`
     ``` javascript
     alert(`Trying to delete ${id} - not yet implemented`);
@@ -43,4 +71,13 @@
     });
     ```
 
-1. Test the changes that you have made. 
+1. Test the changes that you have made by deleting an item near the top of the list. The screen should refresh without this item. Examine the db.json, is the item you dleeted gone?
+
+1. Click the trashcan icon in the terminal window to stop the running process.
+
+1. Mark your work as complete.
+
+## Bonus
+
+1. Write a filter form on index.html that allows you to enter characters, and click a button. When the button is clicked use the input to filter the list of displayed makes. 
+

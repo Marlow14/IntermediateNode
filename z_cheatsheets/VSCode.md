@@ -10,6 +10,9 @@
 * Open integrated terminal window, Ctrl+`
 * open readme in format mode: control-shift-V
 
+List of shortcuts:
+https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf 
+
 ## Stopping servers
 * Ctrl-C kills process and leaves the terminal available
 * Trashcan kills process AND the window

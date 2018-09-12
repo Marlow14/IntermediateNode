@@ -1,32 +1,38 @@
 var express = require('express');
 var router = express.Router();
-var moment = require('moment');
 
-let students = [{
-	nameFirst: "Devin",
-	nameLast: "Durgan",
-	email: "Devin.Durgan@gmail.com",
-	hireDate: moment("01/19/2015", "MM/DD/YYYY")
-}, {
-	nameFirst: "Cristal",
-	nameLast: "Adams",
-	email: "Cristal.Adams@live.com",
-	hireDate: moment("07/29/2016", "MM/DD/YYYY")
-}, {
-	nameFirst: "Nettie",
-	nameLast: "McGlynn",
-	email: "Nettie.McGlynn@gmail.com",
-	hireDate: moment("08/29/2015", "MM/DD/YYYY")
-}];
+const students = [
+  {
+    id: 1, name: 'Sam', age: 32,
+    interests:
+      [{ id: 1, interest: 'baseball' },
+      { id: 2, interest: 'golf' }
+      ]
+  },
+  {
+    id: 2, name: 'Bob', age: 10,
+    interests: [{ id: 1, interest: 'cars' },
+    { id: 2, interest: 'trucks' }
+    ]
+  },
+  { id: 3, name: 'Jay', age: 22, interests: [{ id: 1, interest: 'beer' }, { id: 2, interest: 'frisbee' }] },
+  {
+    id: 4, name: 'Anil', age: 14,
+    interests: [{ id: 1, interest: 'science' },
+    { id: 2, interest: 'games' }
+    ]
+  },
+  { id: 5, name: 'Sasha', age: 55, interests: [{ id: 1, interest: 'movies' }, { id: 2, interest: 'travel' }] },
+  { id: 6, name: 'John', age: 96, interests: [{ id: 1, interest: 'Alaska' }, { id: 2, interest: 'beer' }] }
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
- // res.send('Students will go in here');
-    res.render('students', { 
-     title: 'Students' ,
-     students: students
-        
-    });
+];
+
+// ******* GET  *********
+
+router.get('/', function (req, res) {
+  console.log('all users', students);
+  res.send(students);
 });
+
 
 module.exports = router;

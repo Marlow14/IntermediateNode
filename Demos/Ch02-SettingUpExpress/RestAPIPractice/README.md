@@ -1,67 +1,108 @@
-# Chapter 2 Exercise 6: Create a Rest API
+# Chapter 2 Exercise 6: Rest APIs
 
 ## Objectives:
-* In the student router, setup a student array to be used in the student view
-	``` javascript
-	let students = [{
-		nameFirst: "Devin",
-		nameLast: "Durgan",
-		email: "Devin.Durgan@gmail.com",
-		hireDate: moment("01/19/2015", "MM/DD/YYYY")
-	}, {
-		nameFirst: "Cristal",
-		nameLast: "Adams",
-		email: "Cristal.Adams@live.com",
-		hireDate: moment("07/29/2016", "MM/DD/YYYY")
-	}, {
-		nameFirst: "Nettie",
-		nameLast: "McGlynn",
-		email: "Nettie.McGlynn@gmail.com",
-		hireDate: moment("08/29/2015", "MM/DD/YYYY")
-	}];
-	```
-* Pass the students to the view
-* In students.pug, display students by iterating over the data 
-* Add an if conditon to display if no students are present. Comment out array code to test this.
-* Change the formatting of the application and add Bootstrap
-* When your code is tested and works, replace the /views directory with /Libs/Part
 
-Need detailed steps?
-Read below...
 
 ## Steps
 
-1. Continue with your `MyPractice/lab-project` and launch http://localhost:3000 in browser. Refer to previous exercises if you need more detail.
+1. Do an npm install and npm start
 
-1. In the terminal install the `moment` package and add it as a dependency to the package.json.
-`npm i -S moment`
+	## Make GET requests
 
-1. update the index.pug to just say `Welcome to #{title}`
+1. In the browser, go to the URL http://localhost:3000
 
-1. update the layout to say `Student Manager Application`
+1. How is this page being generated? Open `app.js` and trace through the different routes to find the function. Add this text to the response.
 
-1. Define student array in the `/routes/students`. Use the moment package ot create dates. Add moment to the project using an nom install with a --save flag.
-
-1. display student data however you want, the solution uses a table. The demo displays list items.
+	```html
+	<h1>GET requests for data</h1>
 	```
-	each student in students
-		tr
-		td #{student.nameFirst} #{student.nameLast}
-		td #{student.email}
-		td #{student.hireDate.format("MM/DD/YYYY")}
+
+1. Refresh the browser. Do you see your new text?
+
+1. Click the links in the browser. Can you find where these routes live? 
+
+1. View this link in the browser: http://localhost:3000/user/
+
+1. Open the file `user.js` in the editor.  Read through data in the hard-coded array to see the source of the data in the browser. Find this route (near line 32) to see how the data is being sent back:
+
+	```javascript
+	router.get('/user/'
 	```
-1. Test that you can see the students in the browser. If not make fixes and ask if you get stuck.
 
-1. Add an if conditon to display if no students are present. Comment out students inclusion in router and test your conditional works.
+1. Open Postman and make a GET request to http://localhost:3000/user/ to see the same data but in a nicer format.
 
-## Preparing Project for future work
-The following will modify the application to have links to the routes files.
-It uses Bootstrap for styling. 
+	Continue using Postman for rest of demo.
 
-1. Delete the `/public/javascripts` and `/public/stylesheets` directories. 
+1. Change the URL to display only user 4: http://localhost:3000/user/4 
 
-1. Copy the css and js folders from `NODE-INTERMEDIATE/Libs/Part2-5` into the `/public` folder.
+1. Find the code near line 39 which matches this:
+	```javascript
+		router.param('id', function (req, res, next, id) {
+	```
 
-1. Replace the `layout.pug` and `students.pug` from `NODE-INTERMEDIATE/Libs/Part2-5` into the views directory.
+1. What is happening in this route? 
 
-1. Load in the browser and you should now see a table being displayed like in the solution.
+1. Notice there are two matching routes with `router.get('/user/:id` , which allow the id value to be used. What is the way the route parameter for id is being accessed?
+
+1. Now try this route http://localhost:3000/user/6/interest and then http://localhost:3000/user/6/interest/1
+
+1. Starting near line 62 is code to display the interests. How is one particular interest sepcified in the route, and obtained in the code? 
+
+
+	## Use Query parameters
+
+1. 	
+
+
+	## Make a post request
+
+1. In Postman, first go back to looking at the data of all users:
+a GET request to http://localhost:3000/user/
+
+1. Copy the last object { } by highlighting it and using control+c
+
+1. In postman, change the GET dropdown to be a post. Underneath, you should see a menu with Body as the third option. Choose body.
+
+1. A new menu should appear with `raw` as the 3rd option. 
+
+1. Choose raw, then a drop-down should be present two places to the right, mke sure that `JSON application/json` is selected.
+
+1. Paste the object that you copied, but change the id value to one higher, and change the values up.
+
+1. Hit Send. And notice the bottom of Postman has the status code displayed. You should see a 201 - created successfully.
+
+1. Use the Git menu to discard any changes you made to the demos folder.
+
+
+## Create a Rest API
+1. Create a folder `WIP\Ch02\Rest`
+
+1. Use the express app generator to create a project called rest-api
+
+1. Create an array of your friends, with id, name, and an array of hobbies.
+
+1. You will now create a short Rest API that returns data imply as JSON.
+
+	Refer to the demos on sending data and routes in completing the following steps.
+
+1. Create a GET route that returns all friends at /friends
+
+1. Create a GET route that returns a specific friends at /friends/1 etc.
+
+1. Create a GET route that gets just the hobbies for a specific friend.
+
+1. Create a GET route that gets just one hobby for a specific friend.
+
+1. Create a Post route to add a new friend. 
+
+	* for each one take the appropriate action return the array, add to it (push) 
+
+1. Test using Postman
+
+1. Mark your work as complete. 
+
+## Bonus
+
+1. Implement a DELETE for /user/id 
+
+1. Implement a PUT for user/id with a body passed

@@ -7,6 +7,8 @@
 
 ### Review and organize existing routes
 
+1. Continue your work with your express1 project. Do an nom start if it is not already running.
+
 1. Visit the site at http://localhost:3000
 
 1. Notice the text on the browser screen. Look at the generated folder structure and code, can you see which file sets this text?  Think of your answer, and then scroll down to see..
@@ -26,17 +28,18 @@
     ```
 
 
-1.  In `app.js` there are lines to include routes:
-    ``` javascript
-    var index = require('./routes/index');
-    var users = require('./routes/users');
-    ```
+    In `app.js` there are lines to include routes:
+    
+        ``` javascript
+        var index = require('./routes/index');
+        var users = require('./routes/users');
+        ```
 
-1. And further down the file these are used.
-    ``` javascript
-    app.use('/', index);
-    app.use('/users', users);
-    ```
+    And further down the file these are used.
+        ``` javascript
+        app.use('/', index);
+        app.use('/users', users);
+        ```
 
 1. This had been set up during the app creation. Let's organize a bit and move the require statements down to the use statements so that all 4 of these lines are together. These statements could even be combined like this:
     ```app.use('/', require('./routes/index'));```
