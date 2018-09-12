@@ -1,7 +1,20 @@
 # Chapter 2 Exercise 5: Iterate over data
 
 ## Objectives:
-* In the student router, setup a student array to be used in the student view
+
+Update the students view to display array data from the server
+
+## Steps
+
+1. Continue working in your express1 project
+
+1. Launch http://localhost:3000 in browser. Refer to previous exercises if you need more detail.
+
+1. In the terminal install the `moment` package and add it as a dependency to the package.json.
+`npm i -S moment`
+
+1. In the student router, create a student array to be used in the student view - notice the use of moment to format dates.
+
 	``` javascript
 	let students = [{
 		nameFirst: "Devin",
@@ -20,48 +33,42 @@
 		hireDate: moment("08/29/2015", "MM/DD/YYYY")
 	}];
 	```
-* Pass the students to the view
-* In students.pug, display students by iterating over the data 
-* Add an if conditon to display if no students are present. Comment out array code to test this.
-* Change the formatting of the application and add Bootstrap
-* When your code is tested and works, replace the /views directory with /Libs/Part
 
-Need detailed steps?
-Read below...
-
-## Steps
-
-1. Continue with your `MyPractice/lab-project` and launch http://localhost:3000 in browser. Refer to previous exercises if you need more detail.
-
-1. In the terminal install the `moment` package and add it as a dependency to the package.json.
-`npm i -S moment`
-
-1. update the index.pug to just say `Welcome to #{title}`
-
-1. update the layout to say `Student Manager Application`
-
-1. Define student array in the `/routes/students`. Use the moment package ot create dates. Add moment to the project using an nom install with a --save flag.
-
-1. display student data however you want, the solution uses a table. The demo displays list items.
+1. Modify the render all in this student.js file to pass students as well as title:
+	```javascript
+	/* GET users listing. */
+	router.get('/', function(req, res, next) {
+	// res.send('Students will go in here');
+		res.render('students', { 
+		title: 'Students' ,
+		students: students
+			
+		});
+	});
 	```
-	each student in students
-		tr
-		td #{student.nameFirst} #{student.nameLast}
-		td #{student.email}
-		td #{student.hireDate.format("MM/DD/YYYY")}
-	```
-1. Test that you can see the students in the browser. If not make fixes and ask if you get stuck.
 
-1. Add an if conditon to display if no students are present. Comment out students inclusion in router and test your conditional works.
+1. Delete these 3 files in your \views directory - and then copy the `index.pug`, `layout.pug` and `students.pug` from `/Libs/Part2-5` into your views directory.
 
-## Preparing Project for future work
-The following will modify the application to have links to the routes files.
-It uses Bootstrap for styling. 
+1. Notice that the new index.pug has `Welcome to #{title}`
+
+1. Notice that the layout.pug has `Student Manager Application`
+
+1. Notice how the `student.pug` is dsplaying the student data. 
+
+1. Test that you can see the students in the browser when you click on the student link.
+
+1. Notice how in student.pug there is an if conditon to display if no students are present. 
+
+	Comment out students inclusion in router and test in browser that you see the other output.
+	
+	Once the conditional works - then take out the comment and confirm students are once again displayed.
+
+## Make things pretty
+
+The following will modify the application to have links to the routes files. It uses Bootstrap for styling. 
 
 1. Delete the `/public/javascripts` and `/public/stylesheets` directories. 
 
-1. Copy the css and js folders from `NODE-INTERMEDIATE/Libs/Part2-5` into the `/public` folder.
+1. Copy the css and js folders from `/Libs/Part2-5` into the `/public` folder.
 
-1. Replace the `layout.pug` and `students.pug` from `NODE-INTERMEDIATE/Libs/Part2-5` into the views directory.
-
-1. Load in the browser and you should now see a table being displayed like in the solution.
+1. Load in the browser and you should now see a nicer styled output
