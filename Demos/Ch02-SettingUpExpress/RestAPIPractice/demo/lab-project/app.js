@@ -1,6 +1,6 @@
 var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
+//var path = require('path');
+//var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -14,8 +14,9 @@ app.use(cookieParser());
 
 var sends = require('./routes/sends');
 app.use('/', sends);
-app.use('/', require('./routes/index'))
-app.use('/', require('./routes/user-params'))
+app.use('/', require('./routes/index'));
+app.use('/', require('./routes/user'));
+app.use('/students', require('./routes/students'));
 
 
 // app.use(function(req, res, next){

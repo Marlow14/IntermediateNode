@@ -82,4 +82,13 @@ router.post('/user/', function (req, res) {
 });
 
 
+// *** Query paramaters
+
+//this matches the above, so doesnt generate a separate call for router.param 
+router.get('/user/:id', function (req, res) {
+  console.log('and this matches too');
+  res.send('user ' + req.params.id + ' is ' + req.user.name);
+});
+
+
 module.exports = router;

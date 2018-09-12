@@ -23,7 +23,7 @@
 
 1. View this link in the browser: http://localhost:3000/user/
 
-1. Open the file `user-params.js` in the editor.  Read through data in the hard-coded array to see the source of the data in the browser. Find this route (near line 32) to see how the data is being sent back:
+1. Open the file `user.js` in the editor.  Read through data in the hard-coded array to see the source of the data in the browser. Find this route (near line 32) to see how the data is being sent back:
 
 	```javascript
 	router.get('/user/'
@@ -46,7 +46,13 @@
 
 1. Now try this route http://localhost:3000/user/6/interest and then http://localhost:3000/user/6/interest/1
 
-1. Starting near line 62 is code to display the interests. How is one particular interest sepcified in the route, and obtained in the code?  
+1. Starting near line 62 is code to display the interests. How is one particular interest sepcified in the route, and obtained in the code? 
+
+
+	## Use Query parameters
+
+1. 	
+
 
 	## Make a post request
 
@@ -74,6 +80,10 @@ a GET request to http://localhost:3000/user/
 1. Use the express app generator to create a project called rest-api
 
 1. Create an array of your friends, with id, name, and an array of hobbies.
+
+1. You will now create a short Rest API that returns data imply as JSON.
+
+	Refer to the demos on sending data and routes in completing the following steps.
 
 1. Create a GET route that returns all friends at /friends
 
