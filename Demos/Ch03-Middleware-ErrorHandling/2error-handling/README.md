@@ -79,8 +79,17 @@
 
 1. Copy this folder `\Demos\Ch03-Middleware-ErrorHandling\error-handling\` to your WIP directory.
 
-1. Create routes for GET requests for car data. You can use the db.json file from `\Demos\Ch01-ReviewOfNode\super-agent\db.json`
+1. Copy the db.json file from `\Demos\Ch01-ReviewOfNode\super-agent\db.json`
+and use it for getting a list of cars.
 
-1. Use the browser to pass a query parameter to indicate the country, and return JSON data. 
+1. Create routes for GET requests for car data. 
+    Going to http://localhost:3000/cars gives a listing of all cars as JSON data
+    
+    
+1. Add logic for using a query string to indicate the country, and return JSON data.   http://localhost:3000/cars?country=USA
 
 1. Create a `unique` route which uses Promises to read db.json, and make a list of the countries and number of makes per country.
+    http://localhost:3000/unique
+
+1. Extra challenge - implement as ROUTE PARAMETERS
+    http://localhost:3000/cars/country/USA
