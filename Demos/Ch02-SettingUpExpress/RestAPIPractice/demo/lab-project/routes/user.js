@@ -37,21 +37,20 @@ router.get('/user/', function (req, res) {
 
 //this is pulled from the route parameter 
 router.param('id', function (req, res, next, id) {
-  console.log('param function with just id of ' + id);
   //set a user object on req
   req.user = users.find((e) => {return e.id == id});
   next();  //pass to the next matching middleware
 });
 
 router.get('/user/:id', function (req, res, next) {
-  console.log('this matches /user/' + req.params.id);
-  console.log('user in req object', req.user);
+  //console.log('this matches /user/' + req.params.id);
+  //console.log('user in req object', req.user);
   next();
 });
 
 //this matches the above, so doesnt generate a separate call for router.param 
 router.get('/user/:id', function (req, res) {
-  console.log('and this matches too');
+ // console.log('and this matches too');
   res.send('user ' + req.params.id + ' is ' + req.user.name);
 });
 
