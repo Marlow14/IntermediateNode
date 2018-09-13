@@ -68,16 +68,22 @@
 
     The page should load with a link to a page that does not exist (no matching route.) 
 
-    ### throwing errors
+    Click the link, do you see the info displayed from error.pug?
 
-1. Look in `routes/index.js` and find the route `/throwserror`
+    ### Multiple examples of error handling.
 
-    Notice how it calls a function that doesnt exist. This will throw an error so that next() is never called. But Express takes care of this and will also forward on the error handling middleware. Open in the browser, is it picked up by the error handler?
-
-1. Find the `/mtgox` route. This simulates a service not being avaiable by creating a 503 error with a custom message and passing this into next().  Open in the browser, is it picked up by the error handler?
+1. Look at the rest of the routes in `routes/index.js`. Read the code for each route and the comments then load the URLs in the browser to see the routes functioning. 
 
 1. Find the `/fileread` route. Notice how it uses an error first call back and calls next passing the err. Load this route in the browser, is it picked up by the error handler?
 
 1. Find the `/filewrite` route. Notice how it uses two callbacks. You can string together as many as you like, these are additional middleware that gets called in order. Notice the difference in the way fs.writeFile is called. next will be called, either with or without the error. If it is with an error, then it gets picked up by the errorhandler. Otherwise a response of OK is returned. Load this route in the browser, is it picked up by the error handler?
 
+## Bonus
 
+1. Copy this folder `\Demos\Ch03-Middleware-ErrorHandling\error-handling\` to your WIP directory.
+
+1. Create routes for GET requests for car data. You can use the db.json file from `\Demos\Ch01-ReviewOfNode\super-agent\db.json`
+
+1. Use the browser to pass a query parameter to indicate the country, and return JSON data. 
+
+1. Create a `unique` route which uses Promises to read db.json, and make a list of the countries and number of makes per country.

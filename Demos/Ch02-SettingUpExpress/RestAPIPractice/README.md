@@ -51,11 +51,6 @@
 1. Starting near line 62 is code to display the interests. How is one particular interest sepcified in the route, and obtained in the code? 
 
 
-	## Use Query parameters
-
-1. 	
-
-
 	## Make a post request
 
 1. In Postman, first go back to looking at the data of all users:
