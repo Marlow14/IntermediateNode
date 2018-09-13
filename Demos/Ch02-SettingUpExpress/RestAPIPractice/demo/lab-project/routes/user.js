@@ -30,7 +30,7 @@ const users = [
 // ******* GET  *********
 
 router.get('/user/', function (req, res) {
-  console.log('all users', users);
+  //all users
   res.send(users);
 });
 
@@ -83,11 +83,16 @@ router.post('/user/', function (req, res) {
 
 
 // *** Query paramaters
+//this will allow query string to be passed to filter users
+//http://localhost:3000/searchusers?name=bob&age=21&interest=beer 
+router.get('/searchusers/', function (req, res) {
+    var name = req.query.name;
+    var age = req.query.age;
+    var interest = req.query.interest;  
 
-//this matches the above, so doesnt generate a separate call for router.param 
-router.get('/user/:id', function (req, res) {
-  console.log('and this matches too');
-  res.send('user ' + req.params.id + ' is ' + req.user.name);
+    //with this data you could filter results
+  
+    res.send(`name ${name} age=${age} interest=${interest}`);
 });
 
 
