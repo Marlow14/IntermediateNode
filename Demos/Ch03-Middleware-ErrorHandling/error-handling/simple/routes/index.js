@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var createError = require('http-errors');
+var fs = require("fs");
 
 
 /* GET home page. */
@@ -8,10 +9,6 @@ router.get('/', function (req, res, next) {
   let html = `<p>These links throw errors. </p>
    <ul>
    <li> <a href="/foobar">This is a link to /foobar which doesnt have a route</a></li>
-   <li><a href="/throwserror">This /throwserror has bad code that throws an error, never calls next()</li>
-   <li> <a href="/mtgox"> This link is /mtgox and it passes a 503 error into next()</a><br /></li>
-   <li> <a href="/fileread"> This link tries to read a non existent file</a><br /></li>
-   <li> <a href="/filewrite"> This link tries to write to a non existent path</a><br /></li>
 
 </ul>
 
@@ -45,14 +42,22 @@ router.get("/fileread", function (req, res, next) {
   });
 });
 
-router.get("/filewrite", function (req, res, next) {
-    fs.writeFile("/inaccessible-path", "data", next);
-    //next gets called with or without the error
-  },
-  function (req, res) {
+router.get("/filewritebad", function (req, res, next) {
+  fs.writeFile("/inaccessible-path", "data", next);
+  //next gets called with or without the error
+},
+  function (req, res) { //this fires if next is called w no error
     res.send("OK");
   }
-});
+);
 
+router.get("/filewritegood", function (req, res, next) {
+  fs.writeFile("demo.text", "data", next);
+  //next gets called with or without the error
+},
+  function (req, res) { //this fires if next is called w no error
+    res.send("OK");
+  }
+);
 
 module.exports = router;
