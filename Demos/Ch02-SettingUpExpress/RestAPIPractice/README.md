@@ -1,7 +1,9 @@
-# Chapter 2 Exercise 6: Rest APIs
+# Chapter 2 Demo: Rest APIs
 
 ## Objectives:
-
+* Practice with request / response
+* Use Postman
+* create your own REST API with GET & POST
 
 ## Steps
 

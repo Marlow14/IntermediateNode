@@ -1,0 +1,13 @@
+{
+  "name": "simple",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "devstart": "DEBUG=lab-project node ./bin/www",
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "2.0.0-beta11"
+  }
+}

@@ -7,10 +7,6 @@ var bodyParser = require('body-parser');
 
 var moment = require('moment');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var students = require('./routes/students');
-
 var app = express();
 
 // view engine setup
@@ -49,23 +45,8 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/students', students);
+app.use('/', require('./routes/index'));
 
-app.use('/mtgox', function(req,res,next){
-      console.log('Lets pretend this uses a service that is too busy and times out');
-      let err = new Error('The service is unavailable');
-      err.status = 503;
-      next(err);
-});
-
-app.use('/bug', function(req,res,next){
-  console.log('Pretend there is a really bad bug here. No err info is set..');
-  //notice next() is not called
-  throw new Error('This is a bug/feature ');
-  
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
