@@ -38,7 +38,12 @@ router.use('/mtgox', function (req, res, next) {
 });
 
 
-/* Notice how this uses a query string to write to a file. First load this route using
+/* Notice how the following uses a query string to pass the filename
+
+Notice how it uses two callbacks. You can string together as many as you like, these are additional middleware that gets called in order. Notice the difference in the way fs.writeFile is called. next will be called, either with or without the error. If it is with an error, then it gets picked up by the errorhandler. Otherwise a response of OK is returned. Load this route in the browser, is it picked up by the error handler?
+
+
+First load this route using
 http://localhost:3000/filewrite?filename=demo.text
 then using
 http://localhost:3000/filewrite

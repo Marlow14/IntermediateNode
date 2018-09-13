@@ -72,11 +72,8 @@
 
     ### Multiple examples of error handling.
 
-1. Look at the rest of the routes in `routes/index.js`. Read the code for each route and the comments then load the URLs in the browser to see the routes functioning. 
+1. Look at the rest of the routes in `routes/index.js`. There are multiple examples of handling errors. Read the code for each route and the comments then load the URLs in the browser to see the routes functioning. 
 
-1. Find the `/fileread` route. Notice how it uses an error first call back and calls next passing the err. Load this route in the browser, is it picked up by the error handler?
-
-1. Find the `/filewrite` route. Notice how it uses two callbacks. You can string together as many as you like, these are additional middleware that gets called in order. Notice the difference in the way fs.writeFile is called. next will be called, either with or without the error. If it is with an error, then it gets picked up by the errorhandler. Otherwise a response of OK is returned. Load this route in the browser, is it picked up by the error handler?
 
 ## Bonus
 
