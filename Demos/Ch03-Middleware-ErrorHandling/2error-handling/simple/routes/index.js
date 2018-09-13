@@ -60,16 +60,30 @@ router.get("/filewrite", function (req, res, next) {
 );
 
 /* Notice how this uses an error first call back and calls next passing the err. Load this route in the browser, is it picked up by the error handler?
+With a file that exists
 http://localhost:3000/fileread?filename=demo.text
-then using
+
+then using a file that doesnt exist
+http://localhost:3000/fileread?filename=badfile.txt
+
+then using no query parameter
 http://localhost:3000/fileread
 */
+
 router.get("/fileread", function (req, res, next) {
   let fileName = req.query.filename;
-     
+  if (!fileName) {
+    console.log('about to create an error');
+    next(createError(400, 'Called without filename'));
+    console.log('after next');
+  };
+
+  console.log(`After check of fileName`);
+
   fs.readFile(fileName, function (err, data) {
     if (err) {
-      next(createError(400, "invalid filename" )); // Explicitly Pass errors to Express.
+      console.log('in error');
+      next(createError(400, "invalid filename")); // Explicitly Pass errors to Express.
     }
     else {
       res.send("file contents: " + data.toString());
@@ -81,10 +95,14 @@ router.get("/fileread", function (req, res, next) {
 const Promise = require("bluebird");
 const pfs = Promise.promisifyAll(fs);
 
-//Good URL: http://localhost:3000/filewritepromise?filename=demo.text
-//Bad URL: http://localhost:3000/filewritepromise
+//Good w filename: http://localhost:3000/filewritepromise?filename=demo.text
+//Bad no filename: http://localhost:3000/filewritepromise
+//Bad with empty filename: http://localhost:3000/filewritepromise?filename=
 router.get("/filewritepromise", function (req, res, next) {
   let fileName = req.query.filename;
+  if (!fileName) {
+    next(createError(400, 'Called without filename'))
+  };
 
   Promise.try(() => {
     return fs.writeFileAsync(fileName, "Promises are cool! But you MUST call next on errors");
@@ -94,9 +112,7 @@ router.get("/filewritepromise", function (req, res, next) {
     return fs.readFileAsync(fileName);
   }).then((data) => {
     res.send(`Asynchronous read: ${data.toString()}`);
-  }).catch(err => {
-      next(err);
-  });
+  }).catch(next);
 });
 
 //In this example, a developer might have been distracted and forgot to do something...read through the code.. 
@@ -113,7 +129,7 @@ router.get("/filewritepromisenonext", function (req, res, next) {
   }).then((data) => {
     res.send(`Asynchronous read: ${data.toString()}`);
   }).catch(err => {
-      console.log('Did I forget to turn off the stove?');
+    console.log('Did I forget to turn off the stove?');
   });
 });
 
