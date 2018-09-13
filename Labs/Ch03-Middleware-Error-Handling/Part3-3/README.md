@@ -8,7 +8,7 @@
 
 ## Steps 
 
-1. Continue working in your `MyPractice/lab-project` project. 
+1. Continue working in your `express1/lab-project` project. 
 
 1. So far our routes have been simple. Let's clean this area up a bit in our project because it can get messy quickly. First delete the /mtgox and /bug routes from `app.js`.  
 

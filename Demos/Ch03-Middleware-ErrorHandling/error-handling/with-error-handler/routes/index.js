@@ -20,5 +20,16 @@ throw new Error('This is a bug/feature ');
 
 });
 
+router.get("/file", function (req, res, next) {
+  fs.readFile("/file-does-not-exist", function (err, data) {
+    if (err) {
+      next(err); // Pass errors to Express.
+    }
+    else {
+      res.send(data);
+    }
+  });
+});
+
 
 module.exports = router;
