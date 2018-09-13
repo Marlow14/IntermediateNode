@@ -13,7 +13,7 @@
     "create-error": "^0.3.1",
     "custom-errors": "^1.5.1",
     "debug": "~2.6.9",
-    "express": "~4.15.5",
+    "express": "^4.16.3",
     "express-promise-router": "^2.0.0",
     "moment": "^2.20.1",
     "morgan": "~1.9.0",

@@ -9,7 +9,7 @@
 
 1. Continue working in your `express1/lab-project` project.
 
-1. npm start if the projet is not already running.
+1. npm start if the project is not already running.
 
 1. Notice in `app.js` the last middleware that raises the 404. Try to reach a made up URL like http://localhost:3000/notforrealz 
 
