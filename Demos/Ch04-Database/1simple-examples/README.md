@@ -16,6 +16,10 @@
 
 ## Bonus
 
-1. Create a table called hobbies.
+1. Use a script to:
 
-1. Write code to get the hobbies from the db.
+    * create a table called hobbies.
+
+    * Insert data into the table.
+
+    * Write code to get the hobbies from the db.
