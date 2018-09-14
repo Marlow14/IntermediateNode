@@ -107,17 +107,13 @@ const pfs = Promise.promisifyAll(fs);
 //Bad no filename: http://localhost:3000/filewritepromise
 //Bad with empty filename: http://localhost:3000/filewritepromise?filename=
 router.get("/filewritepromise", function (req, res, next) {
-  let fileName = req.query.filename;
   
-  if (!fileName) {
-    console.log('calling next with error');
-    next(createError(400, "Called without filename"))
-  };
-
   Promise.try(() => {
+    let fileName = req.query.filename;
+  
     if (!fileName) {
       console.log('calling next with error');
-      next(createError(400, "Called without filename"))
+      throw (createError(400, "Called without filename"))
     };
     return fs.writeFileAsync(fileName, "Promises are cool! But you MUST call next on errors");
   }).then(() => {
