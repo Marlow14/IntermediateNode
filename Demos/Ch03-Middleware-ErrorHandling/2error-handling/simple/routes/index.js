@@ -107,40 +107,49 @@ const pfs = Promise.promisifyAll(fs);
 //Bad no filename: http://localhost:3000/filewritepromise
 //Bad with empty filename: http://localhost:3000/filewritepromise?filename=
 router.get("/filewritepromise", function (req, res, next) {
-  
-  Promise.try(() => {
-    let fileName = req.query.filename;
-  
-    if (!fileName) {
-      console.log('calling next with error');
-      throw (createError(400, "Called without filename"))
-    };
-    return fs.writeFileAsync(fileName, "Promises are cool! But you MUST call next on errors");
-  }).then(() => {
-    console.log("Data written successfully!");
-    console.log("Let's read newly written data");
-    return fs.readFileAsync(fileName);
-  }).then((data) => {
-    res.send(`Asynchronous read: ${data.toString()}`);
-  }).catch(next);
+
+  let fileName = req.query.filename;
+
+  if (!fileName) {
+    console.log('calling next with error');
+    next(createError(400, "Called without filename"))
+  }
+  else {
+
+    Promise.try(() => {
+      let fileName = req.query.filename;
+
+      if (!fileName) {
+        console.log('calling next with error');
+        throw (createError(400, "Called without filename"))
+      };
+      return fs.writeFileAsync(fileName, "Promises are cool! But you MUST call next on errors");
+    }).then(() => {
+      console.log("Data written successfully!");
+      console.log("Let's read newly written data");
+      return fs.readFileAsync(fileName);
+    }).then((data) => {
+      res.send(`Asynchronous read: ${data.toString()}`);
+    }).catch(next);
+  }
 });
 
 //In this example, a developer might have been distracted and forgot to do something...read through the code.. 
 //Try this URL: http://localhost:3000/filewritepromisenonext
 router.get("/filewritepromisenonext", function (req, res, next) {
-  let fileName = req.query.filename;
-
-  Promise.try(() => {
-    return fs.writeFileAsync(fileName, "Promises are cool! But you MUST call next on errors");
-  }).then(() => {
-    console.log("Data written successfully!");
-    console.log("Let's read newly written data");
-    return fs.readFileAsync(fileName);
-  }).then((data) => {
-    res.send(`Asynchronous read: ${data.toString()}`);
-  }).catch(err => {
-    console.log('Did I forget to turn off the stove?');
-  });
+  
+    Promise.try(() => {
+      return fs.writeFileAsync("demo.txt", "Promises are cool! But you MUST call next on errors");
+    }).then(() => {
+      console.log("Data written successfully!");
+      console.log("Let's read newly written data");
+      return fs.readFileAsync(fileName);
+    }).then((data) => {
+      res.send(`Asynchronous read: ${data.toString()}`);
+    }).catch(err => {
+      console.log('Did I forget to turn off the stove?');
+    });
+  
 });
 
 
