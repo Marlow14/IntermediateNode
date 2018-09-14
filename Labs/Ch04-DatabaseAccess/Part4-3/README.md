@@ -9,9 +9,7 @@
 
 ### Add the use of bookshelf to create a User model
 
-1. Navigate to your `MyPractice/lab-project` folder.
-
-1. If you successfully completed the last exercise, continue with your project. Otherwise copy the solution from the last exercise.
+1. If you successfully completed the last exercise, continue with your project. Otherwise copy the `\Labs\Ch04-DatabaseAccess\Part4-1\Solution` and use it as your starting point - if you copy - be sure to run `npm install` and to run ```npx knex migrate:latest```
 
 1. We will be using bookshelf - add this as a dependency to package.json.
 
