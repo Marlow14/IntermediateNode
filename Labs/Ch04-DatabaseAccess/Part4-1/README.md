@@ -1,7 +1,7 @@
 # Chapter 4 Exercise 1: Database Access
 
 ## Objectives:
-* Setup knex for project using `knex init`
+* Setup knex for the studentmanagement project using `knex init`
 * Configure usage of knex for development environment
 * Update student router to use Express Promise Router
 * Pass db into student router
@@ -117,44 +117,6 @@
 	
 	module.exports = function({db}) {
 		
-		router.get("/",  (req, res) => {
-			//TODO: return a Promise that 
-			// 1. tries to get the students from the database table students
-			// 2. If get from db is successful, maps:
-			// 2a. the first name and last name to another property called fullName
-			// 2b. uses moment to set the hireDate property based on the format MM/DD/YYYY
-			// 3. If map is successful, use the response to render the students view passing students
-			// 4. If there is any error, render students but pass null
-		});
-		
-		return router;
-	}
-
-	```
-
-1. Try to complete the TODO section. Scroll down for help...
-	``` javascript
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	router.get("/",  (req, res) => {
 		return Promise.try(() => {
 			return db("students");

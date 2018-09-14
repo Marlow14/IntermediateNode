@@ -1,8 +1,8 @@
 
-# Chapter 4 Demo: migrations
+# Chapter 4 Demo: bookshelf
 
 ## Objectives:
-* Observe the use of migrations
+* Observe the use of bookshelf
 
 ## Steps
 
@@ -48,5 +48,5 @@
 1. Rollback this change:
 ```knex migrate:rollback```
 
-1. Use Git icon in VS Code to discard changes to this /Demo directory
+1. Use Git icon in VS Code to undo changes to this /Demo directory
 
