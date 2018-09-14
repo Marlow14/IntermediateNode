@@ -11,7 +11,7 @@
 
 1. Open that folder at the terminal, and run `npm i` then `npm start`
 
-1. Open the browser and clik the student link, you should see 3 students. Where is this data coming from?
+1. Open the browser and click the student link, you should see 3 students. Where is this data coming from?
 
 1. What dependencies are necessary to connect to the database? Add them to package.json. Scroll down to verify and add any missing dependencies.
 	```
