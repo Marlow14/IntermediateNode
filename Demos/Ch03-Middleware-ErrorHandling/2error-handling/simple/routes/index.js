@@ -44,9 +44,9 @@ Notice how it uses two callbacks. You can string together as many as you like, t
 
 
 First load this route using
-http://localhost:3000/filewrite?filename=demo.text
+http://localhost:3000/filewrite?filename=demo.text   //this will work
 then using
-http://localhost:3000/filewrite
+http://localhost:3000/filewrite   this will throw an error
 
 */
 router.get("/filewrite", function (req, res, next) {
@@ -59,23 +59,27 @@ router.get("/filewrite", function (req, res, next) {
   }
 );
 
+
+
+
+/* With err first callbacks */
+
 /* Notice how this uses an error first call back and calls next passing the err. Load this route in the browser, is it picked up by the error handler?
 With a file that exists
-http://localhost:3000/fileread?filename=demo.text
+http://localhost:3000/fileread?filename=demo.text  //works if you did the last step
 
-then using a file that doesnt exist
+then using a file that doesnt exist - raises 400
 http://localhost:3000/fileread?filename=badfile.txt
 
-then using no query parameter
+
+then using no query parameter  - 
 http://localhost:3000/fileread
 */
 
 router.get("/fileread", function (req, res, next) {
   let fileName = req.query.filename;
   if (!fileName) {
-    console.log('about to create an error');
     next(createError(400, 'Called without filename'));
-    console.log('after next');
   };
 
   console.log(`After check of fileName`);
@@ -92,6 +96,10 @@ router.get("/fileread", function (req, res, next) {
 });
 
 
+
+
+
+/* WITH PROMISES */
 const Promise = require("bluebird");
 const pfs = Promise.promisifyAll(fs);
 
@@ -100,11 +108,17 @@ const pfs = Promise.promisifyAll(fs);
 //Bad with empty filename: http://localhost:3000/filewritepromise?filename=
 router.get("/filewritepromise", function (req, res, next) {
   let fileName = req.query.filename;
+  
   if (!fileName) {
-    next(createError(400, 'Called without filename'))
+    console.log('calling next with error');
+    next(createError(400, "Called without filename"))
   };
 
   Promise.try(() => {
+    if (!fileName) {
+      console.log('calling next with error');
+      next(createError(400, "Called without filename"))
+    };
     return fs.writeFileAsync(fileName, "Promises are cool! But you MUST call next on errors");
   }).then(() => {
     console.log("Data written successfully!");
