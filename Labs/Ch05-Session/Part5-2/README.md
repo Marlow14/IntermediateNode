@@ -7,7 +7,7 @@
 
 1. If you successfully completed the last exercise, continue with your project. Otherwise copy the solution from the last exercise.
 
-1. In app.js require connect-session-knex and make sure it is installed. Pass in expressSession.
+1. In `app.js` require `connect-session-knex` and make sure it is installed. Pass in expressSession.
 	```const connectSessionKnex = require("connect-session-knex")(expressSession);```
 
 1. Update the use of expressSession to have a property called store, and use connectSesionKnex to create a new db session.	
