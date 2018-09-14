@@ -6,7 +6,7 @@
 
 ## Steps
 
-1. Continue working in your `MyPractice/lab-project` project. 
+1. Continue working in your `express1/lab-project` project. 
 
 1. We will be using the moment package - add it to package.json.
 

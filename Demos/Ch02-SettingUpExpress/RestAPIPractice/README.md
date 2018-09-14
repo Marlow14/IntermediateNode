@@ -1,7 +1,9 @@
-# Chapter 2 Exercise 6: Rest APIs
+# Chapter 2 Demo: Rest APIs
 
 ## Objectives:
-
+* Practice with request / response
+* Use Postman
+* create your own REST API with GET & POST
 
 ## Steps
 
@@ -47,11 +49,6 @@
 1. Now try this route http://localhost:3000/user/6/interest and then http://localhost:3000/user/6/interest/1
 
 1. Starting near line 62 is code to display the interests. How is one particular interest sepcified in the route, and obtained in the code? 
-
-
-	## Use Query parameters
-
-1. 	
 
 
 	## Make a post request

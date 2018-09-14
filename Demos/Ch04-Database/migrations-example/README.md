@@ -1,16 +1,21 @@
 
-1. Before running this demo, do a GIT PULL  
+# Chapter 4 Demo: migrations
 
-1. View package.json and run `npm install`
+## Objectives:
+* Observe the use of migrations
 
-1. View the knexfile.js and open the corresponding database with the appropriae client software
+## Steps
 
-1. execute this from the command line
+1. View `package.json` dependencies and run `npm install`
+
+1. View the `knexfile.js` and open the corresponding database with the appropriate client software
+
+1. Execute this from the command line
 ``` knex migrate:make create_products ```
 
 1. Look in the migrations folder at the created file
 
-1. modify the file with this content whch creates a table
+1. Modify the file with this content which creates a table
 
     ``` javascript
     exports.up = function(knex, Promise) {
@@ -28,7 +33,7 @@
     };
     ```
 
-1. modify the content with a drop table, in case a rollback is needed
+1. Modify the content with a drop table, in case a rollback is needed
     ``` javascript
     exports.down = function(knex, Promise) {
         return knex.schema.dropTable('products');

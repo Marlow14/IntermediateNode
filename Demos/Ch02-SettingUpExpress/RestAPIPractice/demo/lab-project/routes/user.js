@@ -30,28 +30,27 @@ const users = [
 // ******* GET  *********
 
 router.get('/user/', function (req, res) {
-  console.log('all users', users);
+  //all users
   res.send(users);
 });
 
 
 //this is pulled from the route parameter 
 router.param('id', function (req, res, next, id) {
-  console.log('param function with just id of ' + id);
   //set a user object on req
   req.user = users.find((e) => {return e.id == id});
   next();  //pass to the next matching middleware
 });
 
 router.get('/user/:id', function (req, res, next) {
-  console.log('this matches /user/' + req.params.id);
-  console.log('user in req object', req.user);
+  //console.log('this matches /user/' + req.params.id);
+  //console.log('user in req object', req.user);
   next();
 });
 
 //this matches the above, so doesnt generate a separate call for router.param 
 router.get('/user/:id', function (req, res) {
-  console.log('and this matches too');
+ // console.log('and this matches too');
   res.send('user ' + req.params.id + ' is ' + req.user.name);
 });
 
@@ -83,11 +82,16 @@ router.post('/user/', function (req, res) {
 
 
 // *** Query paramaters
+//this will allow query string to be passed to filter users
+//http://localhost:3000/searchusers?name=bob&age=21&interest=beer 
+router.get('/searchusers/', function (req, res) {
+    var name = req.query.name;
+    var age = req.query.age;
+    var interest = req.query.interest;  
 
-//this matches the above, so doesnt generate a separate call for router.param 
-router.get('/user/:id', function (req, res) {
-  console.log('and this matches too');
-  res.send('user ' + req.params.id + ' is ' + req.user.name);
+    //with this data you could filter results
+  
+    res.send(`name ${name} age=${age} interest=${interest}`);
 });
 
 

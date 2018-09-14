@@ -1,3 +1,4 @@
+var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -53,27 +54,10 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/students', students);
 
-app.use('/mtgox', function(req,res,next){
-      console.log(`Let's pretend this uses a service that is too busy and times out`);
-      let err = new Error('The service is unavailable');
-      err.status = 503;
-      next(err);
-});
-
-app.use('/bug', function(req,res,next){
-  console.log('Pretend there is a really bad bug here. No err info is set..');
-  //notice next() is not called
-  throw new Error('This is a bug/feature ');
-  
-});
-
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  let err = new Error('Oh no! the page cannot be found');
-  err.status = 404;
-  req.timestamp = new Date();
-  next(err);  
-});
+  app.use(function(req, res, next) {
+    next(createError(404,'Oh no! the page cannot be found'));
+  });
 
 app.use(require("./middleware/error-handler")(state));
 
