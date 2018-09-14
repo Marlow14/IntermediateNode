@@ -6,6 +6,12 @@
 
 ## Steps
 
+1. Open a client to view teh postgres database.
+
+1. If not already created for you, create a database called studentmanagement
+
+1. Open the knexfile and confirm the settings
+
 1. Run `npm install`
 
 1. Open a terminal at this location, right click the package.json file.
