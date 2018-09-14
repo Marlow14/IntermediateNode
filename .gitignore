@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 /WIP
 demo.text
+/Demos/Ch04-Database/2migrations-example/migrations
 
 
 # Runtime data

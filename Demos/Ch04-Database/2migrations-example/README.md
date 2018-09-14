@@ -6,9 +6,11 @@
 
 ## Steps
 
+1. IOpen a terminal at this folder.
+
 1. View `package.json` dependencies and run `npm install`
 
-1. View the `knexfile.js` and open the corresponding database with the appropriate client software
+1. View the `knexfile.js` and open the corresponding database with the appropriate client software. Expand to the list of tables and see which tables are present.
 
 1. Execute this from the command line
 ``` npx knex migrate:make create_products ```
@@ -43,10 +45,14 @@
 1. Run the migration with this command:
 ```npx knex migrate:latest```
 
-1. Check the DB for added table
+1. Check the DB for 3 tables: knex_migrations, knex_migrate_lock, products
+
+1. Look at the row added to knex_migrations for this migration.
 
 1. Rollback this change:
-```knex migrate:rollback```
+```npx knex migrate:rollback```
+
+1. The products table should be gone, and the entries in the knex tables will be gone.
 
 1. Use Git icon in VS Code to discard changes to this /Demo directory
 
