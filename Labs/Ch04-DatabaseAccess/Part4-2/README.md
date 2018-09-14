@@ -8,7 +8,7 @@
 
 ### Add migration for users table
 
-1. If you successfully completed the last exercise, continue with your project. Otherwise copy the `\Labs\Ch04-DatabaseAccess\Part4-1\Solution` and use it as yoru starting point.
+1. If you successfully completed the last exercise, continue with your project. Otherwise copy the `\Labs\Ch04-DatabaseAccess\Part4-1\Solution` and use it as yoru starting point - if you copy - be sure to run `npm install`
 
 1. Review the `knexfile.js` and recall that this version of the file can be used in different environments. 
 
@@ -59,7 +59,7 @@
 	};
     ```
 
-1. Run the migration with this command. The default is developent, if you would want to run for another env you can specify it with a flag of `--env test`
+1. Run the migration with this command. The default is development, if you would want to run for another env you can specify it with a flag of `--env test`
 
 	```npx knex migrate:latest```
 
@@ -78,7 +78,7 @@
 
 ### Use seed for users
 
-1. Execute this command: `knex seed:make users`
+1. Execute this command: `npx knex seed:make users`
 
 1. Look for the newly created directory and file: `/seeds/users.js`
 
@@ -104,28 +104,14 @@
 
 ## Add a new migration file
 
-1. Now create a new migraton to add a new column to the users table. We really shouldnt store password as plain text, but instead - a hash of it.
-	* Think of the command to create a new migration file
-	* Think of the logic to add/remove the column
-	* Scroll down...
+1. Now create a new migraton to add a new column to the users table. We really shouldnt store password as plain text, but instead - a hash of it. (when saves are made, the password is run through a hashing function. For now, lets get the column created using a migration.)
+
+	Create a new migration using:	
+	```
+		npx knex migrate:make add_hash_column_users
 	```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	```
-1. Execute the command: 	```npx knex migrate:make add_hash_column_users```
-This allows seed data to be provided. Update the contents of the file to this:
+1. Update the contents of the generated migration file to this:
 	``` javascript
 		exports.up = function(knex, Promise) {
 			return knex.schema.table("users", function(table){
