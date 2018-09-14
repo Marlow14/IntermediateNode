@@ -13,23 +13,36 @@
 
 1. We will be using bookshelf - add this as a dependency to package.json.
 
-1. Create a copy of `db.js` and name the copy `bookshelf.js`
+1. In the root directory, create a copy of `db.js` and name the copy `bookshelf.js`
 
-1. Modify the contents to create an instance of bookshelf and export this.
+1. Modify the contents of bookshelf.js to require it and export it as follows:
+
+    ```javascript
+        const knex = require("knex");
+        const knexconfig = require('./knexfile.js'); 
+        const config = require('./config.json'); 
+
+        const db         = require('knex')(knexconfig[config.env]);
+        const bookshelf = require('bookshelf')(db);
+
+        module.exports = bookshelf;
+    ```
 
 1.  At the root of the project, in `/lab-project` create a directory called `models` and inside create a file called `User.js`
 
 1. In this file require bookshelf: 
     ```const bookshelf = require('../bookshelf');```
 
-1. Declare a User object that extends built-in bookshelf Model with a table name, in this case users table
+1. Declare a User object that extends built-in bookshelf Model with a table name, in this case `users` table. Use this code:
+
     ```javascript
     var User = bookshelf.Model.extend({
         tableName: 'users'
     });
     ```
 
-1. Finally, export User and we are done with model.
+1. Finally, export an object with User and we are done with model.
+    
     ```javascript
     module.exports = {
         User: User
