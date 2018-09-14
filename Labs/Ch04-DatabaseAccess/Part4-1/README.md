@@ -9,11 +9,11 @@
 
 ## Steps 
 
-1. Navigate to your `MyPractice/lab-project` folder.
+1. Navigate to your `express1/lab-project` folder.
 
-1. If you successfully completed the last exercise, continue with your project. Otherwise copy the solution from the last exercise.
+1. If you successfully completed the last exercise, continue with your project. Otherwise copy the start folder to your WIP directory.
 
-1. We will be connecting to the postgres database to read student records. Think about what dependencies we can use to build queries against the postgres database. Scroll down to verify and add the needed dependencies.
+1. We will be connecting to the postgres database to read student records. Think about what dependencies we talked aboutthat we need to connect and execute queries against the postgres database. Scroll down to verify and add the needed dependencies.
 	```
 
 
@@ -30,8 +30,8 @@
 
 	```
 
-1. Install:  pg and knex and add to package.json. You can do this in one step from the command line 
-`npm install -S pg knex `
+	Install pg and knex and add to package.json. You can do this in one step from the command line 
+	`npm install -S pg knex `
 
 1. In the terminal, use this knex CLI command ```knex init``` to create a `knexfile.js`.
 
